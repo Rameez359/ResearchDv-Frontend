@@ -27,11 +27,12 @@ License: You must have a valid license purchased only from themeforest(the above
 </head>
 <!-- END: Head -->
 <style>
-    #file-name{
+    #file-name {
         font-size: 21px;
         color: white;
     }
 </style>
+
 <body class="py-5 md:py-0 bg-black/[0.15] dark:bg-transparent">
     <!-- BEGIN: Mobile Menu -->
     <div class="mobile-menu md:hidden">
@@ -79,8 +80,6 @@ License: You must have a valid license purchased only from themeforest(the above
                         </li>
                     </ul>
                 </li>
-                
-
             </ul>
         </div>
     </div>
@@ -90,7 +89,7 @@ License: You must have a valid license purchased only from themeforest(the above
         <nav class="side-nav">
             <a href="/myProjects" class="intro-x flex items-center pl-5 pt-4 mt-3">
                 <img alt="Midone - HTML Admin Template" class="w-6" src="dist/images/logo.svg">
-                <span style="color: black;" class="hidden xl:block text-white text-lg ml-3"> Multi Model </span>
+                <span class="hidden xl:block text-white text-lg ml-3"> Multi Model </span>
             </a>
             <div class="side-nav__devider my-6"></div>
             <ul>
@@ -105,18 +104,18 @@ License: You must have a valid license purchased only from themeforest(the above
                     </a>
                 </li>
                 <li>
-                    <a href="/dataSet" class="side-menu ">
-                        <div class="menu__icon"> <i data-lucide="box"></i> </div>
+                    <a href="javascript:;.html" class="side-menu ">
+                        <div class="side-menu__icon"> <i data-lucide="box"></i> </div>
 
                         <div class="side-menu__title">
-                            Data Set
+                            Datasets
                             <!-- <div class="side-menu__sub-icon transform rotate-180"> <i data-lucide="chevron-down"></i> </div> -->
                         </div>
                     </a>
                 </li>
                 <li>
                     <a href="/myProjects" class="side-menu ">
-                        <div class="menu__icon"> <i data-lucide="layout"></i> </div>
+                        <div class="side-menu__icon"> <i data-lucide="layout"></i> </div>
 
                         <div class="side-menu__title">
                             My Projects
@@ -129,34 +128,21 @@ License: You must have a valid license purchased only from themeforest(the above
                         <div class="side-menu__icon"> <i data-lucide="edit"></i> </div>
 
                         <div class="side-menu__title">
-                            Create Projects
+                            Create Project
                             <!-- <div class="side-menu__sub-icon transform rotate-180"> <i data-lucide="chevron-down"></i> </div> -->
                         </div>
                     </a>
-                    <!-- <ul class="side-menu__sub-open">
-                            
-                            <li>
-                                <a href="side-menu-dark-dashboard-overview-2.html" class="side-menu side-menu--active">
-                                    <div class="side-menu__icon"> <i data-lucide="activity"></i> </div>
-                                    <div class="side-menu__title"> Overview 2 </div>
-                                </a>
-                            </li>
-                           
-                        </ul> -->
                 </li>
                 <li>
-                    <a href="/traine" class="side-menu">
-                        <div class="side-menu__icon"> <i data-lucide="sidebar"></i> </div>
+                    <a href="/trainModels" class="side-menu">
+                        <div class="side-menu__icon"> <i data-lucide="database"></i> </div>
 
                         <div class="side-menu__title">
-                            Traine
+                            Train Models
                             <!-- <div class="side-menu__sub-icon transform rotate-180"> <i data-lucide="chevron-down"></i> </div> -->
                         </div>
                     </a>
                 </li>
-               
-                
-
             </ul>
         </nav>
         <!-- END: Side Menu -->
@@ -185,19 +171,22 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <a href="" class="flex items-center">
                                     <div
                                         class="w-8 h-8 bg-success/20 dark:bg-success/10 text-success flex items-center justify-center rounded-full">
-                                        <i class="w-4 h-4" data-lucide="inbox"></i> </div>
+                                        <i class="w-4 h-4" data-lucide="inbox"></i>
+                                    </div>
                                     <div class="ml-3">Mail Settings</div>
                                 </a>
                                 <a href="" class="flex items-center mt-2">
                                     <div
                                         class="w-8 h-8 bg-pending/10 text-pending flex items-center justify-center rounded-full">
-                                        <i class="w-4 h-4" data-lucide="users"></i> </div>
+                                        <i class="w-4 h-4" data-lucide="users"></i>
+                                    </div>
                                     <div class="ml-3">Users & Permissions</div>
                                 </a>
                                 <a href="" class="flex items-center mt-2">
                                     <div
                                         class="w-8 h-8 bg-primary/10 dark:bg-primary/20 text-primary/80 flex items-center justify-center rounded-full">
-                                        <i class="w-4 h-4" data-lucide="credit-card"></i> </div>
+                                        <i class="w-4 h-4" data-lucide="credit-card"></i>
+                                    </div>
                                     <div class="ml-3">Transactions Report</div>
                                 </a>
                             </div>
@@ -433,8 +422,9 @@ License: You must have a valid license purchased only from themeforest(the above
                         <!-- BEGIN: General Report -->
                         <div class="col-span-12 lg:col-span-8 xl:col-span-6 mt-2">
                             <div class="intro-y block sm:flex items-center h-10">
-                                <h2 style="color: black; font-size: 32px;" class="font-bold mr-5 text-3xl text-lg truncate">
-                                    Upload Data Set
+                                <h2 style="color: black; font-size: 32px;"
+                                    class="font-bold mr-5 text-3xl text-lg truncate">
+                                    Upload Dataset
                                 </h2>
                             </div>
 
@@ -461,18 +451,25 @@ License: You must have a valid license purchased only from themeforest(the above
                                     background-color: #e5e7eb;
                                 }
                             </style>
-                           <div style="gap: 40px;" class="flex items-center justify-center w-full drag-drop-div">
-                            <label style="border-color: #2fcd24;background: #636363;" for="dropzone-file" class="mt-5 flex flex-col items-center justify-center w-full h-64 border-2 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
-                                <div class="flex flex-col items-center justify-center pt-5 pb-6">
-                                    <svg class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"/>
-                                    </svg>
-                                    <p id="file-name" class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
-                                    <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
-                                </div>
-                                <input id="dropzone-file" type="file" class="hidden fileInput" accept=".zip,.rar,.7zip" onchange="displayFileName(event)" />
-                                <p id="loadingMessage" style="display: none;">Loading please wait ... </p>
-                                <button style="width: fit-content;
+                            <div style="gap: 40px;" class="flex items-center justify-center w-full drag-drop-div">
+                                <label style="border-color: #2fcd24;background: #636363;" for="dropzone-file"
+                                    class="mt-5 flex flex-col items-center justify-center w-full h-64 border-2 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
+                                    <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                                        <svg class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke-width="2"
+                                                d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
+                                        </svg>
+                                        <p id="file-name" class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span
+                                                class="font-semibold">Click to upload</span> or drag and drop</p>
+                                        <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX.
+                                            800x400px)</p>
+                                    </div>
+                                    <input id="dropzone-file" type="file" class="hidden fileInput"
+                                        accept=".zip,.rar,.7zip" onchange="displayFileName(event)" />
+                                    <p id="loadingMessage" style="display: none;">Loading please wait ... </p>
+                                    <button style="width: fit-content;
                                                 margin-top: 20px;
                                                 padding: 7px;
                                                 color: white;
@@ -481,18 +478,25 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 font-weight: 500;
                                                 background: #12afbc;
                                                 border-radius: 6px;" onclick="uploadData()">Upload data</button>
-                            </label>
-                            <label style="border-color: #2fcd24;background: #636363;" for="dropzone-file" class="mt-5 flex flex-col items-center justify-center w-full h-64 border-2 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
-                                <div class="flex flex-col items-center justify-center pt-5 pb-6">
-                                    <svg class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"/>
-                                    </svg>
-                                    <p id="file-name" class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Select existing Dataset</span> or drag and drop</p>
-                                    <!-- <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p> -->
-                                </div>
-                                <input id="dropzone-file" type="file" class="hidden fileInput" accept=".zip,.rar,.7zip" onchange="displayFileName(event)" />
-                                <!-- <p id="loadingMessage" style="display: none;">Loading please wait ... </p> -->
-                                <button style="width: fit-content;
+                                </label>
+                                <label style="border-color: #2fcd24;background: #636363;" for="dropzone-file"
+                                    class="mt-5 flex flex-col items-center justify-center w-full h-64 border-2 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
+                                    <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                                        <svg class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke-width="2"
+                                                d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
+                                        </svg>
+                                        <p id="file-name" class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span
+                                                class="font-semibold">Select existing Dataset</span> or drag and drop
+                                        </p>
+                                        <!-- <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p> -->
+                                    </div>
+                                    <input id="dropzone-file" type="file" class="hidden fileInput"
+                                        accept=".zip,.rar,.7zip" onchange="displayFileName(event)" />
+                                    <!-- <p id="loadingMessage" style="display: none;">Loading please wait ... </p> -->
+                                    <button style="width: fit-content;
                                                 margin-top: 20px;
                                                 padding: 7px;
                                                 color: white;
@@ -501,40 +505,40 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 font-weight: 500;
                                                 background: #12afbc;
                                                 border-radius: 6px;">Upload data</button>
-                            </label>
-                        </div>
-                        
-                        <script>
-                            function displayFileName(event) {
-                                const input = event.target;
-                                if (input.files.length > 0) {
-                                    const fileName = input.files[0].name;
-                                    document.getElementById('file-name').innerHTML = `<span class="font-semibold">File uploaded:</span> ${fileName}`;
+                                </label>
+                            </div>
+
+                            <script>
+                                function displayFileName(event) {
+                                    const input = event.target;
+                                    if (input.files.length > 0) {
+                                        const fileName = input.files[0].name;
+                                        document.getElementById('file-name').innerHTML = `<span class="font-semibold">File uploaded:</span> ${fileName}`;
+                                    }
                                 }
-                            }
-                        
-                            const dropZone2 = document.querySelector('.drag-drop-div');
-                        
-                            dropZone2.addEventListener('dragover', function (e) {
-                                e.preventDefault();
-                                e.stopPropagation();
-                            });
-                        
-                            dropZone2.addEventListener('drop', function (e) {
-                                e.preventDefault();
-                                e.stopPropagation();
-                        
-                                const files = e.dataTransfer.files;
-                                if (files.length > 0) {
-                                    const fileName = files[0].name;
-                                    document.getElementById('file-name').innerHTML = `<span class="font-semibold">File uploaded:</span> ${fileName}`;
-                                }
-                            });
-                        
-                            
-                        </script>
-                        
-                        
+
+                                const dropZone2 = document.querySelector('.drag-drop-div');
+
+                                dropZone2.addEventListener('dragover', function (e) {
+                                    e.preventDefault();
+                                    e.stopPropagation();
+                                });
+
+                                dropZone2.addEventListener('drop', function (e) {
+                                    e.preventDefault();
+                                    e.stopPropagation();
+
+                                    const files = e.dataTransfer.files;
+                                    if (files.length > 0) {
+                                        const fileName = files[0].name;
+                                        document.getElementById('file-name').innerHTML = `<span class="font-semibold">File uploaded:</span> ${fileName}`;
+                                    }
+                                });
+
+
+                            </script>
+
+
                             <div class="w-container">
                                 <!-- <div style="display: flex;
                                     flex-direction: column;">
@@ -557,78 +561,78 @@ License: You must have a valid license purchased only from themeforest(the above
 
                                 <script>
 
-let isLoading = false;
+                                    let isLoading = false;
 
-function uploadData() {
-    console.log("called");
-    const fileInput = document.getElementById('dropzone-file');
-    const fileName = fileInput.files[0];
-    console.log('Selected file name:', fileName);
-    if (!fileName) {
-        console.error('No file selected.');
-        return;
-    }
-    isLoading = true;
-    updateLoadingMessage();
-    const formData = new FormData();
-    formData.append('file', fileName);
-    const userId = localStorage.getItem('userId');
-    console.log(`userId is ${userId}`);
-    formData.append('userId', userId);
-    console.log(formData, "data value");
-    fetch('http://localhost:3000/projects/postProjectData', {
-        method: 'POST',
-        body: formData
-    })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log('Files uploaded:', data);
-            isLoading = false;
-            updateLoadingMessage();
-        })
-        .catch(error => {
-            console.error('Error uploading files:', error);
-            isLoading = false;
-            updateLoadingMessage();
-        });
-}
+                                    function uploadData() {
+                                        console.log("called");
+                                        const fileInput = document.getElementById('dropzone-file');
+                                        const fileName = fileInput.files[0];
+                                        console.log('Selected file name:', fileName);
+                                        if (!fileName) {
+                                            console.error('No file selected.');
+                                            return;
+                                        }
+                                        isLoading = true;
+                                        updateLoadingMessage();
+                                        const formData = new FormData();
+                                        formData.append('file', fileName);
+                                        const userId = localStorage.getItem('userId');
+                                        console.log(`userId is ${userId}`);
+                                        formData.append('userId', userId);
+                                        console.log(formData, "data value");
+                                        fetch('http://localhost:3000/projects/postProjectData', {
+                                            method: 'POST',
+                                            body: formData
+                                        })
+                                            .then(response => {
+                                                if (!response.ok) {
+                                                    throw new Error('Network response was not ok');
+                                                }
+                                                return response.json();
+                                            })
+                                            .then(data => {
+                                                console.log('Files uploaded:', data);
+                                                isLoading = false;
+                                                updateLoadingMessage();
+                                            })
+                                            .catch(error => {
+                                                console.error('Error uploading files:', error);
+                                                isLoading = false;
+                                                updateLoadingMessage();
+                                            });
+                                    }
 
-function updateLoadingMessage() {
-    const loadingMessage = document.getElementById('loadingMessage');
-    if (isLoading) {
-        loadingMessage.style.display = 'block';
-    } else {
-        loadingMessage.style.display = 'none';
-    }
-}
+                                    function updateLoadingMessage() {
+                                        const loadingMessage = document.getElementById('loadingMessage');
+                                        if (isLoading) {
+                                            loadingMessage.style.display = 'block';
+                                        } else {
+                                            loadingMessage.style.display = 'none';
+                                        }
+                                    }
 
 
 
-                                   
+
                                 </script>
 
                             </div>
-                            
+
                             <script>
                                 const dropZone = document.querySelector('.drag-drop-div');
-                            
+
                                 dropZone.addEventListener('dragover', function (e) {
                                     e.preventDefault();
                                     e.stopPropagation();
                                 });
-                            
+
                                 dropZone.addEventListener('drop', function (e) {
                                     e.preventDefault();
                                     e.stopPropagation();
                                     // Handle the drop event here, if necessary
                                 });
                             </script>
-                            
+
 
 
 
@@ -640,12 +644,12 @@ function updateLoadingMessage() {
                             </div>
 
 
-                            
+
                         </div>
                         <div class="grid gap-6 mt-8">
                             <div class="col-span-12 lg:col-span-3 2xl:col-span-2">
                                 <h2 style="color: black; " class="intro-y text-lg font-medium mr-auto mt-2">
-                                    Uploaded Data Sets
+                                    Uploaded Datasets
                                 </h2>
                                 <!-- BEGIN: File Manager Menu -->
                                 <!-- <div class="intro-y box p-5 mt-6">
@@ -686,27 +690,42 @@ function updateLoadingMessage() {
                                 <!-- BEGIN: File Manager Filter -->
                                 <div class="intro-y flex flex-col-reverse sm:flex-row items-center">
                                     <div class="w-full sm:w-auto relative mr-auto mt-3 sm:mt-0">
-                                        <i class="w-4 h-4 absolute my-auto inset-y-0 ml-3 left-0 z-10 text-slate-500" data-lucide="search"></i> 
-                                        <input type="text" class="form-control w-full sm:w-64 box px-10" placeholder="Search files">
-                                        <div class="inbox-filter dropdown absolute inset-y-0 mr-3 right-0 flex items-center" data-tw-placement="bottom-start">
-                                            <i class="dropdown-toggle w-4 h-4 cursor-pointer text-slate-500" role="button" aria-expanded="false" data-tw-toggle="dropdown" data-lucide="chevron-down"></i> 
+                                        <i class="w-4 h-4 absolute my-auto inset-y-0 ml-3 left-0 z-10 text-slate-500"
+                                            data-lucide="search"></i>
+                                        <input type="text" class="form-control w-full sm:w-64 box px-10"
+                                            placeholder="Search files">
+                                        <div class="inbox-filter dropdown absolute inset-y-0 mr-3 right-0 flex items-center"
+                                            data-tw-placement="bottom-start">
+                                            <i class="dropdown-toggle w-4 h-4 cursor-pointer text-slate-500"
+                                                role="button" aria-expanded="false" data-tw-toggle="dropdown"
+                                                data-lucide="chevron-down"></i>
                                             <div class="inbox-filter__dropdown-menu dropdown-menu pt-2">
                                                 <div class="dropdown-content">
                                                     <div class="grid grid-cols-12 gap-4 gap-y-3 p-3">
                                                         <div class="col-span-6">
-                                                            <label for="input-filter-1" class="form-label text-xs">File Name</label>
-                                                            <input id="input-filter-1" type="text" class="form-control flex-1" placeholder="Type the file name">
+                                                            <label for="input-filter-1" class="form-label text-xs">File
+                                                                Name</label>
+                                                            <input id="input-filter-1" type="text"
+                                                                class="form-control flex-1"
+                                                                placeholder="Type the file name">
                                                         </div>
                                                         <div class="col-span-6">
-                                                            <label for="input-filter-2" class="form-label text-xs">Shared With</label>
-                                                            <input id="input-filter-2" type="text" class="form-control flex-1" placeholder="example@gmail.com">
+                                                            <label for="input-filter-2"
+                                                                class="form-label text-xs">Shared With</label>
+                                                            <input id="input-filter-2" type="text"
+                                                                class="form-control flex-1"
+                                                                placeholder="example@gmail.com">
                                                         </div>
                                                         <div class="col-span-6">
-                                                            <label for="input-filter-3" class="form-label text-xs">Created At</label>
-                                                            <input id="input-filter-3" type="text" class="form-control flex-1" placeholder="Important Meeting">
+                                                            <label for="input-filter-3"
+                                                                class="form-label text-xs">Created At</label>
+                                                            <input id="input-filter-3" type="text"
+                                                                class="form-control flex-1"
+                                                                placeholder="Important Meeting">
                                                         </div>
                                                         <div class="col-span-6">
-                                                            <label for="input-filter-4" class="form-label text-xs">Size</label>
+                                                            <label for="input-filter-4"
+                                                                class="form-label text-xs">Size</label>
                                                             <select id="input-filter-4" class="form-select flex-1">
                                                                 <option>10</option>
                                                                 <option>25</option>
@@ -715,7 +734,8 @@ function updateLoadingMessage() {
                                                             </select>
                                                         </div>
                                                         <div class="col-span-12 flex items-center mt-3">
-                                                            <button class="btn btn-secondary w-32 ml-auto">Create Filter</button>
+                                                            <button class="btn btn-secondary w-32 ml-auto">Create
+                                                                Filter</button>
                                                             <button class="btn btn-primary w-32 ml-2">Search</button>
                                                         </div>
                                                     </div>
@@ -726,16 +746,20 @@ function updateLoadingMessage() {
                                     <div class="w-full sm:w-auto flex">
                                         <button class="btn btn-primary shadow-md mr-2">Upload New Files</button>
                                         <div class="dropdown">
-                                            <button class="dropdown-toggle btn px-2 box" aria-expanded="false" data-tw-toggle="dropdown">
-                                                <span class="w-5 h-5 flex items-center justify-center"> <i class="w-4 h-4" data-lucide="plus"></i> </span>
+                                            <button class="dropdown-toggle btn px-2 box" aria-expanded="false"
+                                                data-tw-toggle="dropdown">
+                                                <span class="w-5 h-5 flex items-center justify-center"> <i
+                                                        class="w-4 h-4" data-lucide="plus"></i> </span>
                                             </button>
                                             <div class="dropdown-menu w-40">
                                                 <ul class="dropdown-content">
                                                     <li>
-                                                        <a href="" class="dropdown-item"> <i data-lucide="file" class="w-4 h-4 mr-2"></i> Share Files </a>
+                                                        <a href="" class="dropdown-item"> <i data-lucide="file"
+                                                                class="w-4 h-4 mr-2"></i> Share Files </a>
                                                     </li>
                                                     <li>
-                                                        <a href="" class="dropdown-item"> <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Settings </a>
+                                                        <a href="" class="dropdown-item"> <i data-lucide="settings"
+                                                                class="w-4 h-4 mr-2"></i> Settings </a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -748,19 +772,26 @@ function updateLoadingMessage() {
                                     <div class="intro-y col-span-6 sm:col-span-4 md:col-span-3 2xl:col-span-2">
                                         <div class="file box rounded-md px-5 pt-8 pb-5 px-3 sm:px-5 relative zoom-in">
                                             <div class="absolute left-0 top-0 mt-3 ml-3">
-                                                <input class="form-check-input border border-slate-500" type="checkbox" >
+                                                <input class="form-check-input border border-slate-500" type="checkbox">
                                             </div>
-                                            <a href="" class="w-3/5 file__icon file__icon--directory mx-auto"></a> <a href="" class="block font-medium mt-4 text-center truncate">Repository</a> 
+                                            <a href="" class="w-3/5 file__icon file__icon--directory mx-auto"></a> <a
+                                                href=""
+                                                class="block font-medium mt-4 text-center truncate">Repository</a>
                                             <div class="text-slate-500 text-xs text-center mt-0.5">20 KB</div>
                                             <div class="absolute top-0 right-0 mr-2 mt-3 dropdown ml-auto">
-                                                <a class="dropdown-toggle w-5 h-5 block" href="javascript:;" aria-expanded="false" data-tw-toggle="dropdown"> <i data-lucide="more-vertical" class="w-5 h-5 text-slate-500"></i> </a>
+                                                <a class="dropdown-toggle w-5 h-5 block" href="javascript:;"
+                                                    aria-expanded="false" data-tw-toggle="dropdown"> <i
+                                                        data-lucide="more-vertical" class="w-5 h-5 text-slate-500"></i>
+                                                </a>
                                                 <div class="dropdown-menu w-40">
                                                     <ul class="dropdown-content">
                                                         <li>
-                                                            <a href="" class="dropdown-item"> <i data-lucide="users" class="w-4 h-4 mr-2"></i> Share File </a>
+                                                            <a href="" class="dropdown-item"> <i data-lucide="users"
+                                                                    class="w-4 h-4 mr-2"></i> Share File </a>
                                                         </li>
                                                         <li>
-                                                            <a href="" class="dropdown-item"> <i data-lucide="trash" class="w-4 h-4 mr-2"></i> Delete </a>
+                                                            <a href="" class="dropdown-item"> <i data-lucide="trash"
+                                                                    class="w-4 h-4 mr-2"></i> Delete </a>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -770,22 +801,29 @@ function updateLoadingMessage() {
                                     <div class="intro-y col-span-6 sm:col-span-4 md:col-span-3 2xl:col-span-2">
                                         <div class="file box rounded-md px-5 pt-8 pb-5 px-3 sm:px-5 relative zoom-in">
                                             <div class="absolute left-0 top-0 mt-3 ml-3">
-                                                <input class="form-check-input border border-slate-500" type="checkbox" checked>
+                                                <input class="form-check-input border border-slate-500" type="checkbox"
+                                                    checked>
                                             </div>
                                             <a href="" class="w-3/5 file__icon file__icon--file mx-auto">
                                                 <div class="file__icon__file-name">MP4</div>
                                             </a>
-                                            <a href="" class="block font-medium mt-4 text-center truncate">Celine Dion - Ashes.mp4</a> 
+                                            <a href="" class="block font-medium mt-4 text-center truncate">Celine Dion -
+                                                Ashes.mp4</a>
                                             <div class="text-slate-500 text-xs text-center mt-0.5">20 MB</div>
                                             <div class="absolute top-0 right-0 mr-2 mt-3 dropdown ml-auto">
-                                                <a class="dropdown-toggle w-5 h-5 block" href="javascript:;" aria-expanded="false" data-tw-toggle="dropdown"> <i data-lucide="more-vertical" class="w-5 h-5 text-slate-500"></i> </a>
+                                                <a class="dropdown-toggle w-5 h-5 block" href="javascript:;"
+                                                    aria-expanded="false" data-tw-toggle="dropdown"> <i
+                                                        data-lucide="more-vertical" class="w-5 h-5 text-slate-500"></i>
+                                                </a>
                                                 <div class="dropdown-menu w-40">
                                                     <ul class="dropdown-content">
                                                         <li>
-                                                            <a href="" class="dropdown-item"> <i data-lucide="users" class="w-4 h-4 mr-2"></i> Share File </a>
+                                                            <a href="" class="dropdown-item"> <i data-lucide="users"
+                                                                    class="w-4 h-4 mr-2"></i> Share File </a>
                                                         </li>
                                                         <li>
-                                                            <a href="" class="dropdown-item"> <i data-lucide="trash" class="w-4 h-4 mr-2"></i> Delete </a>
+                                                            <a href="" class="dropdown-item"> <i data-lucide="trash"
+                                                                    class="w-4 h-4 mr-2"></i> Delete </a>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -795,22 +833,28 @@ function updateLoadingMessage() {
                                     <div class="intro-y col-span-6 sm:col-span-4 md:col-span-3 2xl:col-span-2">
                                         <div class="file box rounded-md px-5 pt-8 pb-5 px-3 sm:px-5 relative zoom-in">
                                             <div class="absolute left-0 top-0 mt-3 ml-3">
-                                                <input class="form-check-input border border-slate-500" type="checkbox" >
+                                                <input class="form-check-input border border-slate-500" type="checkbox">
                                             </div>
                                             <a href="" class="w-3/5 file__icon file__icon--file mx-auto">
                                                 <div class="file__icon__file-name">TXT</div>
                                             </a>
-                                            <a href="" class="block font-medium mt-4 text-center truncate">Resources.txt</a> 
+                                            <a href=""
+                                                class="block font-medium mt-4 text-center truncate">Resources.txt</a>
                                             <div class="text-slate-500 text-xs text-center mt-0.5">2.2 MB</div>
                                             <div class="absolute top-0 right-0 mr-2 mt-3 dropdown ml-auto">
-                                                <a class="dropdown-toggle w-5 h-5 block" href="javascript:;" aria-expanded="false" data-tw-toggle="dropdown"> <i data-lucide="more-vertical" class="w-5 h-5 text-slate-500"></i> </a>
+                                                <a class="dropdown-toggle w-5 h-5 block" href="javascript:;"
+                                                    aria-expanded="false" data-tw-toggle="dropdown"> <i
+                                                        data-lucide="more-vertical" class="w-5 h-5 text-slate-500"></i>
+                                                </a>
                                                 <div class="dropdown-menu w-40">
                                                     <ul class="dropdown-content">
                                                         <li>
-                                                            <a href="" class="dropdown-item"> <i data-lucide="users" class="w-4 h-4 mr-2"></i> Share File </a>
+                                                            <a href="" class="dropdown-item"> <i data-lucide="users"
+                                                                    class="w-4 h-4 mr-2"></i> Share File </a>
                                                         </li>
                                                         <li>
-                                                            <a href="" class="dropdown-item"> <i data-lucide="trash" class="w-4 h-4 mr-2"></i> Delete </a>
+                                                            <a href="" class="dropdown-item"> <i data-lucide="trash"
+                                                                    class="w-4 h-4 mr-2"></i> Delete </a>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -820,24 +864,31 @@ function updateLoadingMessage() {
                                     <div class="intro-y col-span-6 sm:col-span-4 md:col-span-3 2xl:col-span-2">
                                         <div class="file box rounded-md px-5 pt-8 pb-5 px-3 sm:px-5 relative zoom-in">
                                             <div class="absolute left-0 top-0 mt-3 ml-3">
-                                                <input class="form-check-input border border-slate-500" type="checkbox" >
+                                                <input class="form-check-input border border-slate-500" type="checkbox">
                                             </div>
                                             <a href="" class="w-3/5 file__icon file__icon--image mx-auto">
                                                 <div class="file__icon--image__preview image-fit">
-                                                    <img alt="Midone - HTML Admin Template" src="dist/images/preview-15.jpg">
+                                                    <img alt="Midone - HTML Admin Template"
+                                                        src="dist/images/preview-15.jpg">
                                                 </div>
                                             </a>
-                                            <a href="" class="block font-medium mt-4 text-center truncate">preview-15.jpg</a> 
+                                            <a href=""
+                                                class="block font-medium mt-4 text-center truncate">preview-15.jpg</a>
                                             <div class="text-slate-500 text-xs text-center mt-0.5">1 MB</div>
                                             <div class="absolute top-0 right-0 mr-2 mt-3 dropdown ml-auto">
-                                                <a class="dropdown-toggle w-5 h-5 block" href="javascript:;" aria-expanded="false" data-tw-toggle="dropdown"> <i data-lucide="more-vertical" class="w-5 h-5 text-slate-500"></i> </a>
+                                                <a class="dropdown-toggle w-5 h-5 block" href="javascript:;"
+                                                    aria-expanded="false" data-tw-toggle="dropdown"> <i
+                                                        data-lucide="more-vertical" class="w-5 h-5 text-slate-500"></i>
+                                                </a>
                                                 <div class="dropdown-menu w-40">
                                                     <ul class="dropdown-content">
                                                         <li>
-                                                            <a href="" class="dropdown-item"> <i data-lucide="users" class="w-4 h-4 mr-2"></i> Share File </a>
+                                                            <a href="" class="dropdown-item"> <i data-lucide="users"
+                                                                    class="w-4 h-4 mr-2"></i> Share File </a>
                                                         </li>
                                                         <li>
-                                                            <a href="" class="dropdown-item"> <i data-lucide="trash" class="w-4 h-4 mr-2"></i> Delete </a>
+                                                            <a href="" class="dropdown-item"> <i data-lucide="trash"
+                                                                    class="w-4 h-4 mr-2"></i> Delete </a>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -847,24 +898,32 @@ function updateLoadingMessage() {
                                     <div class="intro-y col-span-6 sm:col-span-4 md:col-span-3 2xl:col-span-2">
                                         <div class="file box rounded-md px-5 pt-8 pb-5 px-3 sm:px-5 relative zoom-in">
                                             <div class="absolute left-0 top-0 mt-3 ml-3">
-                                                <input class="form-check-input border border-slate-500" type="checkbox" checked>
+                                                <input class="form-check-input border border-slate-500" type="checkbox"
+                                                    checked>
                                             </div>
                                             <a href="" class="w-3/5 file__icon file__icon--image mx-auto">
                                                 <div class="file__icon--image__preview image-fit">
-                                                    <img alt="Midone - HTML Admin Template" src="dist/images/preview-13.jpg">
+                                                    <img alt="Midone - HTML Admin Template"
+                                                        src="dist/images/preview-13.jpg">
                                                 </div>
                                             </a>
-                                            <a href="" class="block font-medium mt-4 text-center truncate">preview-13.jpg</a> 
+                                            <a href=""
+                                                class="block font-medium mt-4 text-center truncate">preview-13.jpg</a>
                                             <div class="text-slate-500 text-xs text-center mt-0.5">1.4 MB</div>
                                             <div class="absolute top-0 right-0 mr-2 mt-3 dropdown ml-auto">
-                                                <a class="dropdown-toggle w-5 h-5 block" href="javascript:;" aria-expanded="false" data-tw-toggle="dropdown"> <i data-lucide="more-vertical" class="w-5 h-5 text-slate-500"></i> </a>
+                                                <a class="dropdown-toggle w-5 h-5 block" href="javascript:;"
+                                                    aria-expanded="false" data-tw-toggle="dropdown"> <i
+                                                        data-lucide="more-vertical" class="w-5 h-5 text-slate-500"></i>
+                                                </a>
                                                 <div class="dropdown-menu w-40">
                                                     <ul class="dropdown-content">
                                                         <li>
-                                                            <a href="" class="dropdown-item"> <i data-lucide="users" class="w-4 h-4 mr-2"></i> Share File </a>
+                                                            <a href="" class="dropdown-item"> <i data-lucide="users"
+                                                                    class="w-4 h-4 mr-2"></i> Share File </a>
                                                         </li>
                                                         <li>
-                                                            <a href="" class="dropdown-item"> <i data-lucide="trash" class="w-4 h-4 mr-2"></i> Delete </a>
+                                                            <a href="" class="dropdown-item"> <i data-lucide="trash"
+                                                                    class="w-4 h-4 mr-2"></i> Delete </a>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -874,24 +933,31 @@ function updateLoadingMessage() {
                                     <div class="intro-y col-span-6 sm:col-span-4 md:col-span-3 2xl:col-span-2">
                                         <div class="file box rounded-md px-5 pt-8 pb-5 px-3 sm:px-5 relative zoom-in">
                                             <div class="absolute left-0 top-0 mt-3 ml-3">
-                                                <input class="form-check-input border border-slate-500" type="checkbox" >
+                                                <input class="form-check-input border border-slate-500" type="checkbox">
                                             </div>
                                             <a href="" class="w-3/5 file__icon file__icon--image mx-auto">
                                                 <div class="file__icon--image__preview image-fit">
-                                                    <img alt="Midone - HTML Admin Template" src="dist/images/preview-11.jpg">
+                                                    <img alt="Midone - HTML Admin Template"
+                                                        src="dist/images/preview-11.jpg">
                                                 </div>
                                             </a>
-                                            <a href="" class="block font-medium mt-4 text-center truncate">preview-11.jpg</a> 
+                                            <a href=""
+                                                class="block font-medium mt-4 text-center truncate">preview-11.jpg</a>
                                             <div class="text-slate-500 text-xs text-center mt-0.5">1.4 MB</div>
                                             <div class="absolute top-0 right-0 mr-2 mt-3 dropdown ml-auto">
-                                                <a class="dropdown-toggle w-5 h-5 block" href="javascript:;" aria-expanded="false" data-tw-toggle="dropdown"> <i data-lucide="more-vertical" class="w-5 h-5 text-slate-500"></i> </a>
+                                                <a class="dropdown-toggle w-5 h-5 block" href="javascript:;"
+                                                    aria-expanded="false" data-tw-toggle="dropdown"> <i
+                                                        data-lucide="more-vertical" class="w-5 h-5 text-slate-500"></i>
+                                                </a>
                                                 <div class="dropdown-menu w-40">
                                                     <ul class="dropdown-content">
                                                         <li>
-                                                            <a href="" class="dropdown-item"> <i data-lucide="users" class="w-4 h-4 mr-2"></i> Share File </a>
+                                                            <a href="" class="dropdown-item"> <i data-lucide="users"
+                                                                    class="w-4 h-4 mr-2"></i> Share File </a>
                                                         </li>
                                                         <li>
-                                                            <a href="" class="dropdown-item"> <i data-lucide="trash" class="w-4 h-4 mr-2"></i> Delete </a>
+                                                            <a href="" class="dropdown-item"> <i data-lucide="trash"
+                                                                    class="w-4 h-4 mr-2"></i> Delete </a>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -901,19 +967,25 @@ function updateLoadingMessage() {
                                     <div class="intro-y col-span-6 sm:col-span-4 md:col-span-3 2xl:col-span-2">
                                         <div class="file box rounded-md px-5 pt-8 pb-5 px-3 sm:px-5 relative zoom-in">
                                             <div class="absolute left-0 top-0 mt-3 ml-3">
-                                                <input class="form-check-input border border-slate-500" type="checkbox" >
+                                                <input class="form-check-input border border-slate-500" type="checkbox">
                                             </div>
-                                            <a href="" class="w-3/5 file__icon file__icon--empty-directory mx-auto"></a> <a href="" class="block font-medium mt-4 text-center truncate">Laravel 7</a> 
+                                            <a href="" class="w-3/5 file__icon file__icon--empty-directory mx-auto"></a>
+                                            <a href="" class="block font-medium mt-4 text-center truncate">Laravel 7</a>
                                             <div class="text-slate-500 text-xs text-center mt-0.5">120 MB</div>
                                             <div class="absolute top-0 right-0 mr-2 mt-3 dropdown ml-auto">
-                                                <a class="dropdown-toggle w-5 h-5 block" href="javascript:;" aria-expanded="false" data-tw-toggle="dropdown"> <i data-lucide="more-vertical" class="w-5 h-5 text-slate-500"></i> </a>
+                                                <a class="dropdown-toggle w-5 h-5 block" href="javascript:;"
+                                                    aria-expanded="false" data-tw-toggle="dropdown"> <i
+                                                        data-lucide="more-vertical" class="w-5 h-5 text-slate-500"></i>
+                                                </a>
                                                 <div class="dropdown-menu w-40">
                                                     <ul class="dropdown-content">
                                                         <li>
-                                                            <a href="" class="dropdown-item"> <i data-lucide="users" class="w-4 h-4 mr-2"></i> Share File </a>
+                                                            <a href="" class="dropdown-item"> <i data-lucide="users"
+                                                                    class="w-4 h-4 mr-2"></i> Share File </a>
                                                         </li>
                                                         <li>
-                                                            <a href="" class="dropdown-item"> <i data-lucide="trash" class="w-4 h-4 mr-2"></i> Delete </a>
+                                                            <a href="" class="dropdown-item"> <i data-lucide="trash"
+                                                                    class="w-4 h-4 mr-2"></i> Delete </a>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -923,19 +995,26 @@ function updateLoadingMessage() {
                                     <div class="intro-y col-span-6 sm:col-span-4 md:col-span-3 2xl:col-span-2">
                                         <div class="file box rounded-md px-5 pt-8 pb-5 px-3 sm:px-5 relative zoom-in">
                                             <div class="absolute left-0 top-0 mt-3 ml-3">
-                                                <input class="form-check-input border border-slate-500" type="checkbox" >
+                                                <input class="form-check-input border border-slate-500" type="checkbox">
                                             </div>
-                                            <a href="" class="w-3/5 file__icon file__icon--directory mx-auto"></a> <a href="" class="block font-medium mt-4 text-center truncate">Repository</a> 
+                                            <a href="" class="w-3/5 file__icon file__icon--directory mx-auto"></a> <a
+                                                href=""
+                                                class="block font-medium mt-4 text-center truncate">Repository</a>
                                             <div class="text-slate-500 text-xs text-center mt-0.5">20 KB</div>
                                             <div class="absolute top-0 right-0 mr-2 mt-3 dropdown ml-auto">
-                                                <a class="dropdown-toggle w-5 h-5 block" href="javascript:;" aria-expanded="false" data-tw-toggle="dropdown"> <i data-lucide="more-vertical" class="w-5 h-5 text-slate-500"></i> </a>
+                                                <a class="dropdown-toggle w-5 h-5 block" href="javascript:;"
+                                                    aria-expanded="false" data-tw-toggle="dropdown"> <i
+                                                        data-lucide="more-vertical" class="w-5 h-5 text-slate-500"></i>
+                                                </a>
                                                 <div class="dropdown-menu w-40">
                                                     <ul class="dropdown-content">
                                                         <li>
-                                                            <a href="" class="dropdown-item"> <i data-lucide="users" class="w-4 h-4 mr-2"></i> Share File </a>
+                                                            <a href="" class="dropdown-item"> <i data-lucide="users"
+                                                                    class="w-4 h-4 mr-2"></i> Share File </a>
                                                         </li>
                                                         <li>
-                                                            <a href="" class="dropdown-item"> <i data-lucide="trash" class="w-4 h-4 mr-2"></i> Delete </a>
+                                                            <a href="" class="dropdown-item"> <i data-lucide="trash"
+                                                                    class="w-4 h-4 mr-2"></i> Delete </a>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -945,19 +1024,27 @@ function updateLoadingMessage() {
                                     <div class="intro-y col-span-6 sm:col-span-4 md:col-span-3 2xl:col-span-2">
                                         <div class="file box rounded-md px-5 pt-8 pb-5 px-3 sm:px-5 relative zoom-in">
                                             <div class="absolute left-0 top-0 mt-3 ml-3">
-                                                <input class="form-check-input border border-slate-500" type="checkbox" checked>
+                                                <input class="form-check-input border border-slate-500" type="checkbox"
+                                                    checked>
                                             </div>
-                                            <a href="" class="w-3/5 file__icon file__icon--empty-directory mx-auto"></a> <a href="" class="block font-medium mt-4 text-center truncate">Documentation</a> 
+                                            <a href="" class="w-3/5 file__icon file__icon--empty-directory mx-auto"></a>
+                                            <a href=""
+                                                class="block font-medium mt-4 text-center truncate">Documentation</a>
                                             <div class="text-slate-500 text-xs text-center mt-0.5">4 MB</div>
                                             <div class="absolute top-0 right-0 mr-2 mt-3 dropdown ml-auto">
-                                                <a class="dropdown-toggle w-5 h-5 block" href="javascript:;" aria-expanded="false" data-tw-toggle="dropdown"> <i data-lucide="more-vertical" class="w-5 h-5 text-slate-500"></i> </a>
+                                                <a class="dropdown-toggle w-5 h-5 block" href="javascript:;"
+                                                    aria-expanded="false" data-tw-toggle="dropdown"> <i
+                                                        data-lucide="more-vertical" class="w-5 h-5 text-slate-500"></i>
+                                                </a>
                                                 <div class="dropdown-menu w-40">
                                                     <ul class="dropdown-content">
                                                         <li>
-                                                            <a href="" class="dropdown-item"> <i data-lucide="users" class="w-4 h-4 mr-2"></i> Share File </a>
+                                                            <a href="" class="dropdown-item"> <i data-lucide="users"
+                                                                    class="w-4 h-4 mr-2"></i> Share File </a>
                                                         </li>
                                                         <li>
-                                                            <a href="" class="dropdown-item"> <i data-lucide="trash" class="w-4 h-4 mr-2"></i> Delete </a>
+                                                            <a href="" class="dropdown-item"> <i data-lucide="trash"
+                                                                    class="w-4 h-4 mr-2"></i> Delete </a>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -967,22 +1054,28 @@ function updateLoadingMessage() {
                                     <div class="intro-y col-span-6 sm:col-span-4 md:col-span-3 2xl:col-span-2">
                                         <div class="file box rounded-md px-5 pt-8 pb-5 px-3 sm:px-5 relative zoom-in">
                                             <div class="absolute left-0 top-0 mt-3 ml-3">
-                                                <input class="form-check-input border border-slate-500" type="checkbox" >
+                                                <input class="form-check-input border border-slate-500" type="checkbox">
                                             </div>
                                             <a href="" class="w-3/5 file__icon file__icon--file mx-auto">
                                                 <div class="file__icon__file-name">PHP</div>
                                             </a>
-                                            <a href="" class="block font-medium mt-4 text-center truncate">Routes.php</a> 
+                                            <a href=""
+                                                class="block font-medium mt-4 text-center truncate">Routes.php</a>
                                             <div class="text-slate-500 text-xs text-center mt-0.5">1 KB</div>
                                             <div class="absolute top-0 right-0 mr-2 mt-3 dropdown ml-auto">
-                                                <a class="dropdown-toggle w-5 h-5 block" href="javascript:;" aria-expanded="false" data-tw-toggle="dropdown"> <i data-lucide="more-vertical" class="w-5 h-5 text-slate-500"></i> </a>
+                                                <a class="dropdown-toggle w-5 h-5 block" href="javascript:;"
+                                                    aria-expanded="false" data-tw-toggle="dropdown"> <i
+                                                        data-lucide="more-vertical" class="w-5 h-5 text-slate-500"></i>
+                                                </a>
                                                 <div class="dropdown-menu w-40">
                                                     <ul class="dropdown-content">
                                                         <li>
-                                                            <a href="" class="dropdown-item"> <i data-lucide="users" class="w-4 h-4 mr-2"></i> Share File </a>
+                                                            <a href="" class="dropdown-item"> <i data-lucide="users"
+                                                                    class="w-4 h-4 mr-2"></i> Share File </a>
                                                         </li>
                                                         <li>
-                                                            <a href="" class="dropdown-item"> <i data-lucide="trash" class="w-4 h-4 mr-2"></i> Delete </a>
+                                                            <a href="" class="dropdown-item"> <i data-lucide="trash"
+                                                                    class="w-4 h-4 mr-2"></i> Delete </a>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -992,19 +1085,27 @@ function updateLoadingMessage() {
                                     <div class="intro-y col-span-6 sm:col-span-4 md:col-span-3 2xl:col-span-2">
                                         <div class="file box rounded-md px-5 pt-8 pb-5 px-3 sm:px-5 relative zoom-in">
                                             <div class="absolute left-0 top-0 mt-3 ml-3">
-                                                <input class="form-check-input border border-slate-500" type="checkbox" checked>
+                                                <input class="form-check-input border border-slate-500" type="checkbox"
+                                                    checked>
                                             </div>
-                                            <a href="" class="w-3/5 file__icon file__icon--directory mx-auto"></a> <a href="" class="block font-medium mt-4 text-center truncate">Repository</a> 
+                                            <a href="" class="w-3/5 file__icon file__icon--directory mx-auto"></a> <a
+                                                href=""
+                                                class="block font-medium mt-4 text-center truncate">Repository</a>
                                             <div class="text-slate-500 text-xs text-center mt-0.5">20 KB</div>
                                             <div class="absolute top-0 right-0 mr-2 mt-3 dropdown ml-auto">
-                                                <a class="dropdown-toggle w-5 h-5 block" href="javascript:;" aria-expanded="false" data-tw-toggle="dropdown"> <i data-lucide="more-vertical" class="w-5 h-5 text-slate-500"></i> </a>
+                                                <a class="dropdown-toggle w-5 h-5 block" href="javascript:;"
+                                                    aria-expanded="false" data-tw-toggle="dropdown"> <i
+                                                        data-lucide="more-vertical" class="w-5 h-5 text-slate-500"></i>
+                                                </a>
                                                 <div class="dropdown-menu w-40">
                                                     <ul class="dropdown-content">
                                                         <li>
-                                                            <a href="" class="dropdown-item"> <i data-lucide="users" class="w-4 h-4 mr-2"></i> Share File </a>
+                                                            <a href="" class="dropdown-item"> <i data-lucide="users"
+                                                                    class="w-4 h-4 mr-2"></i> Share File </a>
                                                         </li>
                                                         <li>
-                                                            <a href="" class="dropdown-item"> <i data-lucide="trash" class="w-4 h-4 mr-2"></i> Delete </a>
+                                                            <a href="" class="dropdown-item"> <i data-lucide="trash"
+                                                                    class="w-4 h-4 mr-2"></i> Delete </a>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -1014,19 +1115,25 @@ function updateLoadingMessage() {
                                     <div class="intro-y col-span-6 sm:col-span-4 md:col-span-3 2xl:col-span-2">
                                         <div class="file box rounded-md px-5 pt-8 pb-5 px-3 sm:px-5 relative zoom-in">
                                             <div class="absolute left-0 top-0 mt-3 ml-3">
-                                                <input class="form-check-input border border-slate-500" type="checkbox" >
+                                                <input class="form-check-input border border-slate-500" type="checkbox">
                                             </div>
-                                            <a href="" class="w-3/5 file__icon file__icon--directory mx-auto"></a> <a href="" class="block font-medium mt-4 text-center truncate">Dota 2</a> 
+                                            <a href="" class="w-3/5 file__icon file__icon--directory mx-auto"></a> <a
+                                                href="" class="block font-medium mt-4 text-center truncate">Dota 2</a>
                                             <div class="text-slate-500 text-xs text-center mt-0.5">112 GB</div>
                                             <div class="absolute top-0 right-0 mr-2 mt-3 dropdown ml-auto">
-                                                <a class="dropdown-toggle w-5 h-5 block" href="javascript:;" aria-expanded="false" data-tw-toggle="dropdown"> <i data-lucide="more-vertical" class="w-5 h-5 text-slate-500"></i> </a>
+                                                <a class="dropdown-toggle w-5 h-5 block" href="javascript:;"
+                                                    aria-expanded="false" data-tw-toggle="dropdown"> <i
+                                                        data-lucide="more-vertical" class="w-5 h-5 text-slate-500"></i>
+                                                </a>
                                                 <div class="dropdown-menu w-40">
                                                     <ul class="dropdown-content">
                                                         <li>
-                                                            <a href="" class="dropdown-item"> <i data-lucide="users" class="w-4 h-4 mr-2"></i> Share File </a>
+                                                            <a href="" class="dropdown-item"> <i data-lucide="users"
+                                                                    class="w-4 h-4 mr-2"></i> Share File </a>
                                                         </li>
                                                         <li>
-                                                            <a href="" class="dropdown-item"> <i data-lucide="trash" class="w-4 h-4 mr-2"></i> Delete </a>
+                                                            <a href="" class="dropdown-item"> <i data-lucide="trash"
+                                                                    class="w-4 h-4 mr-2"></i> Delete </a>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -1036,19 +1143,26 @@ function updateLoadingMessage() {
                                     <div class="intro-y col-span-6 sm:col-span-4 md:col-span-3 2xl:col-span-2">
                                         <div class="file box rounded-md px-5 pt-8 pb-5 px-3 sm:px-5 relative zoom-in">
                                             <div class="absolute left-0 top-0 mt-3 ml-3">
-                                                <input class="form-check-input border border-slate-500" type="checkbox" >
+                                                <input class="form-check-input border border-slate-500" type="checkbox">
                                             </div>
-                                            <a href="" class="w-3/5 file__icon file__icon--directory mx-auto"></a> <a href="" class="block font-medium mt-4 text-center truncate">Repository</a> 
+                                            <a href="" class="w-3/5 file__icon file__icon--directory mx-auto"></a> <a
+                                                href=""
+                                                class="block font-medium mt-4 text-center truncate">Repository</a>
                                             <div class="text-slate-500 text-xs text-center mt-0.5">20 KB</div>
                                             <div class="absolute top-0 right-0 mr-2 mt-3 dropdown ml-auto">
-                                                <a class="dropdown-toggle w-5 h-5 block" href="javascript:;" aria-expanded="false" data-tw-toggle="dropdown"> <i data-lucide="more-vertical" class="w-5 h-5 text-slate-500"></i> </a>
+                                                <a class="dropdown-toggle w-5 h-5 block" href="javascript:;"
+                                                    aria-expanded="false" data-tw-toggle="dropdown"> <i
+                                                        data-lucide="more-vertical" class="w-5 h-5 text-slate-500"></i>
+                                                </a>
                                                 <div class="dropdown-menu w-40">
                                                     <ul class="dropdown-content">
                                                         <li>
-                                                            <a href="" class="dropdown-item"> <i data-lucide="users" class="w-4 h-4 mr-2"></i> Share File </a>
+                                                            <a href="" class="dropdown-item"> <i data-lucide="users"
+                                                                    class="w-4 h-4 mr-2"></i> Share File </a>
                                                         </li>
                                                         <li>
-                                                            <a href="" class="dropdown-item"> <i data-lucide="trash" class="w-4 h-4 mr-2"></i> Delete </a>
+                                                            <a href="" class="dropdown-item"> <i data-lucide="trash"
+                                                                    class="w-4 h-4 mr-2"></i> Delete </a>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -1058,19 +1172,27 @@ function updateLoadingMessage() {
                                     <div class="intro-y col-span-6 sm:col-span-4 md:col-span-3 2xl:col-span-2">
                                         <div class="file box rounded-md px-5 pt-8 pb-5 px-3 sm:px-5 relative zoom-in">
                                             <div class="absolute left-0 top-0 mt-3 ml-3">
-                                                <input class="form-check-input border border-slate-500" type="checkbox" checked>
+                                                <input class="form-check-input border border-slate-500" type="checkbox"
+                                                    checked>
                                             </div>
-                                            <a href="" class="w-3/5 file__icon file__icon--directory mx-auto"></a> <a href="" class="block font-medium mt-4 text-center truncate">Repository</a> 
+                                            <a href="" class="w-3/5 file__icon file__icon--directory mx-auto"></a> <a
+                                                href=""
+                                                class="block font-medium mt-4 text-center truncate">Repository</a>
                                             <div class="text-slate-500 text-xs text-center mt-0.5">20 KB</div>
                                             <div class="absolute top-0 right-0 mr-2 mt-3 dropdown ml-auto">
-                                                <a class="dropdown-toggle w-5 h-5 block" href="javascript:;" aria-expanded="false" data-tw-toggle="dropdown"> <i data-lucide="more-vertical" class="w-5 h-5 text-slate-500"></i> </a>
+                                                <a class="dropdown-toggle w-5 h-5 block" href="javascript:;"
+                                                    aria-expanded="false" data-tw-toggle="dropdown"> <i
+                                                        data-lucide="more-vertical" class="w-5 h-5 text-slate-500"></i>
+                                                </a>
                                                 <div class="dropdown-menu w-40">
                                                     <ul class="dropdown-content">
                                                         <li>
-                                                            <a href="" class="dropdown-item"> <i data-lucide="users" class="w-4 h-4 mr-2"></i> Share File </a>
+                                                            <a href="" class="dropdown-item"> <i data-lucide="users"
+                                                                    class="w-4 h-4 mr-2"></i> Share File </a>
                                                         </li>
                                                         <li>
-                                                            <a href="" class="dropdown-item"> <i data-lucide="trash" class="w-4 h-4 mr-2"></i> Delete </a>
+                                                            <a href="" class="dropdown-item"> <i data-lucide="trash"
+                                                                    class="w-4 h-4 mr-2"></i> Delete </a>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -1080,19 +1202,26 @@ function updateLoadingMessage() {
                                     <div class="intro-y col-span-6 sm:col-span-4 md:col-span-3 2xl:col-span-2">
                                         <div class="file box rounded-md px-5 pt-8 pb-5 px-3 sm:px-5 relative zoom-in">
                                             <div class="absolute left-0 top-0 mt-3 ml-3">
-                                                <input class="form-check-input border border-slate-500" type="checkbox" >
+                                                <input class="form-check-input border border-slate-500" type="checkbox">
                                             </div>
-                                            <a href="" class="w-3/5 file__icon file__icon--directory mx-auto"></a> <a href="" class="block font-medium mt-4 text-center truncate">Repository</a> 
+                                            <a href="" class="w-3/5 file__icon file__icon--directory mx-auto"></a> <a
+                                                href=""
+                                                class="block font-medium mt-4 text-center truncate">Repository</a>
                                             <div class="text-slate-500 text-xs text-center mt-0.5">20 KB</div>
                                             <div class="absolute top-0 right-0 mr-2 mt-3 dropdown ml-auto">
-                                                <a class="dropdown-toggle w-5 h-5 block" href="javascript:;" aria-expanded="false" data-tw-toggle="dropdown"> <i data-lucide="more-vertical" class="w-5 h-5 text-slate-500"></i> </a>
+                                                <a class="dropdown-toggle w-5 h-5 block" href="javascript:;"
+                                                    aria-expanded="false" data-tw-toggle="dropdown"> <i
+                                                        data-lucide="more-vertical" class="w-5 h-5 text-slate-500"></i>
+                                                </a>
                                                 <div class="dropdown-menu w-40">
                                                     <ul class="dropdown-content">
                                                         <li>
-                                                            <a href="" class="dropdown-item"> <i data-lucide="users" class="w-4 h-4 mr-2"></i> Share File </a>
+                                                            <a href="" class="dropdown-item"> <i data-lucide="users"
+                                                                    class="w-4 h-4 mr-2"></i> Share File </a>
                                                         </li>
                                                         <li>
-                                                            <a href="" class="dropdown-item"> <i data-lucide="trash" class="w-4 h-4 mr-2"></i> Delete </a>
+                                                            <a href="" class="dropdown-item"> <i data-lucide="trash"
+                                                                    class="w-4 h-4 mr-2"></i> Delete </a>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -1102,19 +1231,27 @@ function updateLoadingMessage() {
                                     <div class="intro-y col-span-6 sm:col-span-4 md:col-span-3 2xl:col-span-2">
                                         <div class="file box rounded-md px-5 pt-8 pb-5 px-3 sm:px-5 relative zoom-in">
                                             <div class="absolute left-0 top-0 mt-3 ml-3">
-                                                <input class="form-check-input border border-slate-500" type="checkbox" checked>
+                                                <input class="form-check-input border border-slate-500" type="checkbox"
+                                                    checked>
                                             </div>
-                                            <a href="" class="w-3/5 file__icon file__icon--directory mx-auto"></a> <a href="" class="block font-medium mt-4 text-center truncate">Repository</a> 
+                                            <a href="" class="w-3/5 file__icon file__icon--directory mx-auto"></a> <a
+                                                href=""
+                                                class="block font-medium mt-4 text-center truncate">Repository</a>
                                             <div class="text-slate-500 text-xs text-center mt-0.5">20 KB</div>
                                             <div class="absolute top-0 right-0 mr-2 mt-3 dropdown ml-auto">
-                                                <a class="dropdown-toggle w-5 h-5 block" href="javascript:;" aria-expanded="false" data-tw-toggle="dropdown"> <i data-lucide="more-vertical" class="w-5 h-5 text-slate-500"></i> </a>
+                                                <a class="dropdown-toggle w-5 h-5 block" href="javascript:;"
+                                                    aria-expanded="false" data-tw-toggle="dropdown"> <i
+                                                        data-lucide="more-vertical" class="w-5 h-5 text-slate-500"></i>
+                                                </a>
                                                 <div class="dropdown-menu w-40">
                                                     <ul class="dropdown-content">
                                                         <li>
-                                                            <a href="" class="dropdown-item"> <i data-lucide="users" class="w-4 h-4 mr-2"></i> Share File </a>
+                                                            <a href="" class="dropdown-item"> <i data-lucide="users"
+                                                                    class="w-4 h-4 mr-2"></i> Share File </a>
                                                         </li>
                                                         <li>
-                                                            <a href="" class="dropdown-item"> <i data-lucide="trash" class="w-4 h-4 mr-2"></i> Delete </a>
+                                                            <a href="" class="dropdown-item"> <i data-lucide="trash"
+                                                                    class="w-4 h-4 mr-2"></i> Delete </a>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -1124,24 +1261,31 @@ function updateLoadingMessage() {
                                     <div class="intro-y col-span-6 sm:col-span-4 md:col-span-3 2xl:col-span-2">
                                         <div class="file box rounded-md px-5 pt-8 pb-5 px-3 sm:px-5 relative zoom-in">
                                             <div class="absolute left-0 top-0 mt-3 ml-3">
-                                                <input class="form-check-input border border-slate-500" type="checkbox" >
+                                                <input class="form-check-input border border-slate-500" type="checkbox">
                                             </div>
                                             <a href="" class="w-3/5 file__icon file__icon--image mx-auto">
                                                 <div class="file__icon--image__preview image-fit">
-                                                    <img alt="Midone - HTML Admin Template" src="dist/images/preview-6.jpg">
+                                                    <img alt="Midone - HTML Admin Template"
+                                                        src="dist/images/preview-6.jpg">
                                                 </div>
                                             </a>
-                                            <a href="" class="block font-medium mt-4 text-center truncate">preview-6.jpg</a> 
+                                            <a href=""
+                                                class="block font-medium mt-4 text-center truncate">preview-6.jpg</a>
                                             <div class="text-slate-500 text-xs text-center mt-0.5">1.4 MB</div>
                                             <div class="absolute top-0 right-0 mr-2 mt-3 dropdown ml-auto">
-                                                <a class="dropdown-toggle w-5 h-5 block" href="javascript:;" aria-expanded="false" data-tw-toggle="dropdown"> <i data-lucide="more-vertical" class="w-5 h-5 text-slate-500"></i> </a>
+                                                <a class="dropdown-toggle w-5 h-5 block" href="javascript:;"
+                                                    aria-expanded="false" data-tw-toggle="dropdown"> <i
+                                                        data-lucide="more-vertical" class="w-5 h-5 text-slate-500"></i>
+                                                </a>
                                                 <div class="dropdown-menu w-40">
                                                     <ul class="dropdown-content">
                                                         <li>
-                                                            <a href="" class="dropdown-item"> <i data-lucide="users" class="w-4 h-4 mr-2"></i> Share File </a>
+                                                            <a href="" class="dropdown-item"> <i data-lucide="users"
+                                                                    class="w-4 h-4 mr-2"></i> Share File </a>
                                                         </li>
                                                         <li>
-                                                            <a href="" class="dropdown-item"> <i data-lucide="trash" class="w-4 h-4 mr-2"></i> Delete </a>
+                                                            <a href="" class="dropdown-item"> <i data-lucide="trash"
+                                                                    class="w-4 h-4 mr-2"></i> Delete </a>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -1151,19 +1295,26 @@ function updateLoadingMessage() {
                                     <div class="intro-y col-span-6 sm:col-span-4 md:col-span-3 2xl:col-span-2">
                                         <div class="file box rounded-md px-5 pt-8 pb-5 px-3 sm:px-5 relative zoom-in">
                                             <div class="absolute left-0 top-0 mt-3 ml-3">
-                                                <input class="form-check-input border border-slate-500" type="checkbox" >
+                                                <input class="form-check-input border border-slate-500" type="checkbox">
                                             </div>
-                                            <a href="" class="w-3/5 file__icon file__icon--empty-directory mx-auto"></a> <a href="" class="block font-medium mt-4 text-center truncate">Documentation</a> 
+                                            <a href="" class="w-3/5 file__icon file__icon--empty-directory mx-auto"></a>
+                                            <a href=""
+                                                class="block font-medium mt-4 text-center truncate">Documentation</a>
                                             <div class="text-slate-500 text-xs text-center mt-0.5">4 MB</div>
                                             <div class="absolute top-0 right-0 mr-2 mt-3 dropdown ml-auto">
-                                                <a class="dropdown-toggle w-5 h-5 block" href="javascript:;" aria-expanded="false" data-tw-toggle="dropdown"> <i data-lucide="more-vertical" class="w-5 h-5 text-slate-500"></i> </a>
+                                                <a class="dropdown-toggle w-5 h-5 block" href="javascript:;"
+                                                    aria-expanded="false" data-tw-toggle="dropdown"> <i
+                                                        data-lucide="more-vertical" class="w-5 h-5 text-slate-500"></i>
+                                                </a>
                                                 <div class="dropdown-menu w-40">
                                                     <ul class="dropdown-content">
                                                         <li>
-                                                            <a href="" class="dropdown-item"> <i data-lucide="users" class="w-4 h-4 mr-2"></i> Share File </a>
+                                                            <a href="" class="dropdown-item"> <i data-lucide="users"
+                                                                    class="w-4 h-4 mr-2"></i> Share File </a>
                                                         </li>
                                                         <li>
-                                                            <a href="" class="dropdown-item"> <i data-lucide="trash" class="w-4 h-4 mr-2"></i> Delete </a>
+                                                            <a href="" class="dropdown-item"> <i data-lucide="trash"
+                                                                    class="w-4 h-4 mr-2"></i> Delete </a>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -1173,22 +1324,29 @@ function updateLoadingMessage() {
                                     <div class="intro-y col-span-6 sm:col-span-4 md:col-span-3 2xl:col-span-2">
                                         <div class="file box rounded-md px-5 pt-8 pb-5 px-3 sm:px-5 relative zoom-in">
                                             <div class="absolute left-0 top-0 mt-3 ml-3">
-                                                <input class="form-check-input border border-slate-500" type="checkbox" checked>
+                                                <input class="form-check-input border border-slate-500" type="checkbox"
+                                                    checked>
                                             </div>
                                             <a href="" class="w-3/5 file__icon file__icon--file mx-auto">
                                                 <div class="file__icon__file-name">MP4</div>
                                             </a>
-                                            <a href="" class="block font-medium mt-4 text-center truncate">Celine Dion - Ashes.mp4</a> 
+                                            <a href="" class="block font-medium mt-4 text-center truncate">Celine Dion -
+                                                Ashes.mp4</a>
                                             <div class="text-slate-500 text-xs text-center mt-0.5">20 MB</div>
                                             <div class="absolute top-0 right-0 mr-2 mt-3 dropdown ml-auto">
-                                                <a class="dropdown-toggle w-5 h-5 block" href="javascript:;" aria-expanded="false" data-tw-toggle="dropdown"> <i data-lucide="more-vertical" class="w-5 h-5 text-slate-500"></i> </a>
+                                                <a class="dropdown-toggle w-5 h-5 block" href="javascript:;"
+                                                    aria-expanded="false" data-tw-toggle="dropdown"> <i
+                                                        data-lucide="more-vertical" class="w-5 h-5 text-slate-500"></i>
+                                                </a>
                                                 <div class="dropdown-menu w-40">
                                                     <ul class="dropdown-content">
                                                         <li>
-                                                            <a href="" class="dropdown-item"> <i data-lucide="users" class="w-4 h-4 mr-2"></i> Share File </a>
+                                                            <a href="" class="dropdown-item"> <i data-lucide="users"
+                                                                    class="w-4 h-4 mr-2"></i> Share File </a>
                                                         </li>
                                                         <li>
-                                                            <a href="" class="dropdown-item"> <i data-lucide="trash" class="w-4 h-4 mr-2"></i> Delete </a>
+                                                            <a href="" class="dropdown-item"> <i data-lucide="trash"
+                                                                    class="w-4 h-4 mr-2"></i> Delete </a>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -1198,19 +1356,26 @@ function updateLoadingMessage() {
                                     <div class="intro-y col-span-6 sm:col-span-4 md:col-span-3 2xl:col-span-2">
                                         <div class="file box rounded-md px-5 pt-8 pb-5 px-3 sm:px-5 relative zoom-in">
                                             <div class="absolute left-0 top-0 mt-3 ml-3">
-                                                <input class="form-check-input border border-slate-500" type="checkbox" >
+                                                <input class="form-check-input border border-slate-500" type="checkbox">
                                             </div>
-                                            <a href="" class="w-3/5 file__icon file__icon--directory mx-auto"></a> <a href="" class="block font-medium mt-4 text-center truncate">Repository</a> 
+                                            <a href="" class="w-3/5 file__icon file__icon--directory mx-auto"></a> <a
+                                                href=""
+                                                class="block font-medium mt-4 text-center truncate">Repository</a>
                                             <div class="text-slate-500 text-xs text-center mt-0.5">20 KB</div>
                                             <div class="absolute top-0 right-0 mr-2 mt-3 dropdown ml-auto">
-                                                <a class="dropdown-toggle w-5 h-5 block" href="javascript:;" aria-expanded="false" data-tw-toggle="dropdown"> <i data-lucide="more-vertical" class="w-5 h-5 text-slate-500"></i> </a>
+                                                <a class="dropdown-toggle w-5 h-5 block" href="javascript:;"
+                                                    aria-expanded="false" data-tw-toggle="dropdown"> <i
+                                                        data-lucide="more-vertical" class="w-5 h-5 text-slate-500"></i>
+                                                </a>
                                                 <div class="dropdown-menu w-40">
                                                     <ul class="dropdown-content">
                                                         <li>
-                                                            <a href="" class="dropdown-item"> <i data-lucide="users" class="w-4 h-4 mr-2"></i> Share File </a>
+                                                            <a href="" class="dropdown-item"> <i data-lucide="users"
+                                                                    class="w-4 h-4 mr-2"></i> Share File </a>
                                                         </li>
                                                         <li>
-                                                            <a href="" class="dropdown-item"> <i data-lucide="trash" class="w-4 h-4 mr-2"></i> Delete </a>
+                                                            <a href="" class="dropdown-item"> <i data-lucide="trash"
+                                                                    class="w-4 h-4 mr-2"></i> Delete </a>
                                                         </li>
                                                     </ul>
                                                 </div>

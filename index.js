@@ -21,12 +21,12 @@ app.get('/createProject', (req, res)=> {
 app.get('/projectDetails', (req, res)=> {
     res.render('projectDetails');
 })
-app.get('/dataSet', (req, res)=> {
-    res.render('dataSet');
+app.get('/datasets', (req, res)=> {
+    res.render('datasets');
 })
-app.get('/traine', (req, res)=> {
-    res.render('traine');
+app.get('/trainModels', (req, res)=> {
+    res.render('trainModels');
 })
 
 
-app.listen('3001',()=>{console.log('Server is running on http://localhost:3000/')})
+app.listen('3001',()=>{console.log('Server is running on http://localhost:3001/')})
