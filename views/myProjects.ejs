@@ -84,7 +84,7 @@
           window.showAlert = function(projectId) {
             console.log("Project ID: " + projectId);
             localStorage.setItem('currentProjectId',`${projectId}`);
-            window.location.href = '../Source/projectDetails.html';
+            window.location.href = '../Source/dashboard.html';
 
         };
           const projectDiv = document.createElement('div');
@@ -195,9 +195,7 @@ License: You must have a valid license purchased only from themeforest(the above
     }
 
     .project-item {
-        width: 26%;
-        background: #515459;
-
+        width: 30%;
         cursor: pointer;
         border-radius: 2%;
         padding: 10px;
@@ -223,7 +221,7 @@ License: You must have a valid license purchased only from themeforest(the above
                     class="w-8 h-8 text-white transform -rotate-90"></i> </a>
             <ul class="scrollable__content py-2">
                 <li>
-                    <a href="/projectDetails" class="menu menu--active">
+                    <a href="/dashboard" class="menu menu--active">
                         <div class="menu__icon"> <i data-lucide="home"></i> </div>
                         <div class="menu__title"> Dashboard <i data-lucide="chevron-down"
                                 class="menu__sub-icon transform rotate-180"></i> </div>
@@ -262,14 +260,14 @@ License: You must have a valid license purchased only from themeforest(the above
     <div class="flex mt-[4.7rem] md:mt-0 overflow-hidden">
         <!-- BEGIN: Side Menu -->
         <nav class="side-nav">
-            <a href="/myProjects" class="intro-x flex items-center pl-5 pt-4 mt-3">
+            <a href="/dashboard" class="intro-x flex items-center pl-5 pt-4 mt-3">
                 <img alt="Midone - HTML Admin Template" class="w-6" src="dist/images/logo.svg">
                 <span class="hidden xl:block text-white text-lg ml-3"> Multi Model </span>
             </a>
             <div class="side-nav__devider my-6"></div>
             <ul>
                 <li>
-                    <a href="/projectDetails" class="side-menu">
+                    <a href="/dashboard" class="side-menu">
                         <div class="side-menu__icon"> <i data-lucide="home"></i> </div>
 
                         <div class="side-menu__title">
@@ -332,7 +330,7 @@ License: You must have a valid license purchased only from themeforest(the above
                 </nav>
                 <!-- END: Breadcrumb -->
                 <!-- BEGIN: Search -->
-                <div class="intro-x relative mr-3 sm:mr-6">
+                <!-- <div class="intro-x relative mr-3 sm:mr-6">
                     <div class="search hidden sm:block">
                         <input type="text" class="search__input form-control border-transparent"
                             placeholder="Search...">
@@ -441,10 +439,10 @@ License: You must have a valid license purchased only from themeforest(the above
                             </a>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <!-- END: Search -->
                 <!-- BEGIN: Notifications -->
-                <div class="intro-x dropdown mr-auto sm:mr-6">
+                <!-- <div class="intro-x dropdown mr-auto sm:mr-6">
                     <div class="dropdown-toggle notification notification--bullet cursor-pointer" role="button"
                         aria-expanded="false" data-tw-toggle="dropdown"> <i data-lucide="bell"
                             class="notification__icon dark:text-slate-500"></i>
@@ -544,19 +542,19 @@ License: You must have a valid license purchased only from themeforest(the above
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <!-- END: Notifications -->
                 <!-- BEGIN: Account Menu -->
                 <div class="intro-x dropdown w-8 h-8">
                     <div class="dropdown-toggle w-8 h-8 rounded-full overflow-hidden shadow-lg image-fit zoom-in"
                         role="button" aria-expanded="false" data-tw-toggle="dropdown">
-                        <img alt="Midone - HTML Admin Template" src="dist/images/profile-15.jpg">
+                        <img alt="Midone - HTML Admin Template" src="./images/profile-icon.png">
                     </div>
                     <div class="dropdown-menu w-56">
                         <ul class="dropdown-content bg-primary text-white">
                             <li class="p-2">
-                                <div class="font-medium">Leonardo DiCaprio</div>
-                                <div class="text-xs text-white/70 mt-0.5 dark:text-slate-500">Software Engineer</div>
+                                <div class="font-medium">Username</div>
+                                <div class="text-xs text-white/70 mt-0.5 dark:text-slate-500">Title</div>
                             </li>
                             <li>
                                 <hr class="dropdown-divider border-white/[0.08]">
@@ -565,18 +563,18 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <a href="" class="dropdown-item hover:bg-white/5"> <i data-lucide="user"
                                         class="w-4 h-4 mr-2"></i> Profile </a>
                             </li>
-                            <li>
+                            <!-- <li>
                                 <a href="" class="dropdown-item hover:bg-white/5"> <i data-lucide="edit"
                                         class="w-4 h-4 mr-2"></i> Add Account </a>
-                            </li>
+                            </li> -->
                             <li>
                                 <a href="" class="dropdown-item hover:bg-white/5"> <i data-lucide="lock"
                                         class="w-4 h-4 mr-2"></i> Reset Password </a>
                             </li>
-                            <li>
+                            <!-- <li>
                                 <a href="" class="dropdown-item hover:bg-white/5"> <i data-lucide="help-circle"
                                         class="w-4 h-4 mr-2"></i> Help </a>
-                            </li>
+                            </li> -->
                             <li>
                                 <hr class="dropdown-divider border-white/[0.08]">
                             </li>
@@ -606,19 +604,16 @@ License: You must have a valid license purchased only from themeforest(the above
                               </a>
                               </header> -->
                                 <div class="flex justify-between">
-                                    <h3 style="color: black; font-size: 32px;"
-                                        class="text-white font-bold mt-8 mb-4 ml-10">My Projects</h3>
-                                    <a href="./createProject.html">
+                                    <h3 class="font-bold mr-5 text-2xl truncate text-slate-800">My Projects</h3>
+                                    <a href="./createProject">
                                         <button id="create-project" class="project px-4 py-2 text-white rounded">Create
                                             New Project</button>
 
                                     </a>
                                 </div>
                                 <div class="grid  gap-4 " id="project-grid">
-                                    <main class="container mx-auto px-4 py-10 flex flex-wrap gap-4"
+                                    <main class="container mx-auto px-4 py-10 flex flex-wrap justify-evenly gap-4"
                                         id="project-container">
-
-
                                 </div>
 
                                 </main>
@@ -655,7 +650,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
                                         projectContainer.innerHTML = '';
 
-                                        for (let project of projects) {
+                                        for (let project of projects.projects) {
                                             window.showAlert = function (projectId, projectType) {
                                                 console.log("Project ID: " + projectId);
                                                 console.log("Project Type: " + projectType);
@@ -668,14 +663,22 @@ License: You must have a valid license purchased only from themeforest(the above
                                             projectDiv.classList.add('project-item');
 
                                             projectDiv.innerHTML = `
-                                      <a id="hello" onclick="showAlert('${project._id}','${project.projectType}')">
-                                      <img src="./images/1.png" alt="Object Detection Image" class=" mb-2">
-                                      <input type="hidden" value=${project._id}>
-                                      <h2 style="color: white;">${project.projectName}</h2>
-                                        <p style="color: white;">${project.projectType}</p>
-                                       </a>
-                                        
-                                      `;
+                                            <div
+                                            class="p-4 bg-gray-100  rounded-md flex items-center justify-center cursor-pointer section">
+                                            <div id="hello" onclick="showAlert('${project._id}','${project.projectType}')" class="report-box zoom-in">
+                                                <div class="box p-5">
+                                                    <div
+                                                        class="p-4 rounded-md flex items-center justify-center cursor-pointer section">
+                                                        <div class="flex flex-col">
+                                                            <img src="./images/1.png" alt="Object Detection Image" class=" mb-2">
+                                                            <input type="hidden" value=${project._id}>
+                                                            <span class="text-slate-800 text-xl font-bold">${project.projectName}</span>
+                                                            <p class="text-sm text-slate-800 ">${project.projectType}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>`;
 
                                             projectContainer.appendChild(projectDiv);
 

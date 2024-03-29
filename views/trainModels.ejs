@@ -28,37 +28,55 @@ License: You must have a valid license purchased only from themeforest(the above
 </head>
 <!-- END: Head -->
 <style>
-  body{
-      font-family: 'circular';
-  }
-  .selected {
-    border-color: purple;
-    border: 2px solid purple
-  }
-  .project{
-      background-color: #17d0d9 !important;
-      margin-top: 30px;
-  }
-  .project:hover{
-      background-color: #096166 !important;
-  }
-  .project-item{
-      width: 26%;
-      background: #f3f4f6;
-      cursor:pointer;
-      border-radius: 2%;
-      padding: 10px;
-  }
-  .project-item:hover{
-      background: #e5e7eb
-  }
-  option{
-    color: black;
-  }
-  #countries{
-    color: black;
-  }
+    body {
+        font-family: 'circular';
+    }
+
+    .selected {
+        border-color: purple;
+        border: 2px solid purple
+    }
+
+    .project {
+        background-color: #17d0d9 !important;
+        margin-top: 35px;
+    }
+
+    .project:hover {
+        background-color: #096166 !important;
+    }
+
+    .project-item {
+        width: 26%;
+        background: #f3f4f6;
+        cursor: pointer;
+        border-radius: 2%;
+        padding: 10px;
+    }
+
+    .project-item:hover {
+        background: #e5e7eb
+    }
+
+    #models,
+    #datasets {
+        background-color: rgb(216, 225, 247);
+    }
+
+    select::-webkit-scrollbar {
+        width: 12px;
+
+    }
+
+    select::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    select::-webkit-scrollbar-thumb:hover {
+        background: rgb(115 131 170);
+    }
 </style>
+
 <body class="py-5 md:py-0 bg-black/[0.15] dark:bg-transparent">
     <!-- BEGIN: Mobile Menu -->
     <div class="mobile-menu md:hidden">
@@ -74,7 +92,7 @@ License: You must have a valid license purchased only from themeforest(the above
                     class="w-8 h-8 text-white transform -rotate-90"></i> </a>
             <ul class="scrollable__content py-2">
                 <li>
-                    <a href="/projectDetails" class="menu menu--active">
+                    <a href="/dashboard" class="menu menu--active">
                         <div class="menu__icon"> <i data-lucide="home"></i> </div>
                         <div class="menu__title"> Dashboard <i data-lucide="chevron-down"
                                 class="menu__sub-icon transform rotate-180"></i> </div>
@@ -113,14 +131,14 @@ License: You must have a valid license purchased only from themeforest(the above
     <div class="flex mt-[4.7rem] md:mt-0 overflow-hidden">
         <!-- BEGIN: Side Menu -->
         <nav class="side-nav">
-            <a href="/myProjects" class="intro-x flex items-center pl-5 pt-4 mt-3">
+            <a href="/dashboard" class="intro-x flex items-center pl-5 pt-4 mt-3">
                 <img alt="Midone - HTML Admin Template" class="w-6" src="dist/images/logo.svg">
                 <span class="hidden xl:block text-white text-lg ml-3"> Multi Model </span>
             </a>
             <div class="side-nav__devider my-6"></div>
             <ul>
                 <li>
-                    <a href="/projectDetails" class="side-menu">
+                    <a href="/dashboard" class="side-menu">
                         <div class="side-menu__icon"> <i data-lucide="home"></i> </div>
 
                         <div class="side-menu__title">
@@ -177,12 +195,13 @@ License: You must have a valid license purchased only from themeforest(the above
             <!-- BEGIN: Top Bar -->
             <div class="top-bar -mx-4 px-4 md:mx-0 md:px-0">
                 <!-- BEGIN: Breadcrumb -->
-                <nav style="font-size: 26px;color: white;" aria-label="breadcrumb" class="-intro-x mr-auto hidden sm:flex">
-                  AI MultiModel
+                <nav style="font-size: 26px;color: white;" aria-label="breadcrumb"
+                    class="-intro-x mr-auto hidden sm:flex">
+
                 </nav>
                 <!-- END: Breadcrumb -->
                 <!-- BEGIN: Search -->
-                <div class="intro-x relative mr-3 sm:mr-6">
+                <!-- <div class="intro-x relative mr-3 sm:mr-6">
                     <div class="search hidden sm:block">
                         <input type="text" class="search__input form-control border-transparent"
                             placeholder="Search...">
@@ -197,19 +216,22 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <a href="" class="flex items-center">
                                     <div
                                         class="w-8 h-8 bg-success/20 dark:bg-success/10 text-success flex items-center justify-center rounded-full">
-                                        <i class="w-4 h-4" data-lucide="inbox"></i> </div>
+                                        <i class="w-4 h-4" data-lucide="inbox"></i>
+                                    </div>
                                     <div class="ml-3">Mail Settings</div>
                                 </a>
                                 <a href="" class="flex items-center mt-2">
                                     <div
                                         class="w-8 h-8 bg-pending/10 text-pending flex items-center justify-center rounded-full">
-                                        <i class="w-4 h-4" data-lucide="users"></i> </div>
+                                        <i class="w-4 h-4" data-lucide="users"></i>
+                                    </div>
                                     <div class="ml-3">Users & Permissions</div>
                                 </a>
                                 <a href="" class="flex items-center mt-2">
                                     <div
                                         class="w-8 h-8 bg-primary/10 dark:bg-primary/20 text-primary/80 flex items-center justify-center rounded-full">
-                                        <i class="w-4 h-4" data-lucide="credit-card"></i> </div>
+                                        <i class="w-4 h-4" data-lucide="credit-card"></i>
+                                    </div>
                                     <div class="ml-3">Transactions Report</div>
                                 </a>
                             </div>
@@ -288,14 +310,14 @@ License: You must have a valid license purchased only from themeforest(the above
                             </a>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <!-- END: Search -->
                 <!-- BEGIN: Notifications -->
-                <div class="intro-x dropdown mr-auto sm:mr-6">
+                <!-- <div class="intro-x dropdown mr-auto sm:mr-6">
                     <div class="dropdown-toggle notification notification--bullet cursor-pointer" role="button"
                         aria-expanded="false" data-tw-toggle="dropdown"> <i data-lucide="bell"
-                            class="notification__icon dark:text-slate-500"></i> 
-                          </div>
+                            class="notification__icon dark:text-slate-500"></i>
+                    </div>
                     <div class="notification-content pt-2 dropdown-menu">
                         <div class="notification-content__box dropdown-content">
                             <div class="notification-content__title">Notifications</div>
@@ -391,19 +413,19 @@ License: You must have a valid license purchased only from themeforest(the above
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <!-- END: Notifications -->
                 <!-- BEGIN: Account Menu -->
                 <div class="intro-x dropdown w-8 h-8">
                     <div class="dropdown-toggle w-8 h-8 rounded-full overflow-hidden shadow-lg image-fit zoom-in"
                         role="button" aria-expanded="false" data-tw-toggle="dropdown">
-                        <img alt="Midone - HTML Admin Template" src="dist/images/profile-15.jpg">
+                        <img alt="Midone - HTML Admin Template" src="./images/profile-icon.png">
                     </div>
                     <div class="dropdown-menu w-56">
                         <ul class="dropdown-content bg-primary text-white">
                             <li class="p-2">
-                                <div class="font-medium">Leonardo DiCaprio</div>
-                                <div class="text-xs text-white/70 mt-0.5 dark:text-slate-500">Software Engineer</div>
+                                <div class="font-medium">Username</div>
+                                <div class="text-xs text-white/70 mt-0.5 dark:text-slate-500">Title</div>
                             </li>
                             <li>
                                 <hr class="dropdown-divider border-white/[0.08]">
@@ -412,18 +434,18 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <a href="" class="dropdown-item hover:bg-white/5"> <i data-lucide="user"
                                         class="w-4 h-4 mr-2"></i> Profile </a>
                             </li>
-                            <li>
+                            <!-- <li>
                                 <a href="" class="dropdown-item hover:bg-white/5"> <i data-lucide="edit"
                                         class="w-4 h-4 mr-2"></i> Add Account </a>
-                            </li>
+                            </li> -->
                             <li>
                                 <a href="" class="dropdown-item hover:bg-white/5"> <i data-lucide="lock"
                                         class="w-4 h-4 mr-2"></i> Reset Password </a>
                             </li>
-                            <li>
+                            <!-- <li>
                                 <a href="" class="dropdown-item hover:bg-white/5"> <i data-lucide="help-circle"
                                         class="w-4 h-4 mr-2"></i> Help </a>
-                            </li>
+                            </li> -->
                             <li>
                                 <hr class="dropdown-divider border-white/[0.08]">
                             </li>
@@ -446,116 +468,113 @@ License: You must have a valid license purchased only from themeforest(the above
                         <!-- BEGIN: General Report -->
                         <div class="col-span-12 lg:col-span-8 xl:col-span-6 mt-2">
                             <div class="intro-y block items-center h-10">
-                              <!-- <header class="bg-gray-800 flex justify-between items-center p-4">
+                                <!-- <header class="bg-gray-800 flex justify-between items-center p-4">
                                 <h1 class="text-white text-3xl font-bold">AI MultiModel</h1>
                                 <a href="/">
                                 <p class="text-white text-2xl cursor-pointer">Logout</p>
                               </a>
                               </header> -->
-                              
-<form class="flex gap-6 mt-10 items-center">
-    <div class="w-96">
-    <label for="countries" class="block mb-2 text-lg font-medium text-gray-900 dark:text-white">Choose Model</label>
-    <select id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-      <option selected>Choose from the list</option>
-      <option value="AlexNet">AlexNet</option>
-    <option value="VGG-11">VGG-11</option>
-    <option value="VGG-13">VGG-13</option>
-    <option value="VGG-16">VGG-16</option>
-    <option value="VGG-19">VGG-19</option>
-    <option value="ResNet-18">ResNet-18</option>
-    <option value="ResNet-34">ResNet-34</option>
-    <option value="ResNet-50">ResNet-50</option>
-    <option value="ResNet-101">ResNet-101</option>
-    <option value="ResNet-152">ResNet-152</option>
-    <option value="SqueezeNet 1.0">SqueezeNet 1.0</option>
-    <option value="SqueezeNet 1.1">SqueezeNet 1.1</option>
-    <option value="Densenet-121">Densenet-121</option>
-    <option value="Densenet-169">Densenet-169</option>
-    <option value="Densenet-201">Densenet-201</option>
-    <option value="Densenet-161">Densenet-161</option>
-    <option value="Inception v3">Inception v3</option>
-    <option value="GoogleNet">GoogleNet</option>
-    <option value="ShuffleNet V2 x1.0">ShuffleNet V2 x1.0</option>
-    <option value="ShuffleNet V2 x0.5">ShuffleNet V2 x0.5</option>
-    <option value="MobileNet V2">MobileNet V2</option>
-    <option value="MobileNet V3 Large">MobileNet V3 Large</option>
-    <option value="MobileNet V3 Small">MobileNet V3 Small</option>
-    <option value="ResNeXt-50-32x4d">ResNeXt-50-32x4d</option>
-    <option value="ResNeXt-101-32x8d">ResNeXt-101-32x8d</option>
-    <option value="Wide ResNet-50-2">Wide ResNet-50-2</option>
-    <option value="Wide ResNet-101-2">Wide ResNet-101-2</option>
-    <option value="MNASNet 1.0">MNASNet 1.0</option>
-    <option value="MNASNet 0.5">MNASNet 0.5</option>
-    </select>
-    </div>
-    <div class="w-96">
-        <label for="countries" class="block mb-2 text-lg font-medium text-gray-900 dark:text-white">Choose Dataset</label>
-        <select id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-          <option selected>Choose from the list</option>
-          <option value="US">Soil Type</option>
-          <option value="CA">Motion Detection</option>
-          <option value="FR">Face Detection</option>
-        </select>
-        </div>
-        <a href="./createProject.html">
-            <button style="padding-top: 12px;
-            padding-bottom: 12px;
-            font-size: 18px;
-            font-weight: 500;
-            margin-top: 33px;" id="create-project" class="project px-4  text-white rounded">Train Models</button>
-            
-          </a>
-  </form>
 
+                                <form class="w-11/12 flex gap-6 mt-10 items-center justify-center">
+                                    <div class="w-96">
+                                        <label for="models" class="block mb-2 text-lg font-medium text-slate-800">Choose
+                                            Model</label>
+                                        <select id="models"
+                                            class="bg-gray-50 border border-gray-300 text-slate-800 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                                            <option selected>Choose from the list</option>
+                                            <option value="AlexNet">AlexNet</option>
+                                            <option value="VGG-11">VGG-11</option>
+                                            <option value="VGG-13">VGG-13</option>
+                                            <option value="VGG-16">VGG-16</option>
+                                            <option value="VGG-19">VGG-19</option>
+                                            <option value="ResNet-18">ResNet-18</option>
+                                            <option value="ResNet-34">ResNet-34</option>
+                                            <option value="ResNet-50">ResNet-50</option>
+                                            <option value="ResNet-101">ResNet-101</option>
+                                            <option value="ResNet-152">ResNet-152</option>
+                                            <option value="SqueezeNet 1.0">SqueezeNet 1.0</option>
+                                            <option value="SqueezeNet 1.1">SqueezeNet 1.1</option>
+                                            <option value="Densenet-121">Densenet-121</option>
+                                            <option value="Densenet-169">Densenet-169</option>
+                                            <option value="Densenet-201">Densenet-201</option>
+                                            <option value="Densenet-161">Densenet-161</option>
+                                            <option value="Inception v3">Inception v3</option>
+                                            <option value="GoogleNet">GoogleNet</option>
+                                            <option value="ShuffleNet V2 x1.0">ShuffleNet V2 x1.0</option>
+                                            <option value="ShuffleNet V2 x0.5">ShuffleNet V2 x0.5</option>
+                                            <option value="MobileNet V2">MobileNet V2</option>
+                                            <option value="MobileNet V3 Large">MobileNet V3 Large</option>
+                                            <option value="MobileNet V3 Small">MobileNet V3 Small</option>
+                                            <option value="ResNeXt-50-32x4d">ResNeXt-50-32x4d</option>
+                                            <option value="ResNeXt-101-32x8d">ResNeXt-101-32x8d</option>
+                                            <option value="Wide ResNet-50-2">Wide ResNet-50-2</option>
+                                            <option value="Wide ResNet-101-2">Wide ResNet-101-2</option>
+                                            <option value="MNASNet 1.0">MNASNet 1.0</option>
+                                            <option value="MNASNet 0.5">MNASNet 0.5</option>
+                                        </select>
+                                    </div>
 
-  
-                                
-                              </main>
-                              <!-- <div class="flex justify-center">
+                                    <div class="w-96">
+                                        <label for="datasets"
+                                            class="block mb-2 text-lg font-medium text-slate-800">Choose
+                                            Dataset</label>
+                                        <select id="datasets"
+                                            class="bg-gray-50 border border-gray-300 text-slate-800 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                                            <option selected>Choose from the list</option>
+                                            <option value="US">Soil Type</option>
+                                            <option value="CA">Motion Detection</option>
+                                            <option value="FR">Face Detection</option>
+                                        </select>
+                                    </div>
+                                    <button id="create-project" class="project px-4 py-2.5 text-white rounded">Train
+                                        Model</button>
+                                </form>
+
+                                </main>
+                                <!-- <div class="flex justify-center">
                                 <a href="./createProject.html">
                                 <button id="create-project" class="project px-4 py-2 text-white rounded">Create New Project</button>
                                 
                               </a> -->
                             </div>
-                              
-                              <script>
-                                document.addEventListener("DOMContentLoaded", function() {
-                                  function fetchUserProjects(userId) {
-                                    const url = `http://localhost:3000/projects/getUserProject/${userId}`;
-                                    fetch(url)
-                                      .then(response => {
-                                        if (!response.ok) {
-                                          throw new Error('Network response was not ok');
-                                        }
-                                        return response.json();
-                                      })
-                                      .then(data => {
-                                        console.log('User projects:', data.result);
-                                        displayUserProjects(data.result);
-                                      })
-                                      .catch(error => {
-                                        console.error('There was an error!', error);
-                                        
-                                      });
-                                  }
-                                 
-                                  function displayUserProjects(projects) {
-                                    const projectContainer = document.querySelector('#project-container');
-                                    
-                                    projectContainer.innerHTML = '';
-                            
-                                    for(let project of projects){
-                                      window.showAlert = function(projectId) {
-                                        console.log("Project ID: " + projectId);
-                                        localStorage.setItem('currentProjectId',`${projectId}`);
-                                        window.location.href = '../Source/projectDetails.html';
-                            
-                                    };
-                                      const projectDiv = document.createElement('div');
-                                      projectDiv.classList.add('project-item');
-                                    
-                                      projectDiv.innerHTML = `
+
+                            <script>
+                                document.addEventListener("DOMContentLoaded", function () {
+                                    function fetchUserProjects(userId) {
+                                        const url = `http://localhost:3000/projects/getUserProject/${userId}`;
+                                        fetch(url)
+                                            .then(response => {
+                                                if (!response.ok) {
+                                                    throw new Error('Network response was not ok');
+                                                }
+                                                return response.json();
+                                            })
+                                            .then(data => {
+                                                console.log('User projects:', data.result);
+                                                displayUserProjects(data.result);
+                                            })
+                                            .catch(error => {
+                                                console.error('There was an error!', error);
+
+                                            });
+                                    }
+
+                                    function displayUserProjects(projects) {
+                                        const projectContainer = document.querySelector('#project-container');
+
+                                        projectContainer.innerHTML = '';
+
+                                        for (let project of projects) {
+                                            window.showAlert = function (projectId) {
+                                                console.log("Project ID: " + projectId);
+                                                localStorage.setItem('currentProjectId', `${projectId}`);
+                                                window.location.href = '../Source/dashboard.html';
+
+                                            };
+                                            const projectDiv = document.createElement('div');
+                                            projectDiv.classList.add('project-item');
+
+                                            projectDiv.innerHTML = `
                                       <a id="hello" onclick="showAlert('${project._id}')">
                                       <img src="./images/1.png" alt="Object Detection Image" class=" mb-2">
                                       <input type="hidden" value=${project._id}>
@@ -564,53 +583,53 @@ License: You must have a valid license purchased only from themeforest(the above
                                        </a>
                                         
                                       `;
-                            
-                                      projectContainer.appendChild(projectDiv);
-                            
-                                    };
-                                  }
-                                  
-                                  const userId = localStorage.getItem('userId'); 
-                                  fetchUserProjects(userId);
+
+                                            projectContainer.appendChild(projectDiv);
+
+                                        };
+                                    }
+
+                                    const userId = localStorage.getItem('userId');
+                                    fetchUserProjects(userId);
                                 });
-                              </script>
-                            </div>
-
-                            
-                            <!-- END: General Report -->
-                            <!-- BEGIN: Visitors -->
-
-                            <!-- END: Users By Age -->
-                            <!-- BEGIN: Official Store -->
-
-                            <!-- END: Official Store -->
-                            <!-- BEGIN: Weekly Best Sellers -->
-
-                            <!-- END: Weekly Best Sellers -->
-                            <!-- BEGIN: Ads 1 -->
-
-                            <!-- END: Ads 1 -->
-                            <!-- BEGIN: Ads 2 -->
-
-                            <!-- END: Ads 2 -->
-                            <!-- BEGIN: Weekly Top Products -->
-
-                            <!-- END: Weekly Top Products -->
+                            </script>
                         </div>
+
+
+                        <!-- END: General Report -->
+                        <!-- BEGIN: Visitors -->
+
+                        <!-- END: Users By Age -->
+                        <!-- BEGIN: Official Store -->
+
+                        <!-- END: Official Store -->
+                        <!-- BEGIN: Weekly Best Sellers -->
+
+                        <!-- END: Weekly Best Sellers -->
+                        <!-- BEGIN: Ads 1 -->
+
+                        <!-- END: Ads 1 -->
+                        <!-- BEGIN: Ads 2 -->
+
+                        <!-- END: Ads 2 -->
+                        <!-- BEGIN: Weekly Top Products -->
+
+                        <!-- END: Weekly Top Products -->
                     </div>
-
                 </div>
+
             </div>
-            <!-- END: Content -->
         </div>
+        <!-- END: Content -->
+    </div>
 
 
-        <!-- BEGIN: JS Assets-->
-        <script
-            src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=[" your-google-map-api"]&libraries=places"></script>
-        <script src="dist/js/app.js"></script>
-        <!-- END: JS Assets-->
+    <!-- BEGIN: JS Assets-->
+    <script
+        src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=[" your-google-map-api"]&libraries=places"></script>
+    <script src="dist/js/app.js"></script>
+    <!-- END: JS Assets-->
 </body>
 
 </html>

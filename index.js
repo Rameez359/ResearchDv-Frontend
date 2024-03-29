@@ -18,8 +18,8 @@ app.get('/myProjects', (req, res)=> {
 app.get('/createProject', (req, res)=> {
     res.render('createProject');
 })
-app.get('/projectDetails', (req, res)=> {
-    res.render('projectDetails');
+app.get('/dashboard', (req, res)=> {
+    res.render('dashboard');
 })
 app.get('/datasets', (req, res)=> {
     res.render('datasets');
