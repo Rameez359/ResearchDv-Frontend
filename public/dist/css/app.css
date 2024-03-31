@@ -2014,7 +2014,7 @@ select{
 }
 .dark .form-check-input[type="checkbox"]{
     border-color: transparent;
-    --tw-bg-opacity: 1;
+    --tw-bg-opacity: 0.5;
     background-color: rgb(var(--color-darkmode-800) / var(--tw-bg-opacity));
 }
 .dark .form-check-input[type="checkbox"]:focus{
@@ -2024,8 +2024,8 @@ select{
 .form-check-input[type="checkbox"]:checked{
     border-color: rgb(var(--color-primary) / var(--tw-border-opacity));
     --tw-border-opacity: 0.1;
-    --tw-bg-opacity: 1;
-    background-color: rgb(var(--color-primary) / var(--tw-bg-opacity));
+    /* --tw-bg-opacity: 1;
+    background-color: rgb(var(--color-primary) / var(--tw-bg-opacity)); */
 }
 .form-check-input[type="checkbox"]:disabled:not(:checked){
     cursor: not-allowed;
@@ -2751,8 +2751,9 @@ select{
   }
 .dark .box{
     border-color: transparent;
-    --tw-bg-opacity: 1;
-    background-color: rgb(var(--color-darkmode-600) / var(--tw-bg-opacity));
+    /* --tw-bg-opacity: 1; */
+    /* background-color: rgb(var(--color-darkmode-600) / var(--tw-bg-opacity)); */
+    background-color: rgb(216, 225, 247);
 }
 .visible{
     visibility: visible;
@@ -10273,7 +10274,7 @@ html body{
         background-color: rgb(var(--color-slate-50) / var(--tw-bg-opacity));
     }
 .dark .report-box:before{
-    /* background-color: rgb(var(--color-darkmode-400) / 0.7); */
+    background-color: rgb(var(--color-darkmode-400) / 0.7);
 }
 .report-box .report-box__icon {
         width: 28px;
@@ -12252,7 +12253,7 @@ html body{
     padding-left: 1.25rem;
     padding-right: 1.25rem;
     padding-bottom: 4rem;
-    background: #9b9b9b !important;
+    /* background: #9b9b9b !important; */
 }
 @media (max-width: calc(1280px - 1px)) {
     .side-nav {
@@ -15387,12 +15388,12 @@ html body{
 .dark .side-nav > ul > li > .side-menu .side-menu__icon{
     --tw-text-opacity: 1;
     /* color: rgb(var(--color-slate-400) / var(--tw-text-opacity)); */
-    color: #000;
+    color: #f1f5f9;
 }
 .dark .side-nav > ul > li > .side-menu .side-menu__title{
     --tw-text-opacity: 1;
     /* color: rgb(var(--color-slate-400) / var(--tw-text-opacity)); */
-    color: #000;
+    color: #f1f5f9;
 }
 .side-nav > ul > li > .side-menu:hover:not(.side-menu--active):not(.side-menu--open){
     background-color: rgb(var(--color-primary) / 0.6);

@@ -123,7 +123,7 @@
           sections.forEach(s => s.classList.remove('selected'));
           console.log(`insertedId: ${data.result.insertedId}`);
           localStorage.setItem('currentProjectId',`${data.result.insertedId}`)
-          window.location.href = '../Source/projectDetails.html';
+          window.location.href = '../Source/dashboard.html';
 
         })
         .catch(error => {
@@ -196,22 +196,28 @@ License: You must have a valid license purchased only from themeforest(the above
 </head>
 <!-- END: Head -->
 <style>
-  body{
-      font-family: 'circular';
-  }
-  .selected {
-    border-color: purple !important;
-    /* border: 2px solid purple !important; */
-    border: 4px solid #2fcd24 !important
-  }
-  .project{
-      background-color: #10acb4 !important;
-      margin-top: 30px;
-  }
-  .project:hover{
-      background-color: #096166 !important;
-  }
+    body {
+        font-family: 'circular';
+    }
+
+    .selected {
+        /* border-color: purple !important;
+         border: 2px solid purple !important; */
+        /* border: 4px solid #2fcd24 !important */
+        border: 3px solid rgb(74 90 121) !important;
+        background-color: rgb(168, 188, 236);
+    }
+
+    .project {
+        background-color: #10acb4 !important;
+        margin-top: 30px;
+    }
+
+    .project:hover {
+        background-color: #096166 !important;
+    }
 </style>
+
 <body class="py-5 md:py-0 bg-black/[0.15] dark:bg-transparent">
     <!-- BEGIN: Mobile Menu -->
     <div class="mobile-menu md:hidden">
@@ -227,7 +233,7 @@ License: You must have a valid license purchased only from themeforest(the above
                     class="w-8 h-8 text-white transform -rotate-90"></i> </a>
             <ul class="scrollable__content py-2">
                 <li>
-                    <a href="/projectDetails" class="menu menu--active">
+                    <a href="/dashboard" class="menu menu--active">
                         <div class="menu__icon"> <i data-lucide="home"></i> </div>
                         <div class="menu__title"> Dashboard <i data-lucide="chevron-down"
                                 class="menu__sub-icon transform rotate-180"></i> </div>
@@ -259,8 +265,6 @@ License: You must have a valid license purchased only from themeforest(the above
                         </li>
                     </ul>
                 </li>
-                
-
             </ul>
         </div>
     </div>
@@ -268,14 +272,14 @@ License: You must have a valid license purchased only from themeforest(the above
     <div class="flex mt-[4.7rem] md:mt-0 overflow-hidden">
         <!-- BEGIN: Side Menu -->
         <nav class="side-nav">
-            <a href="/myProjects" class="intro-x flex items-center pl-5 pt-4 mt-3">
+            <a href="/dashboard" class="intro-x flex items-center pl-5 pt-4 mt-3">
                 <img alt="Midone - HTML Admin Template" class="w-6" src="dist/images/logo.svg">
                 <span class="hidden xl:block text-white text-lg ml-3"> Multi Model </span>
             </a>
             <div class="side-nav__devider my-6"></div>
             <ul>
                 <li>
-                    <a href="/projectDetails" class="side-menu">
+                    <a href="/dashboard" class="side-menu">
                         <div class="side-menu__icon"> <i data-lucide="home"></i> </div>
 
                         <div class="side-menu__title">
@@ -285,18 +289,18 @@ License: You must have a valid license purchased only from themeforest(the above
                     </a>
                 </li>
                 <li>
-                    <a href="/dataSet" class="side-menu ">
-                        <div class="menu__icon"> <i data-lucide="box"></i> </div>
+                    <a href="/datasets" class="side-menu ">
+                        <div class="side-menu__icon"> <i data-lucide="box"></i> </div>
 
                         <div class="side-menu__title">
-                            Data Set
+                            Datasets
                             <!-- <div class="side-menu__sub-icon transform rotate-180"> <i data-lucide="chevron-down"></i> </div> -->
                         </div>
                     </a>
                 </li>
                 <li>
                     <a href="/myProjects" class="side-menu ">
-                        <div class="menu__icon"> <i data-lucide="layout"></i> </div>
+                        <div class="side-menu__icon"> <i data-lucide="layout"></i> </div>
 
                         <div class="side-menu__title">
                             My Projects
@@ -305,28 +309,25 @@ License: You must have a valid license purchased only from themeforest(the above
                     </a>
                 </li>
                 <li>
-                    <a href="/createProject" class="side-menu ">
+                    <a href="javascript:;.html" class="side-menu ">
                         <div class="side-menu__icon"> <i data-lucide="edit"></i> </div>
 
                         <div class="side-menu__title">
-                            Create Projects
+                            Create Project
                             <!-- <div class="side-menu__sub-icon transform rotate-180"> <i data-lucide="chevron-down"></i> </div> -->
                         </div>
                     </a>
                 </li>
                 <li>
-                    <a href="/traine" class="side-menu">
+                    <a href="/trainModels" class="side-menu">
                         <div class="side-menu__icon"> <i data-lucide="sidebar"></i> </div>
 
                         <div class="side-menu__title">
-                            Traine
+                            Train Models
                             <!-- <div class="side-menu__sub-icon transform rotate-180"> <i data-lucide="chevron-down"></i> </div> -->
                         </div>
                     </a>
                 </li>
-                
-                
-
             </ul>
         </nav>
         <!-- END: Side Menu -->
@@ -335,12 +336,37 @@ License: You must have a valid license purchased only from themeforest(the above
             <!-- BEGIN: Top Bar -->
             <div class="top-bar -mx-4 px-4 md:mx-0 md:px-0">
                 <!-- BEGIN: Breadcrumb -->
-                <nav style="font-size: 26px;color: white;" aria-label="breadcrumb" class="-intro-x mr-auto hidden sm:flex">
-                  AI MultiModel
+                <nav style="font-size: 26px;" aria-label="breadcrumb" class="-intro-x mr-auto hidden sm:flex">
                 </nav>
                 <!-- END: Breadcrumb -->
+                <!-- BEGIN: Toast -->
+                <div id="toast-warning"
+                    class="invisible fixed right-4 z-50 flex items-center w-full max-w-xs p-4 text-gray-500 bg-red-500 rounded-lg shadow dark:text-gray-400 dark:bg-gray-800"
+                    role="alert">
+                    <div
+                        class="inline-flex items-center justify-center flex-shrink-0 w-10 h-8 text-orange-500 bg-white-100 rounded-lg dark:bg-orange-700 dark:text-orange-200">
+                        <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="orange"
+                            viewBox="0 0 20 20">
+                            <path
+                                d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM10 15a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm1-4a1 1 0 0 1-2 0V6a1 1 0 0 1 2 0v5Z" />
+                        </svg>
+                        <span class="sr-only">Warning icon</span>
+                    </div>
+                    <div class="ms-3 text-sm font-normal text-white">Please enter a project name and select a project type.</div>
+                    <button id="close" type="button"
+                        class="ms-auto -mx-1.5 -my-1.5 text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex items-center justify-center h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700"
+                        data-dismiss-target="#toast-warning" aria-label="Close">
+                        <span class="sr-only">Close</span>
+                        <svg class="w-3 h-3 text-white hover:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 14 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                        </svg>
+                    </button>
+                </div>
+                <!-- END: Toast -->
                 <!-- BEGIN: Search -->
-                <div class="intro-x relative mr-3 sm:mr-6">
+                <!-- <div class="intro-x relative mr-3 sm:mr-6">
                     <div class="search hidden sm:block">
                         <input type="text" class="search__input form-control border-transparent"
                             placeholder="Search...">
@@ -355,19 +381,22 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <a href="" class="flex items-center">
                                     <div
                                         class="w-8 h-8 bg-success/20 dark:bg-success/10 text-success flex items-center justify-center rounded-full">
-                                        <i class="w-4 h-4" data-lucide="inbox"></i> </div>
+                                        <i class="w-4 h-4" data-lucide="inbox"></i>
+                                    </div>
                                     <div class="ml-3">Mail Settings</div>
                                 </a>
                                 <a href="" class="flex items-center mt-2">
                                     <div
                                         class="w-8 h-8 bg-pending/10 text-pending flex items-center justify-center rounded-full">
-                                        <i class="w-4 h-4" data-lucide="users"></i> </div>
+                                        <i class="w-4 h-4" data-lucide="users"></i>
+                                    </div>
                                     <div class="ml-3">Users & Permissions</div>
                                 </a>
                                 <a href="" class="flex items-center mt-2">
                                     <div
                                         class="w-8 h-8 bg-primary/10 dark:bg-primary/20 text-primary/80 flex items-center justify-center rounded-full">
-                                        <i class="w-4 h-4" data-lucide="credit-card"></i> </div>
+                                        <i class="w-4 h-4" data-lucide="credit-card"></i>
+                                    </div>
                                     <div class="ml-3">Transactions Report</div>
                                 </a>
                             </div>
@@ -446,10 +475,10 @@ License: You must have a valid license purchased only from themeforest(the above
                             </a>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <!-- END: Search -->
                 <!-- BEGIN: Notifications -->
-                <div class="intro-x dropdown mr-auto sm:mr-6">
+                <!-- <div class="intro-x dropdown mr-auto sm:mr-6">
                     <div class="dropdown-toggle notification notification--bullet cursor-pointer" role="button"
                         aria-expanded="false" data-tw-toggle="dropdown"> <i data-lucide="bell"
                             class="notification__icon dark:text-slate-500"></i> </div>
@@ -548,19 +577,19 @@ License: You must have a valid license purchased only from themeforest(the above
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <!-- END: Notifications -->
                 <!-- BEGIN: Account Menu -->
                 <div class="intro-x dropdown w-8 h-8">
                     <div class="dropdown-toggle w-8 h-8 rounded-full overflow-hidden shadow-lg image-fit zoom-in"
                         role="button" aria-expanded="false" data-tw-toggle="dropdown">
-                        <img alt="Midone - HTML Admin Template" src="dist/images/profile-15.jpg">
+                        <img alt="Midone - HTML Admin Template" src="./images/profile-icon.png">
                     </div>
                     <div class="dropdown-menu w-56">
                         <ul class="dropdown-content bg-primary text-white">
                             <li class="p-2">
-                                <div class="font-medium">Leonardo DiCaprio</div>
-                                <div class="text-xs text-white/70 mt-0.5 dark:text-slate-500">Software Engineer</div>
+                                <div class="font-medium">Username</div>
+                                <div class="text-xs text-white/70 mt-0.5 dark:text-slate-500">Title</div>
                             </li>
                             <li>
                                 <hr class="dropdown-divider border-white/[0.08]">
@@ -569,18 +598,18 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <a href="" class="dropdown-item hover:bg-white/5"> <i data-lucide="user"
                                         class="w-4 h-4 mr-2"></i> Profile </a>
                             </li>
-                            <li>
+                            <!-- <li>
                                 <a href="" class="dropdown-item hover:bg-white/5"> <i data-lucide="edit"
                                         class="w-4 h-4 mr-2"></i> Add Account </a>
-                            </li>
+                            </li> -->
                             <li>
                                 <a href="" class="dropdown-item hover:bg-white/5"> <i data-lucide="lock"
                                         class="w-4 h-4 mr-2"></i> Reset Password </a>
                             </li>
-                            <li>
+                            <!-- <li>
                                 <a href="" class="dropdown-item hover:bg-white/5"> <i data-lucide="help-circle"
                                         class="w-4 h-4 mr-2"></i> Help </a>
-                            </li>
+                            </li> -->
                             <li>
                                 <hr class="dropdown-divider border-white/[0.08]">
                             </li>
@@ -603,122 +632,198 @@ License: You must have a valid license purchased only from themeforest(the above
                         <!-- BEGIN: General Report -->
                         <div class="col-span-12 lg:col-span-8 xl:col-span-6 mt-2">
                             <div class="intro-y block  items-center h-10">
-                              <!-- <header class="bg-gray-800 flex justify-between items-center p-4">
+                                <!-- <header class="bg-gray-800 flex justify-between items-center p-4">
                                 <h1 class="text-white text-3xl font-bold">AI MultiModel</h1>
                               </header> -->
-                              <main class="container mx-auto px-4 py-10">
-                                <h2 style="color: black;" class="text-3xl font-bold text-gray-800 mb-4">Let's create your project.</h2>
-                                <div class="flex flex-col md:flex-row md:space-x-4">
-                                  <div style="border-color: #2fcd24;" class="w-full md:w-1/2 px-4 py-4 border border-dashed border-gray-200 rounded-md">
-                                    <label for="project-name" class="block text-sm font-medium text-white-700 mb-2">Project Name</label>
-                                    <input type="text" id="project-name" class="block w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-1 focus:ring-orange-500">
-                                  </div>
-                                </div>
-                                <h3 style="color: black;" class="text-2xl font-bold text-white mt-8 mb-4">Project Type</h3>
-                                <div class="gap-4 grid md:grid-cols-3">
-                                  <div style="border: 4px solid white" class="p-4 bg-gray-100  rounded-md flex items-center justify-center cursor-pointer section">
-                                    <div class="flex flex-col">
-                                      <img src="./images/1.png" alt="Object Detection Image" class=" mb-2">
-                                      <span class="text-black text-xl font-bold">Object Detection</span>
-                                      <p class="text-sm text-gray-700 ">Identify objects and their positions with bounding boxes.</p>
+                                <main class="container mx-auto px-4 py-10">
+                                    <h2 class="font-bold mr-5 text-2xl truncate text-slate-800">Create
+                                        Your Project</h2>
+                                    <div class="flex flex-col md:flex-row md:space-x-4">
+                                        <div class="w-full md:w-1/2 border rounded-md m-5">
+                                            <label for="project-name"
+                                                class="block text-sm font-medium text-slate-800 mb-2">Project
+                                                Name</label>
+                                            <input style="background-color: rgb(216, 225, 247);" type="text"
+                                                id="project-name" placeholder="Your Project name"
+                                                class="block w-full px-4 py-2 text-slate-800 text-sm rounded-md border border-gray-300 focus:outline-none focus:ring-1 focus:ring-orange-500">
+                                        </div>
                                     </div>
-                                  </div>
-                                  <div style="border: 4px solid white" class="p-4 bg-gray-100  rounded-md flex items-center justify-center cursor-pointer section">
-                                    <div class="flex flex-col">
-                                      <img src="./images/2.png" alt="Classification Image" class=" mb-2">
-                                      <span class="text-black text-xl font-bold">Classification</span>
-                                      <p class="text-sm text-gray-700 ">Assign labels to the entire image.</p>
+                                    <h3 class="font-bold mt-5 mb-5 text-2xl truncate text-slate-800">Project Type</h3>
+
+                                    <div class="gap-4 grid md:grid-cols-3">
+                                        <div
+                                            class="p-4 bg-gray-100  rounded-md flex items-center justify-center cursor-pointer section">
+                                            <div class="report-box zoom-in">
+                                                <div class="box p-5">
+                                                    <div
+                                                        class="p-4 rounded-md flex items-center justify-center cursor-pointer section">
+                                                        <div class="flex flex-col">
+                                                            <img class="rounded-md mb-4" src="./images/1.png"
+                                                                alt="Object Detection Image">
+                                                            <span class="text-slate-800 text-xl font-bold">Object
+                                                                Detection</span>
+                                                            <p class="text-sm text-slate-600 ">Identify objects and
+                                                                their
+                                                                positions
+                                                                with bounding boxes.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div
+                                            class="p-4 bg-gray-100  rounded-md flex items-center justify-center cursor-pointer section">
+                                            <div class="report-box zoom-in">
+                                                <div class="box p-5">
+                                                    <div
+                                                        class="p-4 rounded-md flex items-center justify-center cursor-pointer section">
+                                                        <div class="flex flex-col">
+                                                            <img class="rounded-md mb-4" src="./images/2.png"
+                                                                alt="Classification Image">
+                                                            <span
+                                                                class="text-slate-800 text-xl font-bold">Classification</span>
+                                                            <p class="text-sm text-slate-600">Assign labels to the
+                                                                entire image and make the predictions accurately.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div
+                                            class="p-4 bg-gray-100  rounded-md flex items-center justify-center cursor-pointer section">
+                                            <div class="report-box zoom-in">
+                                                <div class="box p-5">
+                                                    <div
+                                                        class="p-4 rounded-md flex items-center justify-center cursor-pointer section">
+                                                        <div class="flex flex-col">
+                                                            <img class="rounded-md mb-4" src="./images/3.png"
+                                                                alt="Instance Segmentation Image">
+                                                            <span class="text-slate-800 text-xl font-bold">Instance
+                                                                Segmentation</span>
+                                                            <p class="text-sm text-slate-600 ">Detect multiple objects
+                                                                and their
+                                                                actual shape.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- <div style="border: 4px solid white"
+                                            class="p-4 bg-gray-100  rounded-md flex items-center justify-center cursor-pointer section">
+                                            <div class="flex flex-col">
+                                                <img src="./images/1.png" alt="Object Detection Image" class=" mb-2">
+                                                <span class="text-black text-xl font-bold">Object Detection</span>
+                                                <p class="text-sm text-gray-700 ">Identify objects and their positions
+                                                    with bounding boxes.</p>
+                                            </div>
+                                        </div>
+                                        <div style="border: 4px solid white"
+                                            class="p-4 bg-gray-100  rounded-md flex items-center justify-center cursor-pointer section">
+                                            <div class="flex flex-col">
+                                                <img src="./images/2.png" alt="Classification Image" class=" mb-2">
+                                                <span class="text-black text-xl font-bold">Classification</span>
+                                                <p class="text-sm text-gray-700 ">Assign labels to the entire image.</p>
+                                            </div>
+                                        </div>
+                                        <div style="border: 4px solid white"
+                                            class="p-4 bg-gray-100  rounded-md flex items-center justify-center cursor-pointer section">
+                                            <div class="flex flex-col">
+                                                <img src="./images/3.png" alt="Instance Segmentation Image"
+                                                    class=" mb-2">
+                                                <span class="text-black text-xl font-bold">Instance Segmentation</span>
+                                                <p class="text-sm text-gray-700 ">Detect multiple objects and their
+                                                    actual shape.</p>
+                                            </div>
+                                        </div> -->
                                     </div>
-                                  </div>
-                                  <div style="border: 4px solid white" class="p-4 bg-gray-100  rounded-md flex items-center justify-center cursor-pointer section">
-                                    <div class="flex flex-col">
-                                      <img src="./images/3.png" alt="Instance Segmentation Image" class=" mb-2">
-                                      <span class="text-black text-xl font-bold">Instance Segmentation</span>
-                                      <p class="text-sm text-gray-700 ">Detect multiple objects and their actual shape.</p>
+                                    <div class="flex justify-center">
+                                        <button id="create-project" class="project px-4 py-2 text-white rounded">Create
+                                            Project</button>
                                     </div>
-                                  </div>
-                                </div>
-                                <div class="flex justify-center">
-                                    <button id="create-project" class="project px-4 py-2 text-white rounded">Create Project</button>
-                                  </div>
-                              </main>
-                              <script>
-                                // Get all the elements with the class "section" and add event listeners to them
-                                const sections = document.querySelectorAll('.section');
-                                let selectedProjectName = "";
-                                let selectedProjectType = "";
-                            
-                                // Loop through each section
-                                sections.forEach(section => {
-                                  // Add a click event listener
-                                  section.addEventListener('click', function() {
-                                    // Remove the "selected" class from all sections
-                                    sections.forEach(s => s.classList.remove('selected'));
-                                    // Add the "selected" class to the clicked section
-                                    this.classList.add('selected');
-                                    // Set the selected project type
-                                    selectedProjectType = this.querySelector('span').textContent;
-                                  });
-                                });
-                            
-                                // Add event listener to the "Create Project" button
-                                document.getElementById('create-project').addEventListener('click', function() {
-                                  // Get the project name
-                                  selectedProjectName = document.getElementById('project-name').value;
-                            
-                                  // Validate project name and type
-                                  if(selectedProjectName && selectedProjectType) {
-                                    // Prepare data to send
-                                    const userId = localStorage.getItem('userId'); 
-                                    const data = {
-                                      userId:userId,
-                                      projectName: selectedProjectName,
-                                      projectType: selectedProjectType
-                                    };
-                                    
-                                    console.log(data)
-                            
-                                    // Send data to API
-                                    fetch('http://localhost:3000/projects/postProject', {
-                                      method: 'POST',
-                                      headers: {
-                                        'Content-Type': 'application/json'
-                                      },
-                                      body: JSON.stringify(data)
-                                      
-                                    })
-                                    .then(response => {
-                                      if (!response.ok) {
-                                        throw new Error('Network response was not ok');
-                                      }
-                                      return response.json();
-                                    })
-                                    .then(data => {
-                                      console.log('API response:', data);
-                                      // Reset the selected project name and type
-                                      selectedProjectName = "";
-                                      selectedProjectType = "";
-                                      // Reset the input field and selected section
-                                      document.getElementById('project-name').value = "";
-                                      sections.forEach(s => s.classList.remove('selected'));
-                                      console.log(`insertedId: ${data.result.insertedId}`);
-                                      localStorage.setItem('currentProjectId',`${data.result.insertedId}`)
-                                      window.location.href = '/myProjects';
-                            
-                                    })
-                                    .catch(error => {
-                                      console.error('There was an error!', error);
-                                      alert('An error occurred while creating the project.');
+                                </main>
+                                <script>
+                                    // Get all the elements with the class "section" and add event listeners to them
+                                    const sections = document.querySelectorAll('.section');
+                                    let selectedProjectName = "";
+                                    let selectedProjectType = "";
+
+                                    // Loop through each section
+                                    sections.forEach(section => {
+                                        // Add a click event listener
+                                        section.addEventListener('click', function () {
+                                            // Remove the "selected" class from all sections
+                                            sections.forEach(s => s.classList.remove('selected'));
+                                            // Add the "selected" class to the clicked section
+                                            this.classList.add('selected');
+                                            // Set the selected project type
+                                            selectedProjectType = this.querySelector('span').textContent;
+                                        });
                                     });
-                                  } else {
-                                    alert("Please enter a project name and select a project type.");
-                                  }
-                                 
-                                });
-                              </script>
+
+                                    // Add event listener to the "Create Project" button
+                                    document.getElementById('create-project').addEventListener('click', function () {
+                                        // Get the project name
+                                        selectedProjectName = document.getElementById('project-name').value;
+
+                                        // Validate project name and type
+                                        if (selectedProjectName && selectedProjectType) {
+                                            // Prepare data to send
+                                            const userId = localStorage.getItem('userId');
+                                            const data = {
+                                                userId: userId,
+                                                projectName: selectedProjectName,
+                                                projectType: selectedProjectType
+                                            };
+
+                                            console.log(data)
+
+                                            // Send data to API
+                                            fetch('http://localhost:3000/projects/postProject', {
+                                                method: 'POST',
+                                                headers: {
+                                                    'Content-Type': 'application/json'
+                                                },
+                                                body: JSON.stringify(data)
+
+                                            })
+                                                .then(response => {
+                                                    if (!response.ok) {
+                                                        throw new Error('Network response was not ok');
+                                                    }
+                                                    return response.json();
+                                                })
+                                                .then(data => {
+                                                    console.log('API response:', data);
+                                                    // Reset the selected project name and type
+                                                    selectedProjectName = "";
+                                                    selectedProjectType = "";
+                                                    // Reset the input field and selected section
+                                                    document.getElementById('project-name').value = "";
+                                                    sections.forEach(s => s.classList.remove('selected'));
+                                                    console.log(`insertedId: ${data.result.insertedId}`);
+                                                    localStorage.setItem('currentProjectId', `${data.result.insertedId}`)
+                                                    window.location.href = '/myProjects';
+
+                                                })
+                                                .catch(error => {
+                                                    console.error('There was an error!', error);
+                                                    alert('An error occurred while creating the project.');
+                                                });
+                                        } else {
+                                            const toastAlert = document.getElementById('toast-warning');
+
+                                            toastAlert.classList.remove('invisible');
+                                            //alert("Please enter a project name and select a project type.");
+                                        }
+
+                                    });
+                                </script>
                             </div>
 
-                            
+
                             <!-- END: General Report -->
                             <!-- BEGIN: Visitors -->
 
@@ -748,6 +853,12 @@ License: You must have a valid license purchased only from themeforest(the above
 
 
         <!-- BEGIN: JS Assets-->
+        <script>
+            const closeBtn = document.getElementById('close');
+            closeBtn.addEventListener("click", function () {
+                document.getElementById('toast-warning').classList.add('invisible');
+            });
+        </script>
         <script
             src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=[" your-google-map-api"]&libraries=places"></script>

@@ -125,6 +125,6 @@ const signIn = async () => {
     if (checkUser.statusCode === 200) {
         console.log(JSON.stringify(checkUser));
         localStorage.setItem('userId', `${checkUser.response.userId}`);
-        window.location.href = '/projectDetails';
+        window.location.href = '/dashboard';
     }
 };
