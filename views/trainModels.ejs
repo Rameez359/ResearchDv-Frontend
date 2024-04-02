@@ -21,7 +21,7 @@ License: You must have a valid license purchased only from themeforest(the above
     <meta name="keywords"
         content="admin template, Tinker Admin Template, dashboard template, flat admin template, responsive admin template, web app">
     <meta name="author" content="LEFT4CODE">
-    <title>AI MultiModel</title>
+    <title>Research Dv</title>
     <!-- BEGIN: CSS Assets-->
     <link rel="stylesheet" href="dist/css/app.css" />
     <!-- END: CSS Assets-->
@@ -130,65 +130,7 @@ License: You must have a valid license purchased only from themeforest(the above
     <!-- END: Mobile Menu -->
     <div class="flex mt-[4.7rem] md:mt-0 overflow-hidden">
         <!-- BEGIN: Side Menu -->
-        <nav class="side-nav">
-            <a href="/dashboard" class="intro-x flex items-center pl-5 pt-4 mt-3">
-                <img alt="Midone - HTML Admin Template" class="w-6" src="dist/images/logo.svg">
-                <span class="hidden xl:block text-white text-lg ml-3"> Multi Model </span>
-            </a>
-            <div class="side-nav__devider my-6"></div>
-            <ul>
-                <li>
-                    <a href="/dashboard" class="side-menu">
-                        <div class="side-menu__icon"> <i data-lucide="home"></i> </div>
-
-                        <div class="side-menu__title">
-                            Dashboard
-                            <!-- <div class="side-menu__sub-icon transform rotate-180"> <i data-lucide="chevron-down"></i> </div> -->
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="/datasets" class="side-menu ">
-                        <div class="side-menu__icon"> <i data-lucide="box"></i> </div>
-
-                        <div class="side-menu__title">
-                            Datasets
-                            <!-- <div class="side-menu__sub-icon transform rotate-180"> <i data-lucide="chevron-down"></i> </div> -->
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="/myProjects" class="side-menu ">
-                        <div class="side-menu__icon"> <i data-lucide="layout"></i> </div>
-
-                        <div class="side-menu__title">
-                            My Projects
-                            <!-- <div class="side-menu__sub-icon transform rotate-180"> <i data-lucide="chevron-down"></i> </div> -->
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="/createProject" class="side-menu">
-                        <div class="side-menu__icon"> <i data-lucide="edit"></i> </div>
-
-                        <div class="side-menu__title">
-                            Create Project
-                            <!-- <div class="side-menu__sub-icon transform rotate-180"> <i data-lucide="chevron-down"></i> </div> -->
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:;.html" class="side-menu">
-                        <div class="side-menu__icon"> <i data-lucide="sidebar"></i> </div>
-
-                        <div class="side-menu__title">
-                            Train Models
-                            <!-- <div class="side-menu__sub-icon transform rotate-180"> <i data-lucide="chevron-down"></i> </div> -->
-                        </div>
-                    </a>
-                </li>
-            </ul>
-        </nav>
+        <%- include('./navBar') %>
         <!-- END: Side Menu -->
         <!-- BEGIN: Content -->
         <div style="background: #f1f5f9;" class="content">
@@ -514,7 +456,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                         </select>
                                     </div>
 
-                                    <div class="w-96">
+                                    <!-- <div class="w-96">
                                         <label for="datasets"
                                             class="block mb-2 text-lg font-medium text-slate-800">Choose
                                             Dataset</label>
@@ -525,7 +467,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                             <option value="CA">Motion Detection</option>
                                             <option value="FR">Face Detection</option>
                                         </select>
-                                    </div>
+                                    </div> -->
                                     <button id="create-project" class="project px-4 py-2.5 text-white rounded">Train
                                         Model</button>
                                 </form>

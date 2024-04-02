@@ -13,6 +13,11 @@ app.get('/', (req, res)=> {
 })
 
 app.get('/myProjects', (req, res)=> {
+    // const uid = req.params.uid;
+    // res.render('myProjects', { uid: uid });
+    res.render('myProjects');
+})
+app.get('/myProjects', (req, res)=> {
     res.render('myProjects');
 })
 app.get('/createProject', (req, res)=> {
@@ -26,6 +31,9 @@ app.get('/datasets', (req, res)=> {
 })
 app.get('/trainModels', (req, res)=> {
     res.render('trainModels');
+})
+app.get('/viewDatasets', (req, res)=> {
+    res.render('viewDatasets');
 })
 
 

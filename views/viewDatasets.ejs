@@ -378,230 +378,11 @@ License: You must have a valid license purchased only from themeforest(the above
 
                         <!-- BEGIN: Notification -->
                         <!-- BEGIN: General Report -->
-                        <div class="col-span-12 lg:col-span-8 xl:col-span-6 mt-2">
-                            <div class="intro-y block sm:flex items-center h-10">
-                                <h2 class="font-bold mr-5 text-2xl truncate text-slate-800">
-                                    Upload Dataset
-                                </h2>
-                            </div>
-
-                            <style>
-                                input[type="file"]::file-selector-button {
-                                    border-radius: 4px;
-                                    padding: 0 16px;
-                                    height: 40px;
-                                    cursor: pointer;
-                                    background-color: white;
-                                    border: 1px solid rgba(0, 0, 0, 0.16);
-                                    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.05);
-                                    margin-right: 16px;
-                                    transition: background-color 200ms;
-                                }
-
-                                /* file upload button hover state */
-                                input[type="file"]::file-selector-button:hover {
-                                    background-color: #f3f4f6;
-                                }
-
-                                /* file upload button active state */
-                                input[type="file"]::file-selector-button:active {
-                                    background-color: #e5e7eb;
-                                }
-                            </style>
-                            <div style="gap: 200px;" class="flex items-center justify-center w-full   drag-drop-div">
-                                <label style="background: rgb(216, 225, 247); color: #222222;" for="dropzone-file"
-                                    class="mt-5 flex flex-col items-center justify-center w-2/5 h-64 border-2 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
-                                    <div class="flex flex-col items-center justify-center pt-5 pb-6">
-                                        <svg class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
-                                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
-                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                                stroke-width="2"
-                                                d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
-                                        </svg>
-                                        <p id="file-name" class="mb-2 text-sm"><span class="font-semibold">Click to
-                                                upload</span> or drag and drop</p>
-                                        <p class="text-sm text-gray-500 dark:text-gray-400">please upload only zip / rar
-                                            / 7zip file</p>
-                                    </div>
-                                    <input id="dropzone-file" type="file" class="hidden fileInput"
-                                        accept=".zip,.rar,.7zip" onchange="displayFileName(event)" />
-                                    <p id="loadingMessage" style="display: none;">Loading please wait ... </p>
-                                    <button class="upload-dataset-btn" onclick="uploadData()">Upload</button>
-                                </label>
-                                <!-- <label style="border-color: #2fcd24;background: #636363;" for="dropzone-file"
-                                    class="mt-5 flex flex-col items-center justify-center w-full h-64 border-2 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
-                                    <div class="flex flex-col items-center justify-center pt-5 pb-6">
-                                        <svg class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
-                                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
-                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                                stroke-width="2"
-                                                d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
-                                        </svg>
-                                        <p id="file-name" class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span
-                                                class="font-semibold">Select existing Dataset</span> or drag and drop
-                                        </p> -->
-                                <!-- <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p> -->
-                                <!-- </div>
-                                    <input id="dropzone-file" type="file" class="hidden fileInput"
-                                        accept=".zip,.rar,.7zip" onchange="displayFileName(event)" /> -->
-                                <!-- <p id="loadingMessage" style="display: none;">Loading please wait ... </p> -->
-                                <!-- <button style="width: fit-content;
-                                                margin-top: 20px;
-                                                padding: 7px;
-                                                color: white;
-                                                padding-left: 14px;
-                                                padding-right: 14px;
-                                                font-weight: 500;
-                                                background: #12afbc;
-                                                border-radius: 6px;">Upload data</button>
-                                </label> -->
-                            </div>
-
-                            <script>
-                                function displayFileName(event) {
-                                    const input = event.target;
-                                    if (input.files.length > 0) {
-                                        const fileName = input.files[0].name;
-                                        document.getElementById('file-name').innerHTML = `<span class="font-semibold">File uploaded:</span> ${fileName}`;
-                                    }
-                                }
-
-                                const dropZone2 = document.querySelector('.drag-drop-div');
-
-                                dropZone2.addEventListener('dragover', function (e) {
-                                    e.preventDefault();
-                                    e.stopPropagation();
-                                });
-
-                                dropZone2.addEventListener('drop', function (e) {
-                                    e.preventDefault();
-                                    e.stopPropagation();
-
-                                    const files = e.dataTransfer.files;
-                                    if (files.length > 0) {
-                                        const fileName = files[0].name;
-                                        document.getElementById('file-name').innerHTML = `<span class="font-semibold">File uploaded:</span> ${fileName}`;
-                                    }
-                                });
-
-
-                            </script>
-
-
-                            <div class="w-container">
-                                <!-- <div style="display: flex;
-                                    flex-direction: column;">
-                                    <input style="width: 60%;
-                                    border: 1px solid;
-                                    padding: 11px;
-                                    /* padding-left: 30px; */
-                                    border-radius: 8px;" accept=".zip,.rar,.7zip" type="file" id="fileInput">
-                                    <p id="loadingMessage" style="display: none;">Loading please wait ... </p>
-                                    <button style="width: fit-content;
-                                    margin-top: 20px;
-                                    padding: 7px;
-                                    color: white;
-                                    padding-left: 14px;
-                                    padding-right: 14px;
-                                    font-weight: 500;
-                                    background: #12afbc;
-                                    border-radius: 6px;" onclick="uploadData()">Upload data</button>
-                                </div> -->
-
-                                <script>
-
-                                    let isLoading = false;
-
-                                    function uploadData() {
-                                        console.log("called");
-                                        const fileInput = document.getElementById('dropzone-file');
-                                        const fileName = fileInput.files[0];
-                                        console.log('Selected file name:', fileName);
-                                        if (!fileName) {
-                                            console.error('No file selected.');
-                                            return;
-                                        }
-                                        isLoading = true;
-                                        updateLoadingMessage();
-                                        const formData = new FormData();
-                                        formData.append('file', fileName);
-                                        const userId = localStorage.getItem('userId');
-                                        console.log(`userId is ${userId}`);
-                                        formData.append('userId', userId);
-                                        console.log(formData, "data value");
-                                        fetch('http://localhost:3000/projects/postProjectData', {
-                                            method: 'POST',
-                                            body: formData
-                                        })
-                                            .then(response => {
-                                                if (!response.ok) {
-                                                    throw new Error('Network response was not ok');
-                                                }
-                                                return response.json();
-                                                
-                                            })
-                                            .then(data => {
-                                                console.log('Files uploaded:', data);
-                                                isLoading = false;
-                                                updateLoadingMessage();
-                                                window.location.href = '/trainModels';
-                                                // window.alert("uploaded successfully")
-                                            })
-                                            .catch(error => {
-                                                console.error('Error uploading files:', error);
-                                                isLoading = false;
-                                                updateLoadingMessage();
-                                            });
-                                    }
-
-                                    function updateLoadingMessage() {
-                                        const loadingMessage = document.getElementById('loadingMessage');
-                                        if (isLoading) {
-                                            loadingMessage.style.display = 'block';
-                                        } else {
-                                            loadingMessage.style.display = 'none';
-                                        }
-                                    }
-
-
-
-
-                                </script>
-
-                            </div>
-
-                            <script>
-                                const dropZone = document.querySelector('.drag-drop-div');
-
-                                dropZone.addEventListener('dragover', function (e) {
-                                    e.preventDefault();
-                                    e.stopPropagation();
-                                });
-
-                                dropZone.addEventListener('drop', function (e) {
-                                    e.preventDefault();
-                                    e.stopPropagation();
-                                    // Handle the drop event here, if necessary
-                                });
-                            </script>
-
-
-
-
-
-
-
-
-                            <div>
-                            </div>
-
-
-
-                        </div>
+                     
                         <div class="grid gap-6 mt-8">
                             <div class="col-span-12 lg:col-span-3 2xl:col-span-2">
-                                <h2 style="color: black; " class="intro-y text-lg font-medium mr-auto mt-2">
-                                    Uploaded Datasets
+                                <h2 style="color: black; " class="font-bold mr-5 text-2xl truncate text-slate-800">
+                                    Datasets
                                 </h2>
                                 <!-- BEGIN: File Manager Menu -->
                                 <!-- <div class="intro-y box p-5 mt-6">
@@ -795,28 +576,23 @@ License: You must have a valid license purchased only from themeforest(the above
     function updateDatasetsList(datasets) {
         const container = document.querySelector('.intro-y.grid'); // Adjust the selector to your grid container
         container.innerHTML = ''; // Clear the container
-        window.showAlert = function (datasetId) {
-                                                console.log("Project ID: " + datasetId);
-                                                localStorage.setItem('datasetId', `${datasetId}`);
-                                                window.location.href = `/trainModels?datasetId=${datasetId}`;
 
-                                            };
         // Loop through the datasets and create the HTML for each dataset
         datasets.forEach(dataset => {
             const datasetHtml = `
-                <div  class="intro-y col-span-6 sm:col-span-4 md:col-span-3 2xl:col-span-2">
-                    <div onclick="showAlert('${dataset._id}')" class="file box rounded-md px-5 pt-8 pb-5 px-3 sm:px-5 relative zoom-in">
-                        <a href="#" class="w-3/5 file__icon file__icon--directory mx-auto"></a>
-                        <a href="#" class="block font-medium mt-4 text-center truncate text-slate-800">${dataset.name}</a>
+                <div class="intro-y col-span-6 sm:col-span-4 md:col-span-3 2xl:col-span-2">
+                    <div class="file box rounded-md px-5 pt-8 pb-5 px-3 sm:px-5 relative zoom-in">
+                        <a href="" class="w-3/5 file__icon file__icon--directory mx-auto"></a>
+                        <a href="" class="block font-medium mt-4 text-center truncate text-slate-800">${dataset.name}</a>
                         <div class="text-slate-600 text-xs text-center mt-0.5">800 kb</div>
-                        <input type="hidden" value=${dataset._id}}>
+                        <!-- Add any other dataset details you want to display -->
                     </div>
                 </div>
             `;
             container.insertAdjacentHTML('beforeend', datasetHtml); // Insert the dataset HTML into the container
         });
     }
-});
+    });
 
         
         </script>

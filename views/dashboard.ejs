@@ -20,7 +20,7 @@ License: You must have a valid license purchased only from themeforest(the above
     <meta name="keywords"
         content="admin template, Tinker Admin Template, dashboard template, flat admin template, responsive admin template, web app">
     <meta name="author" content="LEFT4CODE">
-    <title>AI MultiModel</title>
+    <title>Research Dv</title>
     <!-- BEGIN: CSS Assets-->
     <link rel="stylesheet" href="dist/css/app.css" />
     <!-- END: CSS Assets-->
@@ -80,65 +80,7 @@ License: You must have a valid license purchased only from themeforest(the above
     <!-- END: Mobile Menu -->
     <div class="flex mt-[4.7rem] md:mt-0 overflow-hidden">
         <!-- BEGIN: Side Menu -->
-        <nav class="side-nav">
-            <a href="javascript:;.html" class="intro-x flex items-center pl-5 pt-4 mt-3">
-                <img alt="Midone - HTML Admin Template" class="w-6" src="dist/images/logo.svg">
-                <span class="hidden xl:block text-white text-lg ml-3"> Multi Model </span>
-            </a>
-            <div class="side-nav__devider my-6"></div>
-            <ul>
-                <li>
-                    <a href="javascript:;.html" class="side-menu">
-                        <div class="side-menu__icon"> <i data-lucide="home"></i> </div>
-
-                        <div class="side-menu__title">
-                            Dashboard
-                            <!-- <div class="side-menu__sub-icon transform rotate-180"> <i data-lucide="chevron-down"></i> </div> -->
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="/datasets" class="side-menu ">
-                        <div class="side-menu__icon"> <i data-lucide="box"></i> </div>
-
-                        <div class="side-menu__title">
-                            Datasets
-                            <!-- <div class="side-menu__sub-icon transform rotate-180"> <i data-lucide="chevron-down"></i> </div> -->
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="/myProjects" class="side-menu ">
-                        <div class="side-menu__icon"> <i data-lucide="layout"></i> </div>
-
-                        <div class="side-menu__title">
-                            My Projects
-                            <!-- <div class="side-menu__sub-icon transform rotate-180"> <i data-lucide="chevron-down"></i> </div> -->
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="/createProject" class="side-menu ">
-                        <div class="side-menu__icon"> <i data-lucide="edit"></i> </div>
-
-                        <div class="side-menu__title">
-                            Create Project
-                            <!-- <div class="side-menu__sub-icon transform rotate-180"> <i data-lucide="chevron-down"></i> </div> -->
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="/trainModels" class="side-menu">
-                        <div class="side-menu__icon"> <i data-lucide="database"></i> </div>
-
-                        <div class="side-menu__title">
-                            Train Models
-                            <!-- <div class="side-menu__sub-icon transform rotate-180"> <i data-lucide="chevron-down"></i> </div> -->
-                        </div>
-                    </a>
-                </li>
-            </ul>
-        </nav>
+        <%- include('./navBar') %>
         <!-- END: Side Menu -->
         <!-- BEGIN: Content -->
         <div style="background: #f1f5f9;;color: black;" class="content">
@@ -398,7 +340,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <hr class="dropdown-divider border-white/[0.08]">
                             </li>
                             <li>
-                                <a href="" class="dropdown-item hover:bg-white/5"> <i data-lucide="toggle-right"
+                                <a href="/" class="dropdown-item hover:bg-white/5"> <i data-lucide="toggle-right"
                                         class="w-4 h-4 mr-2"></i> Logout </a>
                             </li>
                         </ul>
@@ -426,12 +368,13 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 <!-- <i data-lucide="shopping-cart" class="report-box__icon text-primary"></i>  -->
                                                 <div class="menu__icon"> <i data-lucide="layout"></i> </div>
                                                 <div class="ml-auto">
-                                                    <div class="report-box__indicator bg-success tooltip cursor-pointer"
-                                                        title="33% Higher than last month"> 33% <i
-                                                            data-lucide="chevron-up" class="w-4 h-4 ml-0.5"></i> </div>
+                                                    <div class="report-box__indicator tooltip cursor-pointer"
+                                                        title="Higher than last month">
+                                                    <span><img src="/images/more.png" alt=""></span>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="text-3xl font-medium leading-8 mt-6">4</div>
+                                            <div class="text-3xl font-medium leading-8 mt-6">0</div>
                                             <div class="text-base text-slate-800 mt-1">Projects</div>
                                         </div>
                                     </div>
@@ -442,13 +385,12 @@ License: You must have a valid license purchased only from themeforest(the above
                                             <div class="flex">
                                                 <i data-lucide="credit-card" class="report-box__icon text-pending"></i>
                                                 <div class="ml-auto">
-                                                    <div class="report-box__indicator bg-danger tooltip cursor-pointer"
-                                                        title="2% Lower than last month"> 2% <i
-                                                            data-lucide="chevron-down" class="w-4 h-4 ml-0.5"></i>
+                                                    <div class="report-box__indicator  tooltip cursor-pointer"
+                                                        title="Lower than last month"><span><img src="/images/more.png" alt=""></span>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="text-3xl font-medium leading-8 mt-6">7</div>
+                                            <div id="dataset_id" class="text-3xl font-medium leading-8 mt-6">0</div>
                                             <div class="text-base text-slate-800 mt-1">Datasets</div>
                                         </div>
                                     </div>
@@ -459,9 +401,8 @@ License: You must have a valid license purchased only from themeforest(the above
                                             <div class="flex">
                                                 <i data-lucide="monitor" class="report-box__icon text-warning"></i>
                                                 <div class="ml-auto">
-                                                    <div class="report-box__indicator bg-success tooltip cursor-pointer"
-                                                        title="12% Higher than last month"> 12% <i
-                                                            data-lucide="chevron-up" class="w-4 h-4 ml-0.5"></i> </div>
+                                                    <div class="report-box__indicator  tooltip cursor-pointer"
+                                                        title="Higher than last month"><span><img src="/images/more.png" alt=""></span></div>
                                                 </div>
                                             </div>
                                             <div class="text-3xl font-medium leading-8 mt-6">10</div>
@@ -475,13 +416,12 @@ License: You must have a valid license purchased only from themeforest(the above
                                             <div class="flex">
                                                 <i data-lucide="user" class="report-box__icon text-success"></i>
                                                 <div class="ml-auto">
-                                                    <div class="report-box__indicator bg-success tooltip cursor-pointer"
-                                                        title="22% Higher than last month"> 22% <i
-                                                            data-lucide="chevron-up" class="w-4 h-4 ml-0.5"></i> </div>
+                                                    <div class="report-box__indicator  tooltip cursor-pointer"
+                                                        title="Higher than last month"> <span><img src="/images/more.png" alt=""></span> </div>
                                                 </div>
                                             </div>
-                                            <div class="text-3xl font-medium leading-8 mt-6">152.040</div>
-                                            <div class="text-base text-slate-800 mt-1">Unique Visitor</div>
+                                            <div class="text-3xl font-medium leading-8 mt-6">152</div>
+                                            <div class="text-base text-slate-800 mt-1">Unique User</div>
                                         </div>
                                     </div>
                                 </div>
@@ -489,10 +429,10 @@ License: You must have a valid license purchased only from themeforest(the above
                         </div>
                         <!-- END: General Report -->
                         <!-- BEGIN: Sales Report -->
-                        <!-- <div class="col-span-12 lg:col-span-6 mt-8">
+                        <div class="col-span-12 lg:col-span-6 mt-8">
                             <div class="intro-y block sm:flex items-center h-10">
                                 <h2 class="text-lg font-medium truncate mr-5">
-                                    Sales Report
+                                    Datasets Report
                                 </h2>
                                 <div class="sm:ml-auto mt-3 sm:mt-0 relative text-slate-500">
                                     <i data-lucide="calendar" class="w-4 h-4 z-10 absolute my-auto inset-y-0 ml-3 left-0"></i> 
@@ -531,10 +471,10 @@ License: You must have a valid license purchased only from themeforest(the above
                                     </div>
                                 </div>
                             </div>
-                        </div> -->
+                        </div>
                         <!-- END: Sales Report -->
                         <!-- BEGIN: Weekly Top Seller -->
-                        <!-- <div class="col-span-12 sm:col-span-6 lg:col-span-3 mt-8">
+                        <div class="col-span-12 sm:col-span-6 lg:col-span-3 mt-8">
                             <div class="intro-y flex items-center h-10">
                                 <h2 class="text-lg font-medium truncate mr-5">
                                     Weekly Top Seller
@@ -562,13 +502,13 @@ License: You must have a valid license purchased only from themeforest(the above
                                     </div>
                                 </div>
                             </div>
-                        </div> -->
+                        </div>
                         <!-- END: Weekly Top Seller -->
                         <!-- BEGIN: Sales Report -->
-                        <!-- <div class="col-span-12 sm:col-span-6 lg:col-span-3 mt-8">
+                        <div class="col-span-12 sm:col-span-6 lg:col-span-3 mt-8">
                             <div class="intro-y flex items-center h-10">
                                 <h2 class="text-lg font-medium truncate mr-5">
-                                    Sales Report
+                                    Datasets Report
                                 </h2>
                                 <a href="" class="ml-auto text-primary truncate">Show More</a> 
                             </div>
@@ -593,7 +533,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                     </div>
                                 </div>
                             </div>
-                        </div> -->
+                        </div>
                         <!-- END: Sales Report -->
                         <!-- BEGIN: Official Store -->
 
@@ -603,6 +543,107 @@ License: You must have a valid license purchased only from themeforest(the above
             </div>
             <!-- END: Content -->
         </div>
+
+
+
+
+        <script>
+            // Wait for the DOM to be loaded before running the script
+            document.addEventListener('DOMContentLoaded', function() {
+                // Assuming your "My Projects" link has an id of "myProjectsLink"
+                var myProjectsLink = document.querySelector('a[href="/myProjects"]');
+            
+                if (myProjectsLink) {
+                    myProjectsLink.addEventListener('click', function(e) {
+                        // Prevent the default link behavior
+                        e.preventDefault();
+            
+                        // Get the uid from local storage
+                        var uid = localStorage.getItem('userId');
+            
+                        if (uid) {
+                            // Redirect to the desired URL with the uid
+                            window.location.href = `/myProjects?userId=${uid}`;
+                        } else {
+                            // Handle the case where uid is not found, maybe redirect to login or show an error
+                            console.error('UID not found. Please log in.');
+                        }
+                    });
+                }
+            });
+            </script>
+
+
+
+
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    console.log("called")
+                // Retrieve the user ID from local storage or a global variable
+                const userId = localStorage.getItem('userId'); // or any other source for the userId
+
+                // API endpoint that returns the user projects
+                const apiUrl = `http://localhost:3000/projects/getUserProject/${userId}`;
+
+                fetch(apiUrl)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok ' + response.statusText);
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                // Assuming the API returns a response where data contains an array of projects
+                updateProjectCount(data.result.totalProjects); // or data.projects.length if projects is a property
+                console.log(data.result.totalProjects,"eesult")
+            })
+            .catch(error => {
+                console.error('There was an error fetching the user projects:', error);
+                });
+
+                function updateProjectCount(count) {
+                    // Select the element that holds the project count and update its text
+                    const projectCountElement = document.querySelector('.box .text-3xl');
+                    if (projectCountElement) {
+                        projectCountElement.textContent = count;
+                    }
+                }
+            });
+
+            </script>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    // Assuming you have the user ID stored somewhere, like localStorage
+    const userId = localStorage.getItem('userId');
+
+    const apiUrl = `http://localhost:3000/projects/getDatasets/${userId}`;
+
+    fetch(apiUrl)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+            return response.json();
+        })
+        .then(data => {
+            updateDatasetsCount(data.result.totalDatasets);
+        })
+        .catch(error => {
+            console.error('There was an error fetching the datasets count:', error);
+        });
+
+    function updateDatasetsCount(count) {
+        const datasetsCountElement = document.getElementById('dataset_id');
+        if (datasetsCountElement) {
+            datasetsCountElement.textContent = count;
+        }
+    }
+});
+
+</script>
+            
 
 
         <!-- BEGIN: JS Assets-->
