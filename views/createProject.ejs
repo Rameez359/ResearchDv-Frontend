@@ -1,812 +1,425 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Research Dv</title>
-  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-  <style>
-    body{
-        font-family: 'circular';
-    }
-    .selected {
-      border-color: purple;
-      border: 2px solid purple
-    }
-    .project{
-        background-color: #17d0d9 !important;
-        margin-top: 30px;
-    }
-    .project:hover{
-        background-color: #096166 !important;
-    }
-  </style>
-</head>
-<body>
-  <header class="bg-gray-800 flex justify-between items-center p-4">
-    <h1 class="text-white text-3xl font-bold">AI MultiModel</h1>
-  </header>
-  <main class="container mx-auto px-4 py-10">
-    <h2 class="text-3xl font-bold text-gray-800 mb-4">Let's create your project.</h2>
-    <div class="flex flex-col md:flex-row md:space-x-4">
-      <div class="w-full md:w-1/2 px-4 py-4 border border-gray-200 rounded-md">
-        <label for="project-name" class="block text-sm font-medium text-gray-700 mb-2">Project Name</label>
-        <input type="text" id="project-name" class="block w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-1 focus:ring-orange-500">
-      </div>
-    </div>
-    <h3 class="text-2xl font-bold text-gray-800 mt-8 mb-4">Project Type</h3>
-    <div class="grid grid-cols-2 gap-4 md:grid-cols-3">
-      <div class="p-4 bg-gray-100 hover:bg-gray-200 rounded-md flex items-center justify-center cursor-pointer section">
-        <div class="flex flex-col">
-          <img src="./images/1.png" alt="Object Detection Image" class=" mb-2">
-          <span class="text-orange-500 text-xl font-bold">Object Detection</span>
-          <p class="text-sm text-gray-700 ">Identify objects and their positions with bounding boxes.</p>
-        </div>
-      </div>
-      <div class="p-4 bg-gray-100 hover:bg-gray-200 rounded-md flex items-center justify-center cursor-pointer section">
-        <div class="flex flex-col">
-          <img src="./images/2.png" alt="Classification Image" class=" mb-2">
-          <span class="text-orange-500 text-xl font-bold">Classification</span>
-          <p class="text-sm text-gray-700 ">Assign labels to the entire image.</p>
-        </div>
-      </div>
-      <div class="p-4 bg-gray-100 hover:bg-gray-200 rounded-md flex items-center justify-center cursor-pointer section">
-        <div class="flex flex-col">
-          <img src="./images/3.png" alt="Instance Segmentation Image" class=" mb-2">
-          <span class="text-orange-500 text-xl font-bold">Instance Segmentation</span>
-          <p class="text-sm text-gray-700 ">Detect multiple objects and their actual shape.</p>
-        </div>
-      </div>
-    </div>
-    <div class="flex justify-center">
-        <button id="create-project" class="project px-4 py-2 text-white rounded">Create Project</button>
-      </div>
-  </main>
-  <script>
-    // Get all the elements with the class "section" and add event listeners to them
-    const sections = document.querySelectorAll('.section');
-    let selectedProjectName = "";
-    let selectedProjectType = "";
-
-    // Loop through each section
-    sections.forEach(section => {
-      // Add a click event listener
-      section.addEventListener('click', function() {
-        // Remove the "selected" class from all sections
-        sections.forEach(s => s.classList.remove('selected'));
-        // Add the "selected" class to the clicked section
-        this.classList.add('selected');
-        // Set the selected project type
-        selectedProjectType = this.querySelector('span').textContent;
-      });
-    });
-
-    // Add event listener to the "Create Project" button
-    document.getElementById('create-project').addEventListener('click', function() {
-      // Get the project name
-      selectedProjectName = document.getElementById('project-name').value;
-
-      // Validate project name and type
-      if(selectedProjectName && selectedProjectType) {
-        // Prepare data to send
-        const userId = localStorage.getItem('userId'); 
-        const data = {
-          userId:userId,
-          projectName: selectedProjectName,
-          projectType: selectedProjectType
-        };
-        
-        console.log(data)
-
-        // Send data to API
-        fetch('http://localhost:3000/projects/postProject', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(data)
-          
-        })
-        .then(response => {
-          if (!response.ok) {
-            throw new Error('Network response was not ok');
-          }
-          return response.json();
-        })
-        .then(data => {
-          console.log('API response:', data);
-          // Reset the selected project name and type
-          selectedProjectName = "";
-          selectedProjectType = "";
-          // Reset the input field and selected section
-          document.getElementById('project-name').value = "";
-          sections.forEach(s => s.classList.remove('selected'));
-          console.log(`insertedId: ${data.result.insertedId}`);
-          localStorage.setItem('currentProjectId',`${data.result.insertedId}`)
-          window.location.href = '../Source/dashboard.html';
-
-        })
-        .catch(error => {
-          console.error('There was an error!', error);
-          alert('An error occurred while creating the project.');
-        });
-      } else {
-        alert("Please enter a project name and select a project type.");
-      }
-     
-    });
-  </script>
-</body>
-</html> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
-<!--
-Template Name: Tinker - HTML Admin Dashboard Template
-Author: Left4code
-Website: http://www.left4code.com/
-Contact: muhammadrizki@left4code.com
-Purchase: https://themeforest.net/user/left4code/portfolio
-Renew Support: https://themeforest.net/user/left4code/portfolio
-License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
--->
 <html lang="en" class="dark">
-<!-- BEGIN: Head -->
+  <!-- BEGIN: Head -->
 
-<head>
-    <meta charset="utf-8">
-    <link href="dist/images/logo.svg" rel="shortcut icon">
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description"
-        content="Tinker admin is super flexible, powerful, clean & modern responsive tailwind admin template with unlimited possibilities.">
-    <meta name="keywords"
-        content="admin template, Tinker Admin Template, dashboard template, flat admin template, responsive admin template, web app">
-    <meta name="author" content="LEFT4CODE">
+  <head>
+    <meta charset="utf-8" />
+    <link href="dist/images/logo.svg" rel="shortcut icon" />
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Tinker admin is super flexible, powerful, clean & modern responsive tailwind admin template with unlimited possibilities."
+    />
+    <meta
+      name="keywords"
+      content="admin template, Tinker Admin Template, dashboard template, flat admin template, responsive admin template, web app"
+    />
+    <meta name="author" content="LEFT4CODE" />
     <title>Research Dv</title>
     <!-- BEGIN: CSS Assets-->
     <link rel="stylesheet" href="dist/css/app.css" />
     <!-- END: CSS Assets-->
-</head>
-<!-- END: Head -->
-<style>
+  </head>
+  <!-- END: Head -->
+  <style>
     body {
-        font-family: 'circular';
+      font-family: "circular";
     }
 
     .selected {
-        /* border-color: purple !important;
+      /* border-color: purple !important;
          border: 2px solid purple !important; */
-        /* border: 4px solid #2fcd24 !important */
-        border: 3px solid rgb(74 90 121) !important;
-        background-color: rgb(168, 188, 236);
+      /* border: 4px solid #2fcd24 !important */
+      border: 3px solid rgb(74 90 121) !important;
+      background-color: rgb(168, 188, 236);
     }
 
     .project {
-        background-color: #10acb4 !important;
-        margin-top: 30px;
+      background-color: #10acb4 !important;
+      margin-top: 30px;
     }
 
     .project:hover {
-        background-color: #096166 !important;
+      background-color: #096166 !important;
     }
-</style>
+  </style>
 
-<body class="py-5 md:py-0 bg-black/[0.15] dark:bg-transparent">
+  <body class="py-5 md:py-0 bg-black/[0.15] dark:bg-transparent">
     <!-- BEGIN: Mobile Menu -->
     <div class="mobile-menu md:hidden">
-        <div class="mobile-menu-bar">
-            <a href="" class="flex mr-auto">
-                <img alt="Midone - HTML Admin Template" class="w-6" src="dist/images/logo.svg">
+      <div class="mobile-menu-bar">
+        <a href="" class="flex mr-auto">
+          <img
+            alt="Midone - HTML Admin Template"
+            class="w-6"
+            src="dist/images/logo.svg"
+          />
+        </a>
+        <a href="javascript:;" class="mobile-menu-toggler">
+          <i
+            data-lucide="bar-chart-2"
+            class="w-8 h-8 text-white transform -rotate-90"
+          ></i>
+        </a>
+      </div>
+      <div class="scrollable">
+        <a href="javascript:;" class="mobile-menu-toggler">
+          <i
+            data-lucide="x-circle"
+            class="w-8 h-8 text-white transform -rotate-90"
+          ></i>
+        </a>
+        <ul class="scrollable__content py-2">
+          <li>
+            <a href="/dashboard" class="menu menu--active">
+              <div class="menu__icon"><i data-lucide="home"></i></div>
+              <div class="menu__title">
+                Dashboard
+                <i
+                  data-lucide="chevron-down"
+                  class="menu__sub-icon transform rotate-180"
+                ></i>
+              </div>
             </a>
-            <a href="javascript:;" class="mobile-menu-toggler"> <i data-lucide="bar-chart-2"
-                    class="w-8 h-8 text-white transform -rotate-90"></i> </a>
-        </div>
-        <div class="scrollable">
-            <a href="javascript:;" class="mobile-menu-toggler"> <i data-lucide="x-circle"
-                    class="w-8 h-8 text-white transform -rotate-90"></i> </a>
-            <ul class="scrollable__content py-2">
-                <li>
-                    <a href="/dashboard" class="menu menu--active">
-                        <div class="menu__icon"> <i data-lucide="home"></i> </div>
-                        <div class="menu__title"> Dashboard <i data-lucide="chevron-down"
-                                class="menu__sub-icon transform rotate-180"></i> </div>
-                    </a>
-                    <ul class="menu__sub-open">
-                        <li>
-                            <a href="side-menu-dark-dashboard-overview-1.html" class="menu">
-                                <div class="menu__icon"> <i data-lucide="activity"></i> </div>
-                                <div class="menu__title"> Overview 1 </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="side-menu-dark-dashboard-overview-2.html" class="menu">
-                                <div class="menu__icon"> <i data-lucide="activity"></i> </div>
-                                <div class="menu__title"> Overview 2 </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="side-menu-dark-dashboard-overview-3.html" class="menu">
-                                <div class="menu__icon"> <i data-lucide="activity"></i> </div>
-                                <div class="menu__title"> Overview 3 </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="side-menu-dark-dashboard-overview-4.html" class="menu">
-                                <div class="menu__icon"> <i data-lucide="activity"></i> </div>
-                                <div class="menu__title"> Overview 4 </div>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
+            <ul class="menu__sub-open">
+              <li>
+                <a href="side-menu-dark-dashboard-overview-1.html" class="menu">
+                  <div class="menu__icon"><i data-lucide="activity"></i></div>
+                  <div class="menu__title">Overview 1</div>
+                </a>
+              </li>
+              <li>
+                <a href="side-menu-dark-dashboard-overview-2.html" class="menu">
+                  <div class="menu__icon"><i data-lucide="activity"></i></div>
+                  <div class="menu__title">Overview 2</div>
+                </a>
+              </li>
+              <li>
+                <a href="side-menu-dark-dashboard-overview-3.html" class="menu">
+                  <div class="menu__icon"><i data-lucide="activity"></i></div>
+                  <div class="menu__title">Overview 3</div>
+                </a>
+              </li>
+              <li>
+                <a href="side-menu-dark-dashboard-overview-4.html" class="menu">
+                  <div class="menu__icon"><i data-lucide="activity"></i></div>
+                  <div class="menu__title">Overview 4</div>
+                </a>
+              </li>
             </ul>
-        </div>
+          </li>
+        </ul>
+      </div>
     </div>
     <!-- END: Mobile Menu -->
     <div class="flex mt-[4.7rem] md:mt-0 overflow-hidden">
-        <!-- BEGIN: Side Menu -->
-        <%- include('./navBar') %>
+      <!-- BEGIN: Side Menu -->
+      <%- include('./components/navBar') %>
 
-        <!-- END: Side Menu -->
-        <!-- BEGIN: Content -->
-        <div style="background: #f1f5f9;" class="content">
-            <!-- BEGIN: Top Bar -->
-            <div class="top-bar -mx-4 px-4 md:mx-0 md:px-0">
-                <!-- BEGIN: Breadcrumb -->
-                <nav style="font-size: 26px;" aria-label="breadcrumb" class="-intro-x mr-auto hidden sm:flex">
-                </nav>
-                <!-- END: Breadcrumb -->
-                <!-- BEGIN: Toast -->
-                <div id="toast-warning"
-                    class="invisible fixed right-4 z-50 flex items-center w-full max-w-xs p-4 text-gray-500 bg-red-500 rounded-lg shadow dark:text-gray-400 dark:bg-gray-800"
-                    role="alert">
-                    <div
-                        class="inline-flex items-center justify-center flex-shrink-0 w-10 h-8 text-orange-500 bg-white-100 rounded-lg dark:bg-orange-700 dark:text-orange-200">
-                        <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="orange"
-                            viewBox="0 0 20 20">
-                            <path
-                                d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM10 15a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm1-4a1 1 0 0 1-2 0V6a1 1 0 0 1 2 0v5Z" />
-                        </svg>
-                        <span class="sr-only">Warning icon</span>
-                    </div>
-                    <div class="ms-3 text-sm font-normal text-white">Please enter a project name and select a project type.</div>
-                    <button id="close" type="button"
-                        class="ms-auto -mx-1.5 -my-1.5 text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex items-center justify-center h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700"
-                        data-dismiss-target="#toast-warning" aria-label="Close">
-                        <span class="sr-only">Close</span>
-                        <svg class="w-3 h-3 text-white hover:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                            viewBox="0 0 14 14">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-                        </svg>
-                    </button>
-                </div>
-                <!-- END: Toast -->
-                <!-- BEGIN: Search -->
-                <!-- <div class="intro-x relative mr-3 sm:mr-6">
-                    <div class="search hidden sm:block">
-                        <input type="text" class="search__input form-control border-transparent"
-                            placeholder="Search...">
-                        <i data-lucide="search" class="search__icon dark:text-slate-500"></i>
-                    </div>
-                    <a class="notification sm:hidden" href=""> <i data-lucide="search"
-                            class="notification__icon dark:text-slate-500"></i> </a>
-                    <div class="search-result">
-                        <div class="search-result__content">
-                            <div class="search-result__content__title">Pages</div>
-                            <div class="mb-5">
-                                <a href="" class="flex items-center">
-                                    <div
-                                        class="w-8 h-8 bg-success/20 dark:bg-success/10 text-success flex items-center justify-center rounded-full">
-                                        <i class="w-4 h-4" data-lucide="inbox"></i>
-                                    </div>
-                                    <div class="ml-3">Mail Settings</div>
-                                </a>
-                                <a href="" class="flex items-center mt-2">
-                                    <div
-                                        class="w-8 h-8 bg-pending/10 text-pending flex items-center justify-center rounded-full">
-                                        <i class="w-4 h-4" data-lucide="users"></i>
-                                    </div>
-                                    <div class="ml-3">Users & Permissions</div>
-                                </a>
-                                <a href="" class="flex items-center mt-2">
-                                    <div
-                                        class="w-8 h-8 bg-primary/10 dark:bg-primary/20 text-primary/80 flex items-center justify-center rounded-full">
-                                        <i class="w-4 h-4" data-lucide="credit-card"></i>
-                                    </div>
-                                    <div class="ml-3">Transactions Report</div>
-                                </a>
-                            </div>
-                            <div class="search-result__content__title">Users</div>
-                            <div class="mb-5">
-                                <a href="" class="flex items-center mt-2">
-                                    <div class="w-8 h-8 image-fit">
-                                        <img alt="Midone - HTML Admin Template" class="rounded-full"
-                                            src="dist/images/profile-15.jpg">
-                                    </div>
-                                    <div class="ml-3">Leonardo DiCaprio</div>
-                                    <div class="ml-auto w-48 truncate text-slate-500 text-xs text-right">
-                                        leonardodicaprio@left4code.com</div>
-                                </a>
-                                <a href="" class="flex items-center mt-2">
-                                    <div class="w-8 h-8 image-fit">
-                                        <img alt="Midone - HTML Admin Template" class="rounded-full"
-                                            src="dist/images/profile-7.jpg">
-                                    </div>
-                                    <div class="ml-3">Brad Pitt</div>
-                                    <div class="ml-auto w-48 truncate text-slate-500 text-xs text-right">
-                                        bradpitt@left4code.com</div>
-                                </a>
-                                <a href="" class="flex items-center mt-2">
-                                    <div class="w-8 h-8 image-fit">
-                                        <img alt="Midone - HTML Admin Template" class="rounded-full"
-                                            src="dist/images/profile-14.jpg">
-                                    </div>
-                                    <div class="ml-3">Al Pacino</div>
-                                    <div class="ml-auto w-48 truncate text-slate-500 text-xs text-right">
-                                        alpacino@left4code.com</div>
-                                </a>
-                                <a href="" class="flex items-center mt-2">
-                                    <div class="w-8 h-8 image-fit">
-                                        <img alt="Midone - HTML Admin Template" class="rounded-full"
-                                            src="dist/images/profile-13.jpg">
-                                    </div>
-                                    <div class="ml-3">Angelina Jolie</div>
-                                    <div class="ml-auto w-48 truncate text-slate-500 text-xs text-right">
-                                        angelinajolie@left4code.com</div>
-                                </a>
-                            </div>
-                            <div class="search-result__content__title">Products</div>
-                            <a href="" class="flex items-center mt-2">
-                                <div class="w-8 h-8 image-fit">
-                                    <img alt="Midone - HTML Admin Template" class="rounded-full"
-                                        src="dist/images/preview-15.jpg">
-                                </div>
-                                <div class="ml-3">Sony Master Series A9G</div>
-                                <div class="ml-auto w-48 truncate text-slate-500 text-xs text-right">Electronic</div>
-                            </a>
-                            <a href="" class="flex items-center mt-2">
-                                <div class="w-8 h-8 image-fit">
-                                    <img alt="Midone - HTML Admin Template" class="rounded-full"
-                                        src="dist/images/preview-5.jpg">
-                                </div>
-                                <div class="ml-3">Samsung Q90 QLED TV</div>
-                                <div class="ml-auto w-48 truncate text-slate-500 text-xs text-right">Electronic</div>
-                            </a>
-                            <a href="" class="flex items-center mt-2">
-                                <div class="w-8 h-8 image-fit">
-                                    <img alt="Midone - HTML Admin Template" class="rounded-full"
-                                        src="dist/images/preview-10.jpg">
-                                </div>
-                                <div class="ml-3">Samsung Galaxy S20 Ultra</div>
-                                <div class="ml-auto w-48 truncate text-slate-500 text-xs text-right">Smartphone &amp;
-                                    Tablet</div>
-                            </a>
-                            <a href="" class="flex items-center mt-2">
-                                <div class="w-8 h-8 image-fit">
-                                    <img alt="Midone - HTML Admin Template" class="rounded-full"
-                                        src="dist/images/preview-8.jpg">
-                                </div>
-                                <div class="ml-3">Sony Master Series A9G</div>
-                                <div class="ml-auto w-48 truncate text-slate-500 text-xs text-right">Electronic</div>
-                            </a>
-                        </div>
-                    </div>
-                </div> -->
-                <!-- END: Search -->
-                <!-- BEGIN: Notifications -->
-                <!-- <div class="intro-x dropdown mr-auto sm:mr-6">
-                    <div class="dropdown-toggle notification notification--bullet cursor-pointer" role="button"
-                        aria-expanded="false" data-tw-toggle="dropdown"> <i data-lucide="bell"
-                            class="notification__icon dark:text-slate-500"></i> </div>
-                    <div class="notification-content pt-2 dropdown-menu">
-                        <div class="notification-content__box dropdown-content">
-                            <div class="notification-content__title">Notifications</div>
-                            <div class="cursor-pointer relative flex items-center ">
-                                <div class="w-12 h-12 flex-none image-fit mr-1">
-                                    <img alt="Midone - HTML Admin Template" class="rounded-full"
-                                        src="dist/images/profile-15.jpg">
-                                    <div
-                                        class="w-3 h-3 bg-success absolute right-0 bottom-0 rounded-full border-2 border-white dark:border-darkmode-600">
-                                    </div>
-                                </div>
-                                <div class="ml-2 overflow-hidden">
-                                    <div class="flex items-center">
-                                        <a href="javascript:;" class="font-medium truncate mr-5">Leonardo DiCaprio</a>
-                                        <div class="text-xs text-slate-400 ml-auto whitespace-nowrap">06:05 AM</div>
-                                    </div>
-                                    <div class="w-full truncate text-slate-500 mt-0.5">There are many variations of
-                                        passages of Lorem Ipsum available, but the majority have suffered alteration in
-                                        some form, by injected humour, or randomi</div>
-                                </div>
-                            </div>
-                            <div class="cursor-pointer relative flex items-center mt-5">
-                                <div class="w-12 h-12 flex-none image-fit mr-1">
-                                    <img alt="Midone - HTML Admin Template" class="rounded-full"
-                                        src="dist/images/profile-7.jpg">
-                                    <div
-                                        class="w-3 h-3 bg-success absolute right-0 bottom-0 rounded-full border-2 border-white dark:border-darkmode-600">
-                                    </div>
-                                </div>
-                                <div class="ml-2 overflow-hidden">
-                                    <div class="flex items-center">
-                                        <a href="javascript:;" class="font-medium truncate mr-5">Brad Pitt</a>
-                                        <div class="text-xs text-slate-400 ml-auto whitespace-nowrap">05:09 AM</div>
-                                    </div>
-                                    <div class="w-full truncate text-slate-500 mt-0.5">Contrary to popular belief, Lorem
-                                        Ipsum is not simply random text. It has roots in a piece of classical Latin
-                                        literature from 45 BC, making it over 20</div>
-                                </div>
-                            </div>
-                            <div class="cursor-pointer relative flex items-center mt-5">
-                                <div class="w-12 h-12 flex-none image-fit mr-1">
-                                    <img alt="Midone - HTML Admin Template" class="rounded-full"
-                                        src="dist/images/profile-14.jpg">
-                                    <div
-                                        class="w-3 h-3 bg-success absolute right-0 bottom-0 rounded-full border-2 border-white dark:border-darkmode-600">
-                                    </div>
-                                </div>
-                                <div class="ml-2 overflow-hidden">
-                                    <div class="flex items-center">
-                                        <a href="javascript:;" class="font-medium truncate mr-5">Al Pacino</a>
-                                        <div class="text-xs text-slate-400 ml-auto whitespace-nowrap">05:09 AM</div>
-                                    </div>
-                                    <div class="w-full truncate text-slate-500 mt-0.5">It is a long established fact
-                                        that a reader will be distracted by the readable content of a page when looking
-                                        at its layout. The point of using Lorem </div>
-                                </div>
-                            </div>
-                            <div class="cursor-pointer relative flex items-center mt-5">
-                                <div class="w-12 h-12 flex-none image-fit mr-1">
-                                    <img alt="Midone - HTML Admin Template" class="rounded-full"
-                                        src="dist/images/profile-13.jpg">
-                                    <div
-                                        class="w-3 h-3 bg-success absolute right-0 bottom-0 rounded-full border-2 border-white dark:border-darkmode-600">
-                                    </div>
-                                </div>
-                                <div class="ml-2 overflow-hidden">
-                                    <div class="flex items-center">
-                                        <a href="javascript:;" class="font-medium truncate mr-5">Angelina Jolie</a>
-                                        <div class="text-xs text-slate-400 ml-auto whitespace-nowrap">05:09 AM</div>
-                                    </div>
-                                    <div class="w-full truncate text-slate-500 mt-0.5">Contrary to popular belief, Lorem
-                                        Ipsum is not simply random text. It has roots in a piece of classical Latin
-                                        literature from 45 BC, making it over 20</div>
-                                </div>
-                            </div>
-                            <div class="cursor-pointer relative flex items-center mt-5">
-                                <div class="w-12 h-12 flex-none image-fit mr-1">
-                                    <img alt="Midone - HTML Admin Template" class="rounded-full"
-                                        src="dist/images/profile-2.jpg">
-                                    <div
-                                        class="w-3 h-3 bg-success absolute right-0 bottom-0 rounded-full border-2 border-white dark:border-darkmode-600">
-                                    </div>
-                                </div>
-                                <div class="ml-2 overflow-hidden">
-                                    <div class="flex items-center">
-                                        <a href="javascript:;" class="font-medium truncate mr-5">Brad Pitt</a>
-                                        <div class="text-xs text-slate-400 ml-auto whitespace-nowrap">01:10 PM</div>
-                                    </div>
-                                    <div class="w-full truncate text-slate-500 mt-0.5">It is a long established fact
-                                        that a reader will be distracted by the readable content of a page when looking
-                                        at its layout. The point of using Lorem </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-                <!-- END: Notifications -->
-                <!-- BEGIN: Account Menu -->
-                <div class="intro-x dropdown w-8 h-8">
-                    <div class="dropdown-toggle w-8 h-8 rounded-full overflow-hidden shadow-lg image-fit zoom-in"
-                        role="button" aria-expanded="false" data-tw-toggle="dropdown">
-                        <img alt="Midone - HTML Admin Template" src="./images/profile-icon.png">
-                    </div>
-                    <div class="dropdown-menu w-56">
-                        <ul class="dropdown-content bg-primary text-white">
-                            <li class="p-2">
-                                <div class="font-medium">Username</div>
-                                <div class="text-xs text-white/70 mt-0.5 dark:text-slate-500">Title</div>
-                            </li>
-                            <li>
-                                <hr class="dropdown-divider border-white/[0.08]">
-                            </li>
-                            <li>
-                                <a href="" class="dropdown-item hover:bg-white/5"> <i data-lucide="user"
-                                        class="w-4 h-4 mr-2"></i> Profile </a>
-                            </li>
-                            <!-- <li>
-                                <a href="" class="dropdown-item hover:bg-white/5"> <i data-lucide="edit"
-                                        class="w-4 h-4 mr-2"></i> Add Account </a>
-                            </li> -->
-                            <li>
-                                <a href="" class="dropdown-item hover:bg-white/5"> <i data-lucide="lock"
-                                        class="w-4 h-4 mr-2"></i> Reset Password </a>
-                            </li>
-                            <!-- <li>
-                                <a href="" class="dropdown-item hover:bg-white/5"> <i data-lucide="help-circle"
-                                        class="w-4 h-4 mr-2"></i> Help </a>
-                            </li> -->
-                            <li>
-                                <hr class="dropdown-divider border-white/[0.08]">
-                            </li>
-                            <li>
-                                <a href="/" class="dropdown-item hover:bg-white/5"> <i data-lucide="toggle-right"
-                                        class="w-4 h-4 mr-2"></i> Logout </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- END: Account Menu -->
+      <!-- END: Side Menu -->
+      <!-- BEGIN: Content -->
+      <div style="background: #f1f5f9" class="content">
+        <!-- BEGIN: Top Bar -->
+        <div class="top-bar -mx-4 px-4 md:mx-0 md:px-0">
+          <!-- BEGIN: Breadcrumb -->
+          <nav
+            style="font-size: 26px"
+            aria-label="breadcrumb"
+            class="-intro-x mr-auto hidden sm:flex"
+          ></nav>
+          <!-- END: Breadcrumb -->
+          <!-- BEGIN: Toast -->
+          <div
+            id="toast-warning"
+            class="invisible fixed right-4 z-50 flex items-center w-full max-w-xs p-4 text-gray-500 bg-red-500 rounded-lg shadow dark:text-gray-400 dark:bg-gray-800"
+            role="alert"
+          >
+            <div
+              class="inline-flex items-center justify-center flex-shrink-0 w-10 h-8 text-orange-500 bg-white-100 rounded-lg dark:bg-orange-700 dark:text-orange-200"
+            >
+              <svg
+                class="w-6 h-6"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="orange"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM10 15a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm1-4a1 1 0 0 1-2 0V6a1 1 0 0 1 2 0v5Z"
+                />
+              </svg>
+              <span class="sr-only">Warning icon</span>
             </div>
-            <!-- END: Top Bar -->
-            <div class=" gap-6">
-                <div class="col-span-12 2xl:col-span-9">
-                    <div class="">
-                        <!-- BEGIN: Notification -->
-
-                        <!-- BEGIN: Notification -->
-                        <!-- BEGIN: General Report -->
-                        <div class="col-span-12 lg:col-span-8 xl:col-span-6 mt-2">
-                            <div class="intro-y block  items-center h-10">
-                                <!-- <header class="bg-gray-800 flex justify-between items-center p-4">
-                                <h1 class="text-white text-3xl font-bold">AI MultiModel</h1>
-                              </header> -->
-                                <main class="container mx-auto px-4 py-10">
-                                    <h2 class="font-bold mr-5 text-2xl truncate text-slate-800">Create
-                                        Your Project</h2>
-                                    <div class="flex flex-col md:flex-row md:space-x-4">
-                                        <div class="w-full md:w-1/2 border rounded-md m-5">
-                                            <label for="project-name"
-                                                class="block text-sm font-medium text-slate-800 mb-2">Project
-                                                Name</label>
-                                            <input style="background-color: rgb(216, 225, 247);" type="text"
-                                                id="project-name" placeholder="Your Project name"
-                                                class="block w-full px-4 py-2 text-slate-800 text-sm rounded-md border border-gray-300 focus:outline-none focus:ring-1 focus:ring-orange-500">
-                                        </div>
-                                    </div>
-                                    <h3 class="font-bold mt-5 mb-5 text-2xl truncate text-slate-800">Project Type</h3>
-
-                                    <div class="gap-4 grid md:grid-cols-3">
-                                        <div
-                                            class="p-4 bg-gray-100  rounded-md flex items-center justify-center cursor-pointer section">
-                                            <div class="report-box zoom-in">
-                                                <div class="box p-5">
-                                                    <div
-                                                        class="p-4 rounded-md flex items-center justify-center cursor-pointer section">
-                                                        <div class="flex flex-col">
-                                                            <img class="rounded-md mb-4" src="./images/1.png"
-                                                                alt="Object Detection Image">
-                                                            <span class="text-slate-800 text-xl font-bold">Object
-                                                                Detection</span>
-                                                            <p class="text-sm text-slate-600 ">Identify objects and
-                                                                their
-                                                                positions
-                                                                with bounding boxes.</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div
-                                            class="p-4 bg-gray-100  rounded-md flex items-center justify-center cursor-pointer section">
-                                            <div class="report-box zoom-in">
-                                                <div class="box p-5">
-                                                    <div
-                                                        class="p-4 rounded-md flex items-center justify-center cursor-pointer section">
-                                                        <div class="flex flex-col">
-                                                            <img class="rounded-md mb-4" src="./images/2.png"
-                                                                alt="Classification Image">
-                                                            <span
-                                                                class="text-slate-800 text-xl font-bold">Classification</span>
-                                                            <p class="text-sm text-slate-600">Assign labels to the
-                                                                entire image and make the predictions accurately.</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div
-                                            class="p-4 bg-gray-100  rounded-md flex items-center justify-center cursor-pointer section">
-                                            <div class="report-box zoom-in">
-                                                <div class="box p-5">
-                                                    <div
-                                                        class="p-4 rounded-md flex items-center justify-center cursor-pointer section">
-                                                        <div class="flex flex-col">
-                                                            <img class="rounded-md mb-4" src="./images/3.png"
-                                                                alt="Instance Segmentation Image">
-                                                            <span class="text-slate-800 text-xl font-bold">Instance
-                                                                Segmentation</span>
-                                                            <p class="text-sm text-slate-600 ">Detect multiple objects
-                                                                and their
-                                                                actual shape.</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- <div style="border: 4px solid white"
-                                            class="p-4 bg-gray-100  rounded-md flex items-center justify-center cursor-pointer section">
-                                            <div class="flex flex-col">
-                                                <img src="./images/1.png" alt="Object Detection Image" class=" mb-2">
-                                                <span class="text-black text-xl font-bold">Object Detection</span>
-                                                <p class="text-sm text-gray-700 ">Identify objects and their positions
-                                                    with bounding boxes.</p>
-                                            </div>
-                                        </div>
-                                        <div style="border: 4px solid white"
-                                            class="p-4 bg-gray-100  rounded-md flex items-center justify-center cursor-pointer section">
-                                            <div class="flex flex-col">
-                                                <img src="./images/2.png" alt="Classification Image" class=" mb-2">
-                                                <span class="text-black text-xl font-bold">Classification</span>
-                                                <p class="text-sm text-gray-700 ">Assign labels to the entire image.</p>
-                                            </div>
-                                        </div>
-                                        <div style="border: 4px solid white"
-                                            class="p-4 bg-gray-100  rounded-md flex items-center justify-center cursor-pointer section">
-                                            <div class="flex flex-col">
-                                                <img src="./images/3.png" alt="Instance Segmentation Image"
-                                                    class=" mb-2">
-                                                <span class="text-black text-xl font-bold">Instance Segmentation</span>
-                                                <p class="text-sm text-gray-700 ">Detect multiple objects and their
-                                                    actual shape.</p>
-                                            </div>
-                                        </div> -->
-                                    </div>
-                                    <div class="flex justify-center">
-                                        <button id="create-project" class="project px-4 py-2 text-white rounded">Create
-                                            Project</button>
-                                    </div>
-                                </main>
-                                <script>
-                                    // Get all the elements with the class "section" and add event listeners to them
-                                    const sections = document.querySelectorAll('.section');
-                                    let selectedProjectName = "";
-                                    let selectedProjectType = "";
-
-                                    // Loop through each section
-                                    sections.forEach(section => {
-                                        // Add a click event listener
-                                        section.addEventListener('click', function () {
-                                            // Remove the "selected" class from all sections
-                                            sections.forEach(s => s.classList.remove('selected'));
-                                            // Add the "selected" class to the clicked section
-                                            this.classList.add('selected');
-                                            // Set the selected project type
-                                            selectedProjectType = this.querySelector('span').textContent;
-                                        });
-                                    });
-
-                                    // Add event listener to the "Create Project" button
-                                    document.getElementById('create-project').addEventListener('click', function () {
-                                        // Get the project name
-                                        selectedProjectName = document.getElementById('project-name').value;
-
-                                        // Validate project name and type
-                                        if (selectedProjectName && selectedProjectType) {
-                                            // Prepare data to send
-                                            const userId = localStorage.getItem('userId');
-                                            const data = {
-                                                userId: userId,
-                                                projectName: selectedProjectName,
-                                                projectType: selectedProjectType
-                                            };
-
-                                            console.log(data)
-
-                                            // Send data to API
-                                            fetch('http://localhost:3000/projects/postProject', {
-                                                method: 'POST',
-                                                headers: {
-                                                    'Content-Type': 'application/json'
-                                                },
-                                                body: JSON.stringify(data)
-
-                                            })
-                                                .then(response => {
-                                                    if (!response.ok) {
-                                                        throw new Error('Network response was not ok');
-                                                    }
-                                                    return response.json();
-                                                })
-                                                .then(data => {
-                                                    console.log('API response:', data);
-                                                    // Reset the selected project name and type
-                                                    selectedProjectName = "";
-                                                    selectedProjectType = "";
-                                                    // Reset the input field and selected section
-                                                    document.getElementById('project-name').value = "";
-                                                    sections.forEach(s => s.classList.remove('selected'));
-                                                    console.log(`insertedId: ${data.result.insertedId}`);
-                                                    localStorage.setItem('currentProjectId', `${data.result.insertedId}`)
-                                                    window.location.href = '/datasets';
-
-                                                })
-                                                .catch(error => {
-                                                    console.error('There was an error!', error);
-                                                    alert('An error occurred while creating the project.');
-                                                });
-                                        } else {
-                                            const toastAlert = document.getElementById('toast-warning');
-
-                                            toastAlert.classList.remove('invisible');
-                                            //alert("Please enter a project name and select a project type.");
-                                        }
-
-                                    });
-                                </script>
-                            </div>
-
-
-                            <!-- END: General Report -->
-                            <!-- BEGIN: Visitors -->
-
-                            <!-- END: Users By Age -->
-                            <!-- BEGIN: Official Store -->
-
-                            <!-- END: Official Store -->
-                            <!-- BEGIN: Weekly Best Sellers -->
-
-                            <!-- END: Weekly Best Sellers -->
-                            <!-- BEGIN: Ads 1 -->
-
-                            <!-- END: Ads 1 -->
-                            <!-- BEGIN: Ads 2 -->
-
-                            <!-- END: Ads 2 -->
-                            <!-- BEGIN: Weekly Top Products -->
-
-                            <!-- END: Weekly Top Products -->
-                        </div>
-                    </div>
-
-                </div>
+            <div class="ms-3 text-sm font-normal text-white">
+              Please enter a project name and select a project type.
             </div>
-            <!-- END: Content -->
+            <button
+              id="close"
+              type="button"
+              class="ms-auto -mx-1.5 -my-1.5 text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex items-center justify-center h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700"
+              data-dismiss-target="#toast-warning"
+              aria-label="Close"
+            >
+              <span class="sr-only">Close</span>
+              <svg
+                class="w-3 h-3 text-white hover:text-gray-800"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 14 14"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+                />
+              </svg>
+            </button>
+          </div>
+          <%- include('./components/accounts') %>
+
+          <!-- END: Account Menu -->
         </div>
+        <!-- END: Top Bar -->
+        <div class="gap-6">
+          <div class="col-span-12 2xl:col-span-9">
+            <div class="">
+              <div class="col-span-12 lg:col-span-8 xl:col-span-6 mt-2">
+                <div class="intro-y block items-center h-10">
+                  <main class="container mx-auto px-4 py-10">
+                    <h2 class="font-bold mr-5 text-2xl truncate text-slate-800">
+                      Create Your Project
+                    </h2>
+                    <div class="flex flex-col md:flex-row md:space-x-4">
+                      <div class="w-full md:w-1/2 border rounded-md m-5">
+                        <label
+                          for="project-name"
+                          class="block text-sm font-medium text-slate-800 mb-2"
+                          >Project Name</label
+                        >
+                        <input
+                          style="background-color: rgb(216, 225, 247)"
+                          type="text"
+                          id="project-name"
+                          placeholder="Your Project name"
+                          class="block w-full px-4 py-2 text-slate-800 text-sm rounded-md border border-gray-300 focus:outline-none focus:ring-1 focus:ring-orange-500"
+                        />
+                      </div>
+                    </div>
+                    <h3
+                      class="font-bold mt-5 mb-5 text-2xl truncate text-slate-800"
+                    >
+                      Project Type
+                    </h3>
 
+                    <div class="gap-4 grid md:grid-cols-3">
+                      <div
+                        class="p-4 bg-gray-100 rounded-md flex items-center justify-center cursor-pointer section"
+                      >
+                        <div class="report-box zoom-in">
+                          <div class="box p-5">
+                            <div
+                              class="p-4 rounded-md flex items-center justify-center cursor-pointer section"
+                            >
+                              <div class="flex flex-col">
+                                <img
+                                  class="rounded-md mb-4"
+                                  src="./images/1.png"
+                                  alt="Object Detection Image"
+                                />
+                                <span class="text-slate-800 text-xl font-bold"
+                                  >Object Detection</span
+                                >
+                                <p class="text-sm text-slate-600">
+                                  Identify objects and their positions with
+                                  bounding boxes.
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
 
-        <!-- BEGIN: JS Assets-->
-        <script>
-            const closeBtn = document.getElementById('close');
-            closeBtn.addEventListener("click", function () {
-                document.getElementById('toast-warning').classList.add('invisible');
-            });
-        </script>
-        <script
+                      <div
+                        class="p-4 bg-gray-100 rounded-md flex items-center justify-center cursor-pointer section"
+                      >
+                        <div class="report-box zoom-in">
+                          <div class="box p-5">
+                            <div
+                              class="p-4 rounded-md flex items-center justify-center cursor-pointer section"
+                            >
+                              <div class="flex flex-col">
+                                <img
+                                  class="rounded-md mb-4"
+                                  src="./images/2.png"
+                                  alt="Classification Image"
+                                />
+                                <span class="text-slate-800 text-xl font-bold"
+                                  >Classification</span
+                                >
+                                <p class="text-sm text-slate-600">
+                                  Assign labels to the entire image and make the
+                                  predictions accurately.
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div
+                        class="p-4 bg-gray-100 rounded-md flex items-center justify-center cursor-pointer section"
+                      >
+                        <div class="report-box zoom-in">
+                          <div class="box p-5">
+                            <div
+                              class="p-4 rounded-md flex items-center justify-center cursor-pointer section"
+                            >
+                              <div class="flex flex-col">
+                                <img
+                                  class="rounded-md mb-4"
+                                  src="./images/3.png"
+                                  alt="Instance Segmentation Image"
+                                />
+                                <span class="text-slate-800 text-xl font-bold"
+                                  >Instance Segmentation</span
+                                >
+                                <p class="text-sm text-slate-600">
+                                  Detect multiple objects and their actual
+                                  shape.
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex justify-center">
+                      <button
+                        id="create-project"
+                        class="project px-4 py-2 text-white rounded"
+                      >
+                        Create Project
+                      </button>
+                    </div>
+                  </main>
+                  <script>
+                    // Get all the elements with the class "section" and add event listeners to them
+                    const sections = document.querySelectorAll(".section");
+                    let selectedProjectName = "";
+                    let selectedProjectType = "";
+
+                    // Loop through each section
+                    sections.forEach((section) => {
+                      // Add a click event listener
+                      section.addEventListener("click", function () {
+                        // Remove the "selected" class from all sections
+                        sections.forEach((s) => s.classList.remove("selected"));
+                        // Add the "selected" class to the clicked section
+                        this.classList.add("selected");
+                        // Set the selected project type
+                        selectedProjectType =
+                          this.querySelector("span").textContent;
+                      });
+                    });
+
+                    // Add event listener to the "Create Project" button
+                    document
+                      .getElementById("create-project")
+                      .addEventListener("click", function () {
+                        // Get the project name
+                        selectedProjectName =
+                          document.getElementById("project-name").value;
+
+                        // Validate project name and type
+                        if (selectedProjectName && selectedProjectType) {
+                          // Prepare data to send
+                          const userId = localStorage.getItem("userId");
+                          const data = {
+                            userId: userId,
+                            projectName: selectedProjectName,
+                            projectType: selectedProjectType,
+                          };
+                          const authToken = localStorage.getItem("signInToken");
+
+                          console.log(data);
+
+                          // Send data to API
+                          fetch("http://localhost:3000/projects/postProject", {
+                            method: "POST",
+                            headers: {
+                              "Content-Type": "application/json",
+                              "authorization": authToken
+                            },
+                            body: JSON.stringify(data),
+                          })
+                            .then((response) => {
+                              if (!response.ok) {
+                                throw new Error("Network response was not ok");
+                              }
+                              return response.json();
+                            })
+                            .then((data) => {
+                              console.log("API response:", data);
+                              // Reset the selected project name and type
+                              selectedProjectName = "";
+                              selectedProjectType = "";
+                              // Reset the input field and selected section
+                              document.getElementById("project-name").value =
+                                "";
+                              sections.forEach((s) =>
+                                s.classList.remove("selected")
+                              );
+                              console.log(
+                                `insertedId: ${data.result.insertedId}`
+                              );
+                              localStorage.setItem(
+                                "currentProjectId",
+                                `${data.result.insertedId}`
+                              );
+                              window.location.href = "/datasets";
+                            })
+                            .catch((error) => {
+                              console.error("There was an error!", error);
+                              alert(
+                                "An error occurred while creating the project."
+                              );
+                            });
+                        } else {
+                          const toastAlert =
+                            document.getElementById("toast-warning");
+
+                          toastAlert.classList.remove("invisible");
+                          //alert("Please enter a project name and select a project type.");
+                        }
+                      });
+                  </script>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- END: Content -->
+      </div>
+    </div>
+
+    <!-- BEGIN: JS Assets-->
+    <script>
+      const closeBtn = document.getElementById("close");
+      closeBtn.addEventListener("click", function () {
+        document.getElementById("toast-warning").classList.add("invisible");
+      });
+    </script>
+    <script
             src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=[" your-google-map-api"]&libraries=places"></script>
         <script src="dist/js/app.js"></script>
-        <!-- END: JS Assets-->
-</body>
-
+    <!-- END: JS Assets-->
+  </body>
 </html>
