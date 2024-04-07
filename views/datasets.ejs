@@ -265,6 +265,10 @@
                                             })
                                             .then(data => {
                                                 console.log('Files uploaded:', data);
+                                                localStorage.setItem(
+                                                    "datasetId",
+                                                        `${data.data.insertedId}`
+                                                    );
                                                 isLoading = false;
                                                 updateLoadingMessage();
                                                 window.location.href = '/trainModels';

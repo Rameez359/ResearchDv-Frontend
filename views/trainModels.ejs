@@ -216,7 +216,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                             <option value="FR">Face Detection</option>
                                         </select>
                                     </div> -->
-                                    <button id="create-project" class="project px-4 py-2.5 text-white rounded">Train
+                                    <button id="create-project" class="project px-4 py-2.5 text-white rounded" onclick="trainModel()">Train
                                         Model</button>
                                 </form>
                                 <div class=" mx-auto py-8">
@@ -346,59 +346,47 @@ License: You must have a valid license purchased only from themeforest(the above
                             </div>
 
                             <script>
-                                document.addEventListener("DOMContentLoaded", function () {
-                                    function fetchUserProjects(userId) {
-                                        const url = `http://localhost:3000/projects/getUserProject/${userId}`;
-                                        fetch(url)
+                                function trainModel() {
+                                        const modelName = document.getElementById('models').value;
+                                        console.log('Selected modelName:', modelName);
+                                        if (!modelName) {
+                                            console.error('No mddel selected.');
+                                            return;
+                                        }
+                                      
+                                        const userId = localStorage.getItem('userId');
+                                        const projectId = localStorage.getItem('currentProjectId');
+                                        const datasetId = localStorage.getItem('datasetId');
+
+                                        const formData = new FormData();
+                                        formData.append('userId', userId);
+                                        formData.append('projectId', projectId);
+                                        formData.append('datasetId', datasetId);
+                                        formData.append('modelName', modelName);
+
+
+                                        console.log(formData, "data value");
+                                        fetch('http://localhost:3000/projects/postTrainModel', {
+                                            method: 'POST',
+                                            body: formData
+                                        })
                                             .then(response => {
                                                 if (!response.ok) {
                                                     throw new Error('Network response was not ok');
                                                 }
                                                 return response.json();
+                                                
                                             })
                                             .then(data => {
-                                                console.log('User projects:', data.result);
-                                                displayUserProjects(data.result);
+                                                console.log('Model training request submitted successfully:', data);
+                                                // window.location.href = '/trainModels';
+                                                // window.alert("uploaded successfully")
                                             })
                                             .catch(error => {
-                                                console.error('There was an error!', error);
-
+                                                console.error('Error uploading files:', error);
                                             });
                                     }
 
-                                    function displayUserProjects(projects) {
-                                        const projectContainer = document.querySelector('#project-container');
-
-                                        projectContainer.innerHTML = '';
-
-                                        for (let project of projects) {
-                                            window.showAlert = function (projectId) {
-                                                console.log("Project ID: " + projectId);
-                                                localStorage.setItem('currentProjectId', `${projectId}`);
-                                                window.location.href = '../Source/dashboard.html';
-
-                                            };
-                                            const projectDiv = document.createElement('div');
-                                            projectDiv.classList.add('project-item');
-
-                                            projectDiv.innerHTML = `
-                                      <a id="hello" onclick="showAlert('${project._id}')">
-                                      <img src="./images/1.png" alt="Object Detection Image" class=" mb-2">
-                                      <input type="hidden" value=${project._id}>
-                                      <h2>${project.projectName}</h2>
-                                        <p>${project.projectType}</p>
-                                       </a>
-                                        
-                                      `;
-
-                                            projectContainer.appendChild(projectDiv);
-
-                                        };
-                                    }
-
-                                    const userId = localStorage.getItem('userId');
-                                    fetchUserProjects(userId);
-                                });
                             </script>
                         </div>
 
