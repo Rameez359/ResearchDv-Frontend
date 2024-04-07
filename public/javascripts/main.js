@@ -15,8 +15,7 @@ window.onclick = function (event) {
 };
 
 const OpenSignUpModal = () => {
-    console.log('sign up button clicked');
-
+    document.getElementById('main').style.opacity = 0.7;
     document.getElementById('modal-content-step-two').classList.add('display-none');
     document.getElementById('modal-content-step-three').classList.add('display-none');
     document.getElementById('sign-in').classList.add('display-none');
@@ -26,7 +25,7 @@ const OpenSignUpModal = () => {
 };
 
 const OpenSignInModal = () => {
-    console.log('sign in button clicked');
+    document.getElementById('main').style.opacity = 0.7;
     document.getElementById('modal-content-step-one').classList.add('display-none');
     document.getElementById('modal-content-step-two').classList.add('display-none');
     document.getElementById('modal-content-step-three').classList.add('display-none');
@@ -36,7 +35,7 @@ const OpenSignInModal = () => {
 };
 
 const closeModal = () => {
-    console.log('Working');
+    document.getElementById('main').style.opacity = 1;
     modal.style.display = 'none';
 };
 
@@ -59,13 +58,8 @@ const validateNumberInput = (input) => {
     input.value = input.value.replace(/\D/g, '');
 };
 
-function playError() {
-    const audio = new Audio('audios/error.mp3'); // Replace with the path to your audio file
-    audio.play();
-}
 
 function displayError(messageId, errorMessage) {
-    playError();
     const errorElement = document.getElementById(messageId);
     errorElement.innerHTML = `<div class="error">${errorMessage}</div>`;
     errorElement.classList.remove('display-none');

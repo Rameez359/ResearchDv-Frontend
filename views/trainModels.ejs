@@ -12,199 +12,199 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- BEGIN: Head -->
 
 <head>
-    <meta charset="utf-8">
-    <link href="dist/images/logo.svg" rel="shortcut icon">
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description"
-        content="Tinker admin is super flexible, powerful, clean & modern responsive tailwind admin template with unlimited possibilities.">
-    <meta name="keywords"
-        content="admin template, Tinker Admin Template, dashboard template, flat admin template, responsive admin template, web app">
-    <meta name="author" content="LEFT4CODE">
-    <title>Research Dv</title>
-    <!-- BEGIN: CSS Assets-->
-    <link rel="stylesheet" href="dist/css/app.css" />
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- END: CSS Assets-->
+  <meta charset="utf-8">
+  <link href="dist/images/logo.svg" rel="shortcut icon">
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="Tinker admin is super flexible, powerful, clean & modern responsive tailwind admin template with unlimited possibilities.">
+  <meta name="keywords"
+    content="admin template, Tinker Admin Template, dashboard template, flat admin template, responsive admin template, web app">
+  <meta name="author" content="LEFT4CODE">
+  <title>Research Dv</title>
+  <!-- BEGIN: CSS Assets-->
+  <link rel="stylesheet" href="dist/css/app.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- END: CSS Assets-->
 </head>
 <!-- END: Head -->
 <style>
-    body {
-        font-family: 'circular';
-    }
+  body {
+    font-family: 'circular';
+  }
 
-    .selected {
-        border-color: purple;
-        border: 2px solid purple
-    }
+  .selected {
+    border-color: purple;
+    border: 2px solid purple
+  }
 
-    .project {
-        background-color: #17d0d9 !important;
-        margin-top: 35px;
-    }
+  .project {
+    background-color: #01b1e9;
+    margin-top: 35px;
+  }
 
-    .project:hover {
-        background-color: #096166 !important;
-    }
+  .project:hover {
+    background-color: #1a96bd;
+  }
 
-    .project-item {
-        width: 26%;
-        background: #f3f4f6;
-        cursor: pointer;
-        border-radius: 2%;
-        padding: 10px;
-    }
+  .project-item {
+    width: 26%;
+    background: #f3f4f6;
+    cursor: pointer;
+    border-radius: 2%;
+    padding: 10px;
+  }
 
-    .project-item:hover {
-        background: #e5e7eb
-    }
+  .project-item:hover {
+    background: #e5e7eb
+  }
 
-    #models,
-    #datasets {
-        background-color: rgb(216, 225, 247);
-    }
+  #models,
+  #datasets {
+    background-color: rgb(216, 225, 247);
+  }
 
-    select::-webkit-scrollbar {
-        width: 12px;
+  select::-webkit-scrollbar {
+    width: 12px;
 
-    }
+  }
 
-    select::-webkit-scrollbar-track {
-        background: #f1f1f1;
-    }
+  select::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
 
-    select::-webkit-scrollbar-thumb:hover {
-        background: rgb(115 131 170);
-    }
-    .bg-gray-50:hover {
+  select::-webkit-scrollbar-thumb:hover {
+    background: rgb(115 131 170);
+  }
+
+  .bg-gray-50:hover {
     background-color: #f8fafc;
   }
 </style>
 
 <body class="py-5 md:py-0 bg-black/[0.15] dark:bg-transparent">
-    <!-- BEGIN: Mobile Menu -->
-    <div class="mobile-menu md:hidden">
-        <div class="mobile-menu-bar">
-            <a href="" class="flex mr-auto">
-                <img alt="Midone - HTML Admin Template" class="w-6" src="dist/images/logo.svg">
-            </a>
-            <a href="javascript:;" class="mobile-menu-toggler"> <i data-lucide="bar-chart-2"
-                    class="w-8 h-8 text-white transform -rotate-90"></i> </a>
-        </div>
-        <div class="scrollable">
-            <a href="javascript:;" class="mobile-menu-toggler"> <i data-lucide="x-circle"
-                    class="w-8 h-8 text-white transform -rotate-90"></i> </a>
-            <ul class="scrollable__content py-2">
-                <li>
-                    <a href="/dashboard" class="menu menu--active">
-                        <div class="menu__icon"> <i data-lucide="home"></i> </div>
-                        <div class="menu__title"> Dashboard <i data-lucide="chevron-down"
-                                class="menu__sub-icon transform rotate-180"></i> </div>
-                    </a>
-                    <ul class="menu__sub-open">
-                        <li>
-                            <a href="side-menu-dark-dashboard-overview-1.html" class="menu">
-                                <div class="menu__icon"> <i data-lucide="activity"></i> </div>
-                                <div class="menu__title"> Overview 1 </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="side-menu-dark-dashboard-overview-2.html" class="menu menu--active">
-                                <div class="menu__icon"> <i data-lucide="activity"></i> </div>
-                                <div class="menu__title"> Overview 2 </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="side-menu-dark-dashboard-overview-3.html" class="menu">
-                                <div class="menu__icon"> <i data-lucide="activity"></i> </div>
-                                <div class="menu__title"> Overview 3 </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="side-menu-dark-dashboard-overview-4.html" class="menu">
-                                <div class="menu__icon"> <i data-lucide="activity"></i> </div>
-                                <div class="menu__title"> Overview 4 </div>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
+  <!-- BEGIN: Mobile Menu -->
+  <div class="mobile-menu md:hidden">
+    <div class="mobile-menu-bar">
+      <a href="" class="flex mr-auto">
+        <img alt="Midone - HTML Admin Template" class="w-6" src="dist/images/logo.svg">
+      </a>
+      <a href="javascript:;" class="mobile-menu-toggler"> <i data-lucide="bar-chart-2"
+          class="w-8 h-8 text-white transform -rotate-90"></i> </a>
     </div>
-    <!-- END: Mobile Menu -->
-    <div class="flex mt-[4.7rem] md:mt-0 overflow-hidden">
-        <!-- BEGIN: Side Menu -->
-        <%- include('./components/navBar') %>
-        <!-- END: Side Menu -->
-        <!-- BEGIN: Content -->
-        <div style="background: #f1f5f9;" class="content">
-            <!-- BEGIN: Top Bar -->
-            <div class="top-bar -mx-4 px-4 md:mx-0 md:px-0">
-                <!-- BEGIN: Breadcrumb -->
-                <nav style="font-size: 26px;color: white;" aria-label="breadcrumb"
-                    class="-intro-x mr-auto hidden sm:flex">
+    <div class="scrollable">
+      <a href="javascript:;" class="mobile-menu-toggler"> <i data-lucide="x-circle"
+          class="w-8 h-8 text-white transform -rotate-90"></i> </a>
+      <ul class="scrollable__content py-2">
+        <li>
+          <a href="/dashboard" class="menu menu--active">
+            <div class="menu__icon"> <i data-lucide="home"></i> </div>
+            <div class="menu__title"> Dashboard <i data-lucide="chevron-down"
+                class="menu__sub-icon transform rotate-180"></i> </div>
+          </a>
+          <ul class="menu__sub-open">
+            <li>
+              <a href="side-menu-dark-dashboard-overview-1.html" class="menu">
+                <div class="menu__icon"> <i data-lucide="activity"></i> </div>
+                <div class="menu__title"> Overview 1 </div>
+              </a>
+            </li>
+            <li>
+              <a href="side-menu-dark-dashboard-overview-2.html" class="menu menu--active">
+                <div class="menu__icon"> <i data-lucide="activity"></i> </div>
+                <div class="menu__title"> Overview 2 </div>
+              </a>
+            </li>
+            <li>
+              <a href="side-menu-dark-dashboard-overview-3.html" class="menu">
+                <div class="menu__icon"> <i data-lucide="activity"></i> </div>
+                <div class="menu__title"> Overview 3 </div>
+              </a>
+            </li>
+            <li>
+              <a href="side-menu-dark-dashboard-overview-4.html" class="menu">
+                <div class="menu__icon"> <i data-lucide="activity"></i> </div>
+                <div class="menu__title"> Overview 4 </div>
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- END: Mobile Menu -->
+  <div class="flex mt-[4.7rem] md:mt-0 overflow-hidden">
+    <!-- BEGIN: Side Menu -->
+    <%- include('./components/navBar') %>
+      <!-- END: Side Menu -->
+      <!-- BEGIN: Content -->
+      <div style="background: #f1f5f9;" class="content">
+        <!-- BEGIN: Top Bar -->
+        <div class="top-bar -mx-4 px-4 md:mx-0 md:px-0">
+          <!-- BEGIN: Breadcrumb -->
+          <nav style="font-size: 26px;color: white;" aria-label="breadcrumb" class="-intro-x mr-auto hidden sm:flex">
 
-                </nav>
-                <%- include('./components/accounts') %>
+          </nav>
+          <%- include('./components/accounts') %>
 
-            </div>
-            <!-- END: Top Bar -->
-            <div class="">
-                <div class="col-span-12 2xl:col-span-9">
-                    <div class="grid ">
-                        <!-- BEGIN: Notification -->
+        </div>
+        <!-- END: Top Bar -->
+        <div class="">
+          <div class="col-span-12 2xl:col-span-9">
+            <div class="grid ">
+              <!-- BEGIN: Notification -->
 
-                        <!-- BEGIN: Notification -->
-                        <!-- BEGIN: General Report -->
-                        <div class="col-span-12 lg:col-span-8 xl:col-span-6 mt-2">
-                            <div class="intro-y block items-center h-10">
-                                <!-- <header class="bg-gray-800 flex justify-between items-center p-4">
+              <!-- BEGIN: Notification -->
+              <!-- BEGIN: General Report -->
+              <div class="col-span-12 lg:col-span-8 xl:col-span-6 mt-2">
+                <div class="intro-y block items-center h-10">
+                  <!-- <header class="bg-gray-800 flex justify-between items-center p-4">
                                 <h1 class="text-white text-3xl font-bold">AI MultiModel</h1>
                                 <a href="/">
                                 <p class="text-white text-2xl cursor-pointer">Logout</p>
                               </a>
                               </header> -->
 
-                                <form class="w-11/12 flex gap-6 mt-10 items-center justify-center">
-                                    <div class="w-96">
-                                        <label for="models" class="block mb-2 text-lg font-medium text-slate-800">Choose
-                                            Model</label>
-                                        <select id="models"
-                                            class="bg-gray-50  border border-gray-300 text-slate-800 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                                            <option selected>Choose from the list</option>
-                                            <option value="AlexNet">AlexNet</option>
-                                            <option value="VGG-11">VGG-11</option>
-                                            <option value="VGG-13">VGG-13</option>
-                                            <option value="VGG-16">VGG-16</option>
-                                            <option value="VGG-19">VGG-19</option>
-                                            <option value="ResNet-18">ResNet-18</option>
-                                            <option value="ResNet-34">ResNet-34</option>
-                                            <option value="ResNet-50">ResNet-50</option>
-                                            <option value="ResNet-101">ResNet-101</option>
-                                            <option value="ResNet-152">ResNet-152</option>
-                                            <option value="SqueezeNet 1.0">SqueezeNet 1.0</option>
-                                            <option value="SqueezeNet 1.1">SqueezeNet 1.1</option>
-                                            <option value="Densenet-121">Densenet-121</option>
-                                            <option value="Densenet-169">Densenet-169</option>
-                                            <option value="Densenet-201">Densenet-201</option>
-                                            <option value="Densenet-161">Densenet-161</option>
-                                            <option value="Inception v3">Inception v3</option>
-                                            <option value="GoogleNet">GoogleNet</option>
-                                            <option value="ShuffleNet V2 x1.0">ShuffleNet V2 x1.0</option>
-                                            <option value="ShuffleNet V2 x0.5">ShuffleNet V2 x0.5</option>
-                                            <option value="MobileNet V2">MobileNet V2</option>
-                                            <option value="MobileNet V3 Large">MobileNet V3 Large</option>
-                                            <option value="MobileNet V3 Small">MobileNet V3 Small</option>
-                                            <option value="ResNeXt-50-32x4d">ResNeXt-50-32x4d</option>
-                                            <option value="ResNeXt-101-32x8d">ResNeXt-101-32x8d</option>
-                                            <option value="Wide ResNet-50-2">Wide ResNet-50-2</option>
-                                            <option value="Wide ResNet-101-2">Wide ResNet-101-2</option>
-                                            <option value="MNASNet 1.0">MNASNet 1.0</option>
-                                            <option value="MNASNet 0.5">MNASNet 0.5</option>
-                                        </select>
-                                    </div>
+                  <form class="w-11/12 flex gap-6 mt-10 items-center justify-center">
+                    <div class="w-96">
+                      <label for="models" class="block mb-2 text-lg font-medium text-slate-800">Choose
+                        Model</label>
+                      <select id="models"
+                        class="bg-gray-50  border border-gray-300 text-slate-800 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                        <option selected>Choose from the list</option>
+                        <option value="AlexNet">AlexNet</option>
+                        <option value="VGG-11">VGG-11</option>
+                        <option value="VGG-13">VGG-13</option>
+                        <option value="VGG-16">VGG-16</option>
+                        <option value="VGG-19">VGG-19</option>
+                        <option value="ResNet-18">ResNet-18</option>
+                        <option value="ResNet-34">ResNet-34</option>
+                        <option value="ResNet-50">ResNet-50</option>
+                        <option value="ResNet-101">ResNet-101</option>
+                        <option value="ResNet-152">ResNet-152</option>
+                        <option value="SqueezeNet 1.0">SqueezeNet 1.0</option>
+                        <option value="SqueezeNet 1.1">SqueezeNet 1.1</option>
+                        <option value="Densenet-121">Densenet-121</option>
+                        <option value="Densenet-169">Densenet-169</option>
+                        <option value="Densenet-201">Densenet-201</option>
+                        <option value="Densenet-161">Densenet-161</option>
+                        <option value="Inception v3">Inception v3</option>
+                        <option value="GoogleNet">GoogleNet</option>
+                        <option value="ShuffleNet V2 x1.0">ShuffleNet V2 x1.0</option>
+                        <option value="ShuffleNet V2 x0.5">ShuffleNet V2 x0.5</option>
+                        <option value="MobileNet V2">MobileNet V2</option>
+                        <option value="MobileNet V3 Large">MobileNet V3 Large</option>
+                        <option value="MobileNet V3 Small">MobileNet V3 Small</option>
+                        <option value="ResNeXt-50-32x4d">ResNeXt-50-32x4d</option>
+                        <option value="ResNeXt-101-32x8d">ResNeXt-101-32x8d</option>
+                        <option value="Wide ResNet-50-2">Wide ResNet-50-2</option>
+                        <option value="Wide ResNet-101-2">Wide ResNet-101-2</option>
+                        <option value="MNASNet 1.0">MNASNet 1.0</option>
+                        <option value="MNASNet 0.5">MNASNet 0.5</option>
+                      </select>
+                    </div>
 
-                                    <!-- <div class="w-96">
+                    <!-- <div class="w-96">
                                         <label for="datasets"
                                             class="block mb-2 text-lg font-medium text-slate-800">Choose
                                             Dataset</label>
@@ -216,88 +216,94 @@ License: You must have a valid license purchased only from themeforest(the above
                                             <option value="FR">Face Detection</option>
                                         </select>
                                     </div> -->
-                                    <button id="create-project" class="project px-4 py-2.5 text-white rounded">Train
-                                        Model</button>
-                                </form>
-                                <div class=" mx-auto py-8">
-                                    <div class="flex justify-center">
-                                      <div style="width: -webkit-fill-available;margin-top: 90px;" class="block rounded-lg shadow-lg font-bold bg-white ">
-                                        <div class="py-3 px-6 border-b border-gray-300 text-xl text-black text-center">
-                                          Classification Report
-                                        </div>
-                                        <table class="min-w-full leading-normal">
-                                          <thead>
-                                            <tr>
-                                              <th class="px-5 py-3 border-b-2 border-gray-300 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                                                Class
-                                              </th>
-                                              <th class="px-5 py-3 border-b-2 border-gray-300 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                                                Precision
-                                              </th>
-                                              <th class="px-5 py-3 border-b-2 border-gray-300 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                                                Recall
-                                              </th>
-                                              <th class="px-5 py-3 border-b-2 !border-gray-300 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                                                F1-score
-                                              </th>
-                                              <th class="px-5 py-3 border-b-2 border-gray-300 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                                                Support
-                                              </th>
-                                            </tr>
-                                          </thead>
-                                          <tbody style="color: black;">
-                                            <tr>
-                                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">0</td>
-                                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">0.00</td>
-                                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">0.00</td>
-                                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">0.00</td>
-                                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">4</td>
-                                            </tr>
-                                            <!-- Repeat for other rows -->
-                                            <tr>
-                                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">1</td>
-                                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">0.00</td>
-                                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">0.00</td>
-                                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">0.00</td>
-                                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">4</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">2</td>
-                                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">0.00</td>
-                                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">0.00</td>
-                                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">0.00</td>
-                                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">4</td>
-                                              </tr>
-                                            <!-- ... other rows ... -->
-                                            <tr>
-                                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">3</td>
-                                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">0.25</td>
-                                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">1.00</td>
-                                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">0.40</td>
-                                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">4</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">Accuracy</td>
-                                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">-</td>
-                                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">-</td>
-                                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">0.25</td>
-                                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">16</td>
-                                              </tr>
-                                              <tr>
-                                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">Macro avg</td>
-                                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">0.06</td>
-                                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">0.25</td>
-                                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">0.10</td>
-                                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">16</td>
-                                              </tr>
-                                              <tr>
-                                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">Weighted avg</td>
-                                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">0.06</td>
-                                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">0.25</td>
-                                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">0.10</td>
-                                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">16</td>
-                                              </tr>
-                                            <!-- <tr>
+                    <button id="create-project" class="project px-4 py-2.5 text-white rounded">Train
+                      Model</button>
+                  </form>
+                  <div class=" mx-auto py-8">
+                    <div class="flex justify-center">
+                      <div style="width: -webkit-fill-available;margin-top: 90px;"
+                        class="block rounded-lg shadow-lg font-bold bg-white ">
+                        <div class="py-3 px-6 border-b border-gray-300 text-xl text-black text-center">
+                          Classification Report
+                        </div>
+                        <table class="min-w-full leading-normal">
+                          <thead>
+                            <tr>
+                              <th
+                                class="px-5 py-3 border-b-2 border-gray-300 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                Class
+                              </th>
+                              <th
+                                class="px-5 py-3 border-b-2 border-gray-300 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                Precision
+                              </th>
+                              <th
+                                class="px-5 py-3 border-b-2 border-gray-300 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                Recall
+                              </th>
+                              <th
+                                class="px-5 py-3 border-b-2 !border-gray-300 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                F1-score
+                              </th>
+                              <th
+                                class="px-5 py-3 border-b-2 border-gray-300 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                Support
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody style="color: black;">
+                            <tr>
+                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">0</td>
+                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">0.00</td>
+                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">0.00</td>
+                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">0.00</td>
+                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">4</td>
+                            </tr>
+                            <!-- Repeat for other rows -->
+                            <tr>
+                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">1</td>
+                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">0.00</td>
+                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">0.00</td>
+                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">0.00</td>
+                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">4</td>
+                            </tr>
+                            <tr>
+                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">2</td>
+                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">0.00</td>
+                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">0.00</td>
+                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">0.00</td>
+                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">4</td>
+                            </tr>
+                            <!-- ... other rows ... -->
+                            <tr>
+                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">3</td>
+                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">0.25</td>
+                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">1.00</td>
+                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">0.40</td>
+                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">4</td>
+                            </tr>
+                            <tr>
+                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">Accuracy</td>
+                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">-</td>
+                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">-</td>
+                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">0.25</td>
+                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">16</td>
+                            </tr>
+                            <tr>
+                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">Macro avg</td>
+                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">0.06</td>
+                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">0.25</td>
+                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">0.10</td>
+                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">16</td>
+                            </tr>
+                            <tr>
+                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">Weighted avg</td>
+                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">0.06</td>
+                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">0.25</td>
+                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">0.10</td>
+                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">16</td>
+                            </tr>
+                            <!-- <tr>
                                               <td class="px-5 py-5 bg-white text-sm" colspan="5">
                                                 <strong>accuracy</strong> 0.25
                                               </td>
@@ -312,23 +318,23 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 <strong>weighted avg</strong> 0.06 0.25 0.10 16
                                               </td>
                                             </tr> -->
-                                          </tbody>
-                                        </table>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="flex flex-row justify-center items-center space-x-4">
-                                    <!-- First Graph Container -->
-                                    <div class="w-1/2">
-                                      <canvas class="bg-white" id="rocChart1"></canvas>
-                                    </div>
-                                  
-                                    <!-- Second Graph Container -->
-                                    <div  class="w-1/2">
-                                      <canvas class="bg-white" id="rocChart2"></canvas>
-                                    </div>
-                                  </div>
-                                <img style="margin-top: 60px;
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-row justify-center items-center space-x-4">
+                    <!-- First Graph Container -->
+                    <div class="w-1/2">
+                      <canvas class="bg-white" id="rocChart1"></canvas>
+                    </div>
+
+                    <!-- Second Graph Container -->
+                    <div class="w-1/2">
+                      <canvas class="bg-white" id="rocChart2"></canvas>
+                    </div>
+                  </div>
+                  <img style="margin-top: 60px;
                                 width: 40%;
                                 padding-bottom: 40px;
                                 justify-content: center;
@@ -337,51 +343,51 @@ License: You must have a valid license purchased only from themeforest(the above
                                 margin-left: auto;
                                 margin-right: auto;" src="images/confusion.png" alt="">
 
-                                </main>
-                                <!-- <div class="flex justify-center">
+                  </main>
+                  <!-- <div class="flex justify-center">
                                 <a href="./createProject.html">
                                 <button id="create-project" class="project px-4 py-2 text-white rounded">Create New Project</button>
                                 
                               </a> -->
-                            </div>
+                </div>
 
-                            <script>
-                                document.addEventListener("DOMContentLoaded", function () {
-                                    function fetchUserProjects(userId) {
-                                        const url = `http://localhost:3000/projects/getUserProject/${userId}`;
-                                        fetch(url)
-                                            .then(response => {
-                                                if (!response.ok) {
-                                                    throw new Error('Network response was not ok');
-                                                }
-                                                return response.json();
-                                            })
-                                            .then(data => {
-                                                console.log('User projects:', data.result);
-                                                displayUserProjects(data.result);
-                                            })
-                                            .catch(error => {
-                                                console.error('There was an error!', error);
+                <script>
+                  document.addEventListener("DOMContentLoaded", function () {
+                    function fetchUserProjects(userId) {
+                      const url = `http://localhost:3000/projects/getUserProject/${userId}`;
+                      fetch(url)
+                        .then(response => {
+                          if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                          }
+                          return response.json();
+                        })
+                        .then(data => {
+                          console.log('User projects:', data.result);
+                          displayUserProjects(data.result);
+                        })
+                        .catch(error => {
+                          console.error('There was an error!', error);
 
-                                            });
-                                    }
+                        });
+                    }
 
-                                    function displayUserProjects(projects) {
-                                        const projectContainer = document.querySelector('#project-container');
+                    function displayUserProjects(projects) {
+                      const projectContainer = document.querySelector('#project-container');
 
-                                        projectContainer.innerHTML = '';
+                      projectContainer.innerHTML = '';
 
-                                        for (let project of projects) {
-                                            window.showAlert = function (projectId) {
-                                                console.log("Project ID: " + projectId);
-                                                localStorage.setItem('currentProjectId', `${projectId}`);
-                                                window.location.href = '../Source/dashboard.html';
+                      for (let project of projects) {
+                        window.showAlert = function (projectId) {
+                          console.log("Project ID: " + projectId);
+                          localStorage.setItem('currentProjectId', `${projectId}`);
+                          window.location.href = '../Source/dashboard.html';
 
-                                            };
-                                            const projectDiv = document.createElement('div');
-                                            projectDiv.classList.add('project-item');
+                        };
+                        const projectDiv = document.createElement('div');
+                        projectDiv.classList.add('project-item');
 
-                                            projectDiv.innerHTML = `
+                        projectDiv.innerHTML = `
                                       <a id="hello" onclick="showAlert('${project._id}')">
                                       <img src="./images/1.png" alt="Object Detection Image" class=" mb-2">
                                       <input type="hidden" value=${project._id}>
@@ -391,48 +397,48 @@ License: You must have a valid license purchased only from themeforest(the above
                                         
                                       `;
 
-                                            projectContainer.appendChild(projectDiv);
+                        projectContainer.appendChild(projectDiv);
 
-                                        };
-                                    }
+                      };
+                    }
 
-                                    const userId = localStorage.getItem('userId');
-                                    fetchUserProjects(userId);
-                                });
-                            </script>
-                        </div>
+                    const userId = localStorage.getItem('userId');
+                    fetchUserProjects(userId);
+                  });
+                </script>
+              </div>
 
 
-                        <!-- END: General Report -->
-                        <!-- BEGIN: Visitors -->
+              <!-- END: General Report -->
+              <!-- BEGIN: Visitors -->
 
-                        <!-- END: Users By Age -->
-                        <!-- BEGIN: Official Store -->
+              <!-- END: Users By Age -->
+              <!-- BEGIN: Official Store -->
 
-                        <!-- END: Official Store -->
-                        <!-- BEGIN: Weekly Best Sellers -->
+              <!-- END: Official Store -->
+              <!-- BEGIN: Weekly Best Sellers -->
 
-                        <!-- END: Weekly Best Sellers -->
-                        <!-- BEGIN: Ads 1 -->
+              <!-- END: Weekly Best Sellers -->
+              <!-- BEGIN: Ads 1 -->
 
-                        <!-- END: Ads 1 -->
-                        <!-- BEGIN: Ads 2 -->
+              <!-- END: Ads 1 -->
+              <!-- BEGIN: Ads 2 -->
 
-                        <!-- END: Ads 2 -->
-                        <!-- BEGIN: Weekly Top Products -->
+              <!-- END: Ads 2 -->
+              <!-- BEGIN: Weekly Top Products -->
 
-                        <!-- END: Weekly Top Products -->
-                    </div>
-                </div>
-
+              <!-- END: Weekly Top Products -->
             </div>
-        </div>
-        <!-- END: Content -->
-    </div>
+          </div>
 
-      
-    
-<script>
+        </div>
+      </div>
+      <!-- END: Content -->
+  </div>
+
+
+
+  <script>
     // Define data for the first chart
     var data1 = {
       labels: [0, 0.2, 0.4, 0.6, 0.8, 1],
@@ -443,7 +449,7 @@ License: You must have a valid license purchased only from themeforest(the above
         fill: false
       }]
     };
-  
+
     // Define data for the second chart
     var data2 = {
       labels: [0, 0.2, 0.4, 0.6, 0.8, 1],
@@ -454,7 +460,7 @@ License: You must have a valid license purchased only from themeforest(the above
         fill: false
       }]
     };
-  
+
     // Chart options (can be reused or customized for each chart)
     var options = {
       scales: {
@@ -477,7 +483,7 @@ License: You must have a valid license purchased only from themeforest(the above
         }
       }
     };
-  
+
     // Initialize the first chart
     var ctx1 = document.getElementById('rocChart1').getContext('2d');
     var rocChart1 = new Chart(ctx1, {
@@ -485,7 +491,7 @@ License: You must have a valid license purchased only from themeforest(the above
       data: data1,
       options: options
     });
-  
+
     // Initialize the second chart
     var ctx2 = document.getElementById('rocChart2').getContext('2d');
     var rocChart2 = new Chart(ctx2, {
@@ -500,12 +506,12 @@ License: You must have a valid license purchased only from themeforest(the above
 
 
 
-    <!-- BEGIN: JS Assets-->
-    <script
-        src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=[" your-google-map-api"]&libraries=places"></script>
-    <script src="dist/js/app.js"></script>
-    <!-- END: JS Assets-->
+  <!-- BEGIN: JS Assets-->
+  <script
+    src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=[" your-google-map-api"]&libraries=places"></script>
+  <script src="dist/js/app.js"></script>
+  <!-- END: JS Assets-->
 </body>
 
 </html>

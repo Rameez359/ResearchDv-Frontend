@@ -1,145 +1,115 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
-  <!-- BEGIN: Head -->
+<!-- BEGIN: Head -->
 
-  <head>
-    <meta charset="utf-8" />
-    <link href="dist/images/logo.svg" rel="shortcut icon" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="Tinker admin is super flexible, powerful, clean & modern responsive tailwind admin template with unlimited possibilities."
-    />
-    <meta
-      name="keywords"
-      content="admin template, Tinker Admin Template, dashboard template, flat admin template, responsive admin template, web app"
-    />
-    <meta name="author" content="LEFT4CODE" />
-    <title>Research Dv</title>
-    <!-- BEGIN: CSS Assets-->
-    <link rel="stylesheet" href="dist/css/app.css" />
-    <!-- END: CSS Assets-->
-  </head>
-  <!-- END: Head -->
-  <style>
-    #file-name {
-      font-size: 21px;
-      color: #222222;
-    }
+<head>
+  <meta charset="utf-8" />
+  <link href="dist/images/logo.svg" rel="shortcut icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description"
+    content="Tinker admin is super flexible, powerful, clean & modern responsive tailwind admin template with unlimited possibilities." />
+  <meta name="keywords"
+    content="admin template, Tinker Admin Template, dashboard template, flat admin template, responsive admin template, web app" />
+  <meta name="author" content="LEFT4CODE" />
+  <title>Research Dv</title>
+  <!-- BEGIN: CSS Assets-->
+  <link rel="stylesheet" href="dist/css/app.css" />
+  <!-- END: CSS Assets-->
+</head>
+<!-- END: Head -->
+<style>
+  #file-name {
+    font-size: 21px;
+    color: #222222;
+  }
 
-    .upload-dataset-btn {
-      width: fit-content;
-      margin-top: 20px;
-      padding: 7px;
-      color: white;
-      padding-left: 14px;
-      padding-right: 14px;
-      font-weight: 500;
-      border-radius: 6px;
-      background-color: #17d0d9 !important;
-    }
+  .upload-dataset-btn {
+    width: fit-content;
+    margin-top: 20px;
+    padding: 7px;
+    color: white;
+    padding-left: 14px;
+    padding-right: 14px;
+    font-weight: 500;
+    border-radius: 6px;
+    background-color: #17d0d9 !important;
+  }
 
-    .upload-dataset-btn:hover {
-      background-color: #096166 !important;
-    }
-  </style>
+  .upload-dataset-btn:hover {
+    background-color: #096166 !important;
+  }
+</style>
 
-  <body class="py-5 md:py-0 bg-black/[0.15] dark:bg-transparent">
-    <!-- BEGIN: Mobile Menu -->
-    <div class="mobile-menu md:hidden">
-      <div class="mobile-menu-bar">
-        <a href="" class="flex mr-auto">
-          <img
-            alt="Midone - HTML Admin Template"
-            class="w-6"
-            src="dist/images/logo.svg"
-          />
-        </a>
-        <a href="javascript:;" class="mobile-menu-toggler">
-          <i
-            data-lucide="bar-chart-2"
-            class="w-8 h-8 text-white transform -rotate-90"
-          ></i>
-        </a>
-      </div>
-      <div class="scrollable">
-        <a href="javascript:;" class="mobile-menu-toggler">
-          <i
-            data-lucide="x-circle"
-            class="w-8 h-8 text-white transform -rotate-90"
-          ></i>
-        </a>
-        <ul class="scrollable__content py-2">
-          <li>
-            <a href="javascript:;.html" class="menu menu--active">
-              <div class="menu__icon"><i data-lucide="home"></i></div>
-              <div class="menu__title">
-                Dashboard
-                <i
-                  data-lucide="chevron-down"
-                  class="menu__sub-icon transform rotate-180"
-                ></i>
-              </div>
-            </a>
-            <ul class="menu__sub-open">
-              <li>
-                <a href="side-menu-dark-dashboard-overview-1.html" class="menu">
-                  <div class="menu__icon"><i data-lucide="activity"></i></div>
-                  <div class="menu__title">Overview 1</div>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="side-menu-dark-dashboard-overview-2.html"
-                  class="menu menu--active"
-                >
-                  <div class="menu__icon"><i data-lucide="activity"></i></div>
-                  <div class="menu__title">Overview 2</div>
-                </a>
-              </li>
-              <li>
-                <a href="side-menu-dark-dashboard-overview-3.html" class="menu">
-                  <div class="menu__icon"><i data-lucide="activity"></i></div>
-                  <div class="menu__title">Overview 3</div>
-                </a>
-              </li>
-              <li>
-                <a href="side-menu-dark-dashboard-overview-4.html" class="menu">
-                  <div class="menu__icon"><i data-lucide="activity"></i></div>
-                  <div class="menu__title">Overview 4</div>
-                </a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
+<body class="py-5 md:py-0 bg-black/[0.15] dark:bg-transparent">
+  <!-- BEGIN: Mobile Menu -->
+  <div class="mobile-menu md:hidden">
+    <div class="mobile-menu-bar">
+      <a href="" class="flex mr-auto">
+        <img alt="Midone - HTML Admin Template" class="w-6" src="dist/images/logo.svg" />
+      </a>
+      <a href="javascript:;" class="mobile-menu-toggler">
+        <i data-lucide="bar-chart-2" class="w-8 h-8 text-white transform -rotate-90"></i>
+      </a>
     </div>
-    <!-- END: Mobile Menu -->
-    <div class="flex mt-[4.7rem] md:mt-0 overflow-hidden">
-      <!-- BEGIN: Side Menu -->
-      <%- include('./components/navBar') %>
+    <div class="scrollable">
+      <a href="javascript:;" class="mobile-menu-toggler">
+        <i data-lucide="x-circle" class="w-8 h-8 text-white transform -rotate-90"></i>
+      </a>
+      <ul class="scrollable__content py-2">
+        <li>
+          <a href="javascript:;.html" class="menu menu--active">
+            <div class="menu__icon"><i data-lucide="home"></i></div>
+            <div class="menu__title">
+              Dashboard
+              <i data-lucide="chevron-down" class="menu__sub-icon transform rotate-180"></i>
+            </div>
+          </a>
+          <ul class="menu__sub-open">
+            <li>
+              <a href="side-menu-dark-dashboard-overview-1.html" class="menu">
+                <div class="menu__icon"><i data-lucide="activity"></i></div>
+                <div class="menu__title">Overview 1</div>
+              </a>
+            </li>
+            <li>
+              <a href="side-menu-dark-dashboard-overview-2.html" class="menu menu--active">
+                <div class="menu__icon"><i data-lucide="activity"></i></div>
+                <div class="menu__title">Overview 2</div>
+              </a>
+            </li>
+            <li>
+              <a href="side-menu-dark-dashboard-overview-3.html" class="menu">
+                <div class="menu__icon"><i data-lucide="activity"></i></div>
+                <div class="menu__title">Overview 3</div>
+              </a>
+            </li>
+            <li>
+              <a href="side-menu-dark-dashboard-overview-4.html" class="menu">
+                <div class="menu__icon"><i data-lucide="activity"></i></div>
+                <div class="menu__title">Overview 4</div>
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- END: Mobile Menu -->
+  <div class="flex mt-[4.7rem] md:mt-0 overflow-hidden">
+    <!-- BEGIN: Side Menu -->
+    <%- include('./components/navBar') %>
       <!-- END: Side Menu -->
       <!-- BEGIN: Content -->
       <div style="background: #f1f5f9" class="content">
         <!-- BEGIN: Top Bar -->
         <div class="top-bar -mx-4 px-4 md:mx-0 md:px-0">
           <!-- BEGIN: Breadcrumb -->
-          <nav
-            aria-label="breadcrumb"
-            class="-intro-x mr-auto hidden sm:flex"
-          ></nav>
+          <nav aria-label="breadcrumb" class="-intro-x mr-auto hidden sm:flex"></nav>
           <!-- BEGIN: Account Menu -->
           <div class="intro-x dropdown w-8 h-8">
-            <div
-              class="dropdown-toggle w-8 h-8 rounded-full overflow-hidden shadow-lg image-fit zoom-in"
-              role="button"
-              aria-expanded="false"
-              data-tw-toggle="dropdown"
-            >
-              <img
-                alt="Midone - HTML Admin Template"
-                src="./images/profile-icon.png"
-              />
+            <div class="dropdown-toggle w-8 h-8 rounded-full overflow-hidden shadow-lg image-fit zoom-in" role="button"
+              aria-expanded="false" data-tw-toggle="dropdown">
+              <img alt="Midone - HTML Admin Template" src="./images/profile-icon.png" />
             </div>
             <div class="dropdown-menu w-56">
               <ul class="dropdown-content bg-primary text-white">
@@ -185,24 +155,15 @@
             <div class="">
               <div class="grid gap-6 mt-8">
                 <div class="col-span-12 lg:col-span-3 2xl:col-span-2">
-                  <h2
-                    style="color: black"
-                    class="font-bold mr-5 text-2xl truncate text-slate-800"
-                  >
+                  <h2 style="color: black" class="font-bold mr-5 text-2xl truncate text-slate-800">
                     Datasets
                   </h2>
                 </div>
                 <div class="col-span-12 lg:col-span-9 2xl:col-span-10">
-                  <div
-                    class="intro-y flex flex-col-reverse sm:flex-row items-center"
-                  >
-                    <div
-                      class="w-full sm:w-auto relative mr-auto mt-3 sm:mt-0"
-                    ></div>
+                  <div class="intro-y flex flex-col-reverse sm:flex-row items-center">
+                    <div class="w-full sm:w-auto relative mr-auto mt-3 sm:mt-0"></div>
                   </div>
-                  <div
-                    class="intro-y grid grid-cols-12 gap-3 sm:gap-6 mt-5"
-                  ></div>
+                  <div class="intro-y grid grid-cols-12 gap-3 sm:gap-6 mt-5"></div>
                 </div>
               </div>
             </div>
@@ -210,67 +171,79 @@
         </div>
         <!-- END: Content -->
       </div>
-    </div>
+  </div>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // Assuming you have the user ID stored somewhere, like localStorage
-        const userId = localStorage.getItem("userId");
-        const authToken = localStorage.getItem("signInToken");
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Assuming you have the user ID stored somewhere, like localStorage
+      const userId = localStorage.getItem("userId");
+      const authToken = localStorage.getItem("signInToken");
 
-        const apiUrl = `http://localhost:3000/projects/getDatasets/${userId}`;
+      const apiUrl = `http://localhost:3000/projects/getDatasets/${userId}`;
 
-        fetch(apiUrl, {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            authorization: authToken,
-          },
+      fetch(apiUrl, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          authorization: authToken,
+        },
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(
+              "Network response was not ok " + response.statusText
+            );
+          }
+          return response.json();
         })
-          .then((response) => {
-            if (!response.ok) {
-              throw new Error(
-                "Network response was not ok " + response.statusText
-              );
-            }
-            return response.json();
-          })
-          .then((data) => {
-            const datasets = data.result.datasets; // Adjusted according to your API response
-            console.log(datasets, "new value");
-            updateDatasetsList(datasets);
-          })
-          .catch((error) => {
-            console.error("There was an error fetching the datasets:", error);
-          });
+        .then((data) => {
+          const datasets = data.result.datasets; // Adjusted according to your API response
+          console.log(datasets, "new value");
+          updateDatasetsList(datasets);
+        })
+        .catch((error) => {
+          console.error("There was an error fetching the datasets:", error);
+        });
 
-        function updateDatasetsList(datasets) {
-          const container = document.querySelector(".intro-y.grid"); // Adjust the selector to your grid container
-          container.innerHTML = ""; // Clear the container
+      function updateDatasetsList(datasets) {
+        const container = document.querySelector(".intro-y.grid"); // Adjust the selector to your grid container
+        container.innerHTML = ""; // Clear the container
 
-          // Loop through the datasets and create the HTML for each dataset
-          datasets.forEach((dataset) => {
-            const datasetHtml = `
-                <div class="intro-y col-span-6 sm:col-span-4 md:col-span-3 2xl:col-span-2">
-                    <div class="file box rounded-md px-5 pt-8 pb-5 px-3 sm:px-5 relative zoom-in">
-                        <a href="" class="w-3/5 file__icon file__icon--directory mx-auto"></a>
-                        <a href="" class="block font-medium mt-4 text-center truncate text-slate-800">${dataset.name}</a>
-                        <div class="text-slate-600 text-xs text-center mt-0.5">800 kb</div>
-                        <!-- Add any other dataset details you want to display -->
+        // Loop through the datasets and create the HTML for each dataset
+        datasets.forEach((dataset) => {
+          const datasetHtml = `
+              <div class="intro-y col-span-6 sm:col-span-4 md:col-span-3 2xl:col-span-2">
+                <div class="file box rounded-md px-5 pt-8 pb-5 px-3 sm:px-5 relative zoom-in">
+                    <a href="" class="w-3/5 file__icon file__icon--directory mx-auto"></a> <a
+                        href=""
+                        class="block font-medium mt-4 text-center truncate text-slate-800">${dataset.name}</a>
+                    <div class="text-slate-600 text-xs text-center mt-0.5">20 KB</div>
+                    <div class="absolute top-0 right-0 mr-2 mt-3 dropdown ml-auto">
+                      <a class="dropdown-toggle w-5 h-5 block" href="javascript:;" aria-expanded="false" data-tw-toggle="dropdown"> 
+                        <i data-lucide="more-vertical" class="w-5 h-5 text-slate-600"></i>
+                      </a>
+                      <div class="dropdown-menu w-40">
+                        <ul class="dropdown-content">
+                          <li>
+                            <a href="" class="dropdown-item"> <i data-lucide="trash" class="w-4 h-4 mr-2"></i> Delete </a>
+                          </li>
+                        </ul>
+                      </div>
                     </div>
                 </div>
+              </div>
             `;
-            container.insertAdjacentHTML("beforeend", datasetHtml); // Insert the dataset HTML into the container
-          });
-        }
-      });
-    </script>
+          container.insertAdjacentHTML("beforeend", datasetHtml); // Insert the dataset HTML into the container
+        });
+      }
+    });
+  </script>
 
-    <!-- BEGIN: JS Assets-->
-    <script
-            src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=[" your-google-map-api"]&libraries=places"></script>
-        <script src="dist/js/app.js"></script>
-    <!-- END: JS Assets
+  <!-- BEGIN: JS Assets-->
+  <script
+    src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=[" your-google-map-api"]&libraries=places"></script>
+  <script src="dist/js/app.js"></script>
+  <!-- END: JS Assets
   </body>
 </html>

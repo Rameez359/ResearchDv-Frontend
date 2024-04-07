@@ -1,111 +1,88 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
-  <!-- BEGIN: Head -->
+<!-- BEGIN: Head -->
 
-  <head>
-    <meta charset="utf-8" />
-    <link href="dist/images/logo.svg" rel="shortcut icon" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="Tinker admin is super flexible, powerful, clean & modern responsive tailwind admin template with unlimited possibilities."
-    />
-    <meta
-      name="keywords"
-      content="admin template, Tinker Admin Template, dashboard template, flat admin template, responsive admin template, web app"
-    />
-    <meta name="author" content="LEFT4CODE" />
-    <title>Research Dv</title>
-    <!-- BEGIN: CSS Assets-->
-    <link rel="stylesheet" href="dist/css/app.css" />
-    <!-- END: CSS Assets-->
-  </head>
-  <!-- END: Head -->
+<head>
+  <meta charset="utf-8" />
+  <link href="dist/images/logo.svg" rel="shortcut icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description"
+    content="Tinker admin is super flexible, powerful, clean & modern responsive tailwind admin template with unlimited possibilities." />
+  <meta name="keywords"
+    content="admin template, Tinker Admin Template, dashboard template, flat admin template, responsive admin template, web app" />
+  <meta name="author" content="LEFT4CODE" />
+  <title>Research Dv</title>
+  <!-- BEGIN: CSS Assets-->
+  <link rel="stylesheet" href="dist/css/app.css" />
+  <!-- END: CSS Assets-->
+</head>
+<!-- END: Head -->
 
-  <body class="py-5 md:py-0 bg-black/[0.15] dark:bg-transparent">
-    <!-- BEGIN: Mobile Menu -->
-    <div class="mobile-menu md:hidden">
-      <div class="mobile-menu-bar">
-        <a href="" class="flex mr-auto">
-          <img
-            alt="Midone - HTML Admin Template"
-            class="w-6"
-            src="dist/images/logo.svg"
-          />
-        </a>
-        <a href="javascript:;" class="mobile-menu-toggler">
-          <i
-            data-lucide="bar-chart-2"
-            class="w-8 h-8 text-white transform -rotate-90"
-          ></i>
-        </a>
-      </div>
-      <div class="scrollable">
-        <a href="javascript:;" class="mobile-menu-toggler">
-          <i
-            data-lucide="x-circle"
-            class="w-8 h-8 text-white transform -rotate-90"
-          ></i>
-        </a>
-        <ul class="scrollable__content py-2">
-          <li>
-            <a href="javascript:;.html" class="menu">
-              <div class="menu__icon"><i data-lucide="home"></i></div>
-              <div class="menu__title">
-                Dashboard
-                <i
-                  data-lucide="chevron-down"
-                  class="menu__sub-icon transform rotate-180"
-                ></i>
-              </div>
-            </a>
-            <ul class="menu__sub-open">
-              <li>
-                <a href="side-menu-dark-dashboard-overview-1.html" class="menu">
-                  <div class="menu__icon"><i data-lucide="activity"></i></div>
-                  <div class="menu__title">Overview 1</div>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="side-menu-dark-dashboard-overview-2.html"
-                  class="menu menu--active"
-                >
-                  <div class="menu__icon"><i data-lucide="activity"></i></div>
-                  <div class="menu__title">Overview 2</div>
-                </a>
-              </li>
-              <li>
-                <a href="side-menu-dark-dashboard-overview-3.html" class="menu">
-                  <div class="menu__icon"><i data-lucide="activity"></i></div>
-                  <div class="menu__title">Overview 3</div>
-                </a>
-              </li>
-              <li>
-                <a href="side-menu-dark-dashboard-overview-4.html" class="menu">
-                  <div class="menu__icon"><i data-lucide="activity"></i></div>
-                  <div class="menu__title">Overview 4</div>
-                </a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
+<body class="py-5 md:py-0 bg-black/[0.15] dark:bg-transparent">
+  <!-- BEGIN: Mobile Menu -->
+  <div class="mobile-menu md:hidden">
+    <div class="mobile-menu-bar">
+      <a href="" class="flex mr-auto">
+        <img alt="Midone - HTML Admin Template" class="w-6" src="dist/images/logo.svg" />
+      </a>
+      <a href="javascript:;" class="mobile-menu-toggler">
+        <i data-lucide="bar-chart-2" class="w-8 h-8 text-white transform -rotate-90"></i>
+      </a>
     </div>
-    <!-- END: Mobile Menu -->
-    <div class="flex mt-[4.7rem] md:mt-0 overflow-hidden">
-      <!-- BEGIN: Side Menu -->
-      <%- include('./components/navBar') %>
+    <div class="scrollable">
+      <a href="javascript:;" class="mobile-menu-toggler">
+        <i data-lucide="x-circle" class="w-8 h-8 text-white transform -rotate-90"></i>
+      </a>
+      <ul class="scrollable__content py-2">
+        <li>
+          <a href="javascript:;.html" class="menu">
+            <div class="menu__icon"><i data-lucide="home"></i></div>
+            <div class="menu__title">
+              Dashboard
+              <i data-lucide="chevron-down" class="menu__sub-icon transform rotate-180"></i>
+            </div>
+          </a>
+          <ul class="menu__sub-open">
+            <li>
+              <a href="side-menu-dark-dashboard-overview-1.html" class="menu">
+                <div class="menu__icon"><i data-lucide="activity"></i></div>
+                <div class="menu__title">Overview 1</div>
+              </a>
+            </li>
+            <li>
+              <a href="side-menu-dark-dashboard-overview-2.html" class="menu menu--active">
+                <div class="menu__icon"><i data-lucide="activity"></i></div>
+                <div class="menu__title">Overview 2</div>
+              </a>
+            </li>
+            <li>
+              <a href="side-menu-dark-dashboard-overview-3.html" class="menu">
+                <div class="menu__icon"><i data-lucide="activity"></i></div>
+                <div class="menu__title">Overview 3</div>
+              </a>
+            </li>
+            <li>
+              <a href="side-menu-dark-dashboard-overview-4.html" class="menu">
+                <div class="menu__icon"><i data-lucide="activity"></i></div>
+                <div class="menu__title">Overview 4</div>
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- END: Mobile Menu -->
+  <div class="flex mt-[4.7rem] md:mt-0 overflow-hidden">
+    <!-- BEGIN: Side Menu -->
+    <%- include('./components/navBar') %>
       <!-- END: Side Menu -->
       <!-- BEGIN: Content -->
       <div style="background: #f1f5f9; color: black" class="content">
         <!-- BEGIN: Top Bar -->
         <div class="top-bar -mx-4 px-4 md:mx-0 md:px-0">
           <!-- BEGIN: Breadcrumb -->
-          <nav
-            aria-label="breadcrumb"
-            class="-intro-x mr-auto hidden sm:flex"
-          ></nav>
+          <nav aria-label="breadcrumb" class="-intro-x mr-auto hidden sm:flex"></nav>
           <%- include('./components/accounts') %>
         </div>
         <!-- END: Top Bar -->
@@ -132,13 +109,8 @@
                               <i data-lucide="layout"></i>
                             </div>
                             <div class="ml-auto">
-                              <div
-                                class="report-box__indicator tooltip cursor-pointer"
-                                title="Higher than last month"
-                              >
-                                <span
-                                  ><img src="/images/more.png" alt=""
-                                /></span>
+                              <div class="report-box__indicator tooltip cursor-pointer" title="Higher than last month">
+                                <span><img src="/images/more.png" alt="" /></span>
                               </div>
                             </div>
                           </div>
@@ -156,23 +128,14 @@
                     <div class="report-box zoom-in">
                       <div class="box p-5">
                         <div class="flex">
-                          <i
-                            data-lucide="credit-card"
-                            class="report-box__icon text-pending"
-                          ></i>
+                          <i data-lucide="credit-card" class="report-box__icon text-pending"></i>
                           <div class="ml-auto">
-                            <div
-                              class="report-box__indicator tooltip cursor-pointer"
-                              title="Lower than last month"
-                            >
+                            <div class="report-box__indicator tooltip cursor-pointer" title="Lower than last month">
                               <span><img src="/images/more.png" alt="" /></span>
                             </div>
                           </div>
                         </div>
-                        <div
-                          id="dataset_id"
-                          class="text-3xl font-medium leading-8 mt-6"
-                        >
+                        <div id="dataset_id" class="text-3xl font-medium leading-8 mt-6">
                           0
                         </div>
                         <div class="text-base text-slate-800 mt-1">
@@ -185,21 +148,15 @@
                     <div class="report-box zoom-in">
                       <div class="box p-5">
                         <div class="flex">
-                          <i
-                            data-lucide="monitor"
-                            class="report-box__icon text-warning"
-                          ></i>
+                          <i data-lucide="monitor" class="report-box__icon text-warning"></i>
                           <div class="ml-auto">
-                            <div
-                              class="report-box__indicator tooltip cursor-pointer"
-                              title="Higher than last month"
-                            >
+                            <div class="report-box__indicator tooltip cursor-pointer" title="Higher than last month">
                               <span><img src="/images/more.png" alt="" /></span>
                             </div>
                           </div>
                         </div>
                         <div class="text-3xl font-medium leading-8 mt-6">
-                          10
+                          0
                         </div>
                         <div class="text-base text-slate-800 mt-1">Results</div>
                       </div>
@@ -209,24 +166,18 @@
                     <div class="report-box zoom-in">
                       <div class="box p-5">
                         <div class="flex">
-                          <i
-                            data-lucide="user"
-                            class="report-box__icon text-success"
-                          ></i>
+                          <i data-lucide="user" class="report-box__icon text-success"></i>
                           <div class="ml-auto">
-                            <div
-                              class="report-box__indicator tooltip cursor-pointer"
-                              title="Higher than last month"
-                            >
+                            <div class="report-box__indicator tooltip cursor-pointer" title="Higher than last month">
                               <span><img src="/images/more.png" alt="" /></span>
                             </div>
                           </div>
                         </div>
                         <div class="text-3xl font-medium leading-8 mt-6">
-                          152
+                          0
                         </div>
                         <div class="text-base text-slate-800 mt-1">
-                          Unique User
+                          Unique Users
                         </div>
                       </div>
                     </div>
@@ -240,90 +191,41 @@
                   <h2 class="text-lg font-medium truncate mr-5">
                     Datasets Report
                   </h2>
-                  <div class="sm:ml-auto mt-3 sm:mt-0 relative text-slate-500">
-                    <i
-                      data-lucide="calendar"
-                      class="w-4 h-4 z-10 absolute my-auto inset-y-0 ml-3 left-0"
-                    ></i>
-                    <input
-                      style="background: white; color: black"
-                      type="text"
-                      class="datepicker form-control sm:w-56 box pl-10"
-                    />
-                  </div>
                 </div>
-                <div
-                  style="background: white"
-                  class="intro-y box p-5 mt-12 sm:mt-5"
-                >
+                <div style="background: white" class="intro-y box p-5 mt-12 sm:mt-5">
                   <div class="flex flex-col md:flex-row md:items-center">
                     <div class="flex">
                       <div>
-                        <div
-                          class="text-primary dark:text-slate-300 text-lg xl:text-xl font-medium"
-                        >
-                          $15,000
+                        <div class="text-primary dark:text-slate-500 text-lg xl:text-xl font-medium">
+                          150
                         </div>
                         <div class="mt-0.5 text-slate-500">This Month</div>
                       </div>
                       <div
-                        class="w-px h-12 border border-r border-dashed border-slate-200 dark:border-darkmode-300 mx-4 xl:mx-5"
-                      ></div>
+                        class="w-px h-12 border border-r border-dashed border-slate-200 dark:border-darkmode-300 mx-4 xl:mx-5">
+                      </div>
                       <div>
-                        <div
-                          class="text-slate-500 text-lg xl:text-xl font-medium"
-                        >
-                          $10,000
+                        <div class="text-slate-500 text-lg xl:text-xl font-medium">
+                          520
                         </div>
                         <div class="mt-0.5 text-slate-500">Last Month</div>
-                      </div>
-                    </div>
-                    <div class="dropdown md:ml-auto mt-5 md:mt-0">
-                      <button
-                        class="dropdown-toggle btn btn-outline-secondary font-normal"
-                        aria-expanded="false"
-                        data-tw-toggle="dropdown"
-                      >
-                        Filter by Category
-                        <i data-lucide="chevron-down" class="w-4 h-4 ml-2"></i>
-                      </button>
-                      <div class="dropdown-menu w-40">
-                        <ul class="dropdown-content overflow-y-auto h-32">
-                          <li>
-                            <a href="" class="dropdown-item">PC & Laptop</a>
-                          </li>
-                          <li>
-                            <a href="" class="dropdown-item">Smartphone</a>
-                          </li>
-                          <li>
-                            <a href="" class="dropdown-item">Electronic</a>
-                          </li>
-                          <li>
-                            <a href="" class="dropdown-item">Photography</a>
-                          </li>
-                          <li><a href="" class="dropdown-item">Sport</a></li>
-                        </ul>
                       </div>
                     </div>
                   </div>
                   <div class="report-chart">
                     <div class="h-[275px]">
-                      <canvas
-                        id="report-line-chart"
-                        class="mt-6 -mb-6"
-                      ></canvas>
+                      <canvas id="report-line-chart" class="mt-6 -mb-6"></canvas>
                     </div>
                   </div>
                 </div>
               </div>
               <!-- END: Sales Report -->
               <!-- BEGIN: Weekly Top Seller -->
-              <div class="col-span-12 sm:col-span-6 lg:col-span-3 mt-8">
+              <div class="col-span-12 sm:col-span-6 mt-8">
                 <div class="intro-y flex items-center h-10">
                   <h2 class="text-lg font-medium truncate mr-5">
-                    Weekly Top Seller
+                    Weekly Top Users
                   </h2>
-                  <a href="" class="ml-auto text-primary truncate">Show More</a>
                 </div>
                 <div style="background: white" class="intro-y box p-5 mt-5">
                   <div class="mt-3">
@@ -334,183 +236,149 @@
                   <div class="w-52 sm:w-auto mx-auto mt-8">
                     <div class="flex items-center">
                       <div class="w-2 h-2 bg-primary rounded-full mr-3"></div>
-                      <span class="truncate">17 - 30 Years old</span>
+                      <span class="truncate">30 Pakistani</span>
                       <span class="font-medium ml-auto">62%</span>
                     </div>
                     <div class="flex items-center mt-4">
                       <div class="w-2 h-2 bg-pending rounded-full mr-3"></div>
-                      <span class="truncate">31 - 50 Years old</span>
+                      <span class="truncate">50 Indian</span>
                       <span class="font-medium ml-auto">33%</span>
                     </div>
                     <div class="flex items-center mt-4">
                       <div class="w-2 h-2 bg-warning rounded-full mr-3"></div>
-                      <span class="truncate">>= 50 Years old</span>
+                      <span class="truncate">10 Canadian</span>
                       <span class="font-medium ml-auto">10%</span>
                     </div>
                   </div>
                 </div>
               </div>
               <!-- END: Weekly Top Seller -->
-              <!-- BEGIN: Sales Report -->
-              <div class="col-span-12 sm:col-span-6 lg:col-span-3 mt-8">
-                <div class="intro-y flex items-center h-10">
-                  <h2 class="text-lg font-medium truncate mr-5">
-                    Datasets Report
-                  </h2>
-                  <a href="" class="ml-auto text-primary truncate">Show More</a>
-                </div>
-                <div style="background: white" class="intro-y box p-5 mt-5">
-                  <div class="mt-3">
-                    <div class="h-[213px]">
-                      <canvas id="report-donut-chart"></canvas>
-                    </div>
-                  </div>
-                  <div class="w-52 sm:w-auto mx-auto mt-8">
-                    <div class="flex items-center">
-                      <div class="w-2 h-2 bg-primary rounded-full mr-3"></div>
-                      <span class="truncate">17 - 30 Years old</span>
-                      <span class="font-medium ml-auto">62%</span>
-                    </div>
-                    <div class="flex items-center mt-4">
-                      <div class="w-2 h-2 bg-pending rounded-full mr-3"></div>
-                      <span class="truncate">31 - 50 Years old</span>
-                      <span class="font-medium ml-auto">33%</span>
-                    </div>
-                    <div class="flex items-center mt-4">
-                      <div class="w-2 h-2 bg-warning rounded-full mr-3"></div>
-                      <span class="truncate">>= 50 Years old</span>
-                      <span class="font-medium ml-auto">10%</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
         <!-- END: Content -->
       </div>
-    </div>
+  </div>
 
-    <script>
-      // Wait for the DOM to be loaded before running the script
-      document.addEventListener("DOMContentLoaded", function () {
-        // Assuming your "My Projects" link has an id of "myProjectsLink"
-        var myProjectsLink = document.querySelector('a[href="/myProjects"]');
+  <script>
+    // Wait for the DOM to be loaded before running the script
+    document.addEventListener("DOMContentLoaded", function () {
+      // Assuming your "My Projects" link has an id of "myProjectsLink"
+      var myProjectsLink = document.querySelector('a[href="/myProjects"]');
 
-        if (myProjectsLink) {
-          myProjectsLink.addEventListener("click", function (e) {
-            // Prevent the default link behavior
-            e.preventDefault();
+      if (myProjectsLink) {
+        myProjectsLink.addEventListener("click", function (e) {
+          // Prevent the default link behavior
+          e.preventDefault();
 
-            // Get the uid from local storage
-            var uid = localStorage.getItem("userId");
+          // Get the uid from local storage
+          var uid = localStorage.getItem("userId");
 
-            if (uid) {
-              // Redirect to the desired URL with the uid
-              window.location.href = `/myProjects?userId=${uid}`;
-            } else {
-              // Handle the case where uid is not found, maybe redirect to login or show an error
-              console.error("UID not found. Please log in.");
-            }
-          });
-        }
-      });
-    </script>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        console.log("called");
-        // Retrieve the user ID from local storage or a global variable
-        const userId = localStorage.getItem("userId"); // or any other source for the userId
-        const authToken = localStorage.getItem("signInToken");
-
-        // API endpoint that returns the user projects
-        const apiUrl = `http://localhost:3000/projects/getUserProject/${userId}`;
-
-        fetch(apiUrl, {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            authorization: authToken,
-          },
-        })
-          .then((response) => {
-            if (!response.ok) {
-              throw new Error(
-                "Network response was not ok " + response.statusText
-              );
-            }
-            return response.json();
-          })
-          .then((data) => {
-            // Assuming the API returns a response where data contains an array of projects
-            updateProjectCount(data.result.totalProjects); // or data.projects.length if projects is a property
-            console.log(data.result.totalProjects, "eesult");
-          })
-          .catch((error) => {
-            console.error(
-              "There was an error fetching the user projects:",
-              error
-            );
-          });
-
-        function updateProjectCount(count) {
-          // Select the element that holds the project count and update its text
-          const projectCountElement = document.querySelector(".box .text-3xl");
-          if (projectCountElement) {
-            projectCountElement.textContent = count;
+          if (uid) {
+            // Redirect to the desired URL with the uid
+            window.location.href = `/myProjects?userId=${uid}`;
+          } else {
+            // Handle the case where uid is not found, maybe redirect to login or show an error
+            console.error("UID not found. Please log in.");
           }
-        }
-      });
-    </script>
+        });
+      }
+    });
+  </script>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // Assuming you have the user ID stored somewhere, like localStorage
-        const userId = localStorage.getItem("userId");
-        const authToken = localStorage.getItem("signInToken");
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Retrieve the user ID from local storage or a global variable
+      const userId = localStorage.getItem("userId"); // or any other source for the userId
+      const authToken = localStorage.getItem("signInToken");
 
-        const apiUrl = `http://localhost:3000/projects/getDatasets/${userId}`;
+      // API endpoint that returns the user projects
+      const apiUrl = `http://localhost:3000/projects/getUserProject/${userId}`;
 
-        fetch(apiUrl, {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            authorization: authToken,
-          },
-        })
-          .then((response) => {
-            if (!response.ok) {
-              throw new Error(
-                "Network response was not ok " + response.statusText
-              );
-            }
-            return response.json();
-          })
-          .then((data) => {
-            updateDatasetsCount(data.result.totalDatasets);
-          })
-          .catch((error) => {
-            console.error(
-              "There was an error fetching the datasets count:",
-              error
+      fetch(apiUrl, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          authorization: authToken,
+        },
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(
+              "Network response was not ok " + response.statusText
             );
-          });
-
-        function updateDatasetsCount(count) {
-          const datasetsCountElement = document.getElementById("dataset_id");
-          if (datasetsCountElement) {
-            datasetsCountElement.textContent = count;
           }
-        }
-      });
-    </script>
+          return response.json();
+        })
+        .then((data) => {
+          // Assuming the API returns a response where data contains an array of projects
+          updateProjectCount(data.result.totalProjects); // or data.projects.length if projects is a property
+        })
+        .catch((error) => {
+          console.error(
+            "There was an error fetching the user projects:",
+            error
+          );
+        });
 
-    <!-- BEGIN: JS Assets-->
-    <script
-            src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=[" your-google-map-api"]&libraries=places"></script>
-        <script src="dist/js/app.js"></script>
-    <!-- END: JS Assets-->
-  </body>
+      function updateProjectCount(count) {
+        // Select the element that holds the project count and update its text
+        const projectCountElement = document.querySelector(".box .text-3xl");
+        if (projectCountElement) {
+          projectCountElement.textContent = count;
+        }
+      }
+    });
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Assuming you have the user ID stored somewhere, like localStorage
+      const userId = localStorage.getItem("userId");
+      const authToken = localStorage.getItem("signInToken");
+
+      const apiUrl = `http://localhost:3000/projects/getDatasets/${userId}`;
+
+      fetch(apiUrl, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          authorization: authToken,
+        },
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(
+              "Network response was not ok " + response.statusText
+            );
+          }
+          return response.json();
+        })
+        .then((data) => {
+          updateDatasetsCount(data.result.totalDatasets);
+        })
+        .catch((error) => {
+          console.error(
+            "There was an error fetching the datasets count:",
+            error
+          );
+        });
+
+      function updateDatasetsCount(count) {
+        const datasetsCountElement = document.getElementById("dataset_id");
+        if (datasetsCountElement) {
+          datasetsCountElement.textContent = count;
+        }
+      }
+    });
+  </script>
+
+  <!-- BEGIN: JS Assets-->
+  <script
+    src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=[" your-google-map-api"]&libraries=places"></script>
+  <script src="dist/js/app.js"></script>
+  <!-- END: JS Assets-->
+</body>
+
 </html>
