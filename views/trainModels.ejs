@@ -24,6 +24,7 @@ License: You must have a valid license purchased only from themeforest(the above
     <title>Research Dv</title>
     <!-- BEGIN: CSS Assets-->
     <link rel="stylesheet" href="dist/css/app.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- END: CSS Assets-->
 </head>
 <!-- END: Head -->
@@ -75,6 +76,9 @@ License: You must have a valid license purchased only from themeforest(the above
     select::-webkit-scrollbar-thumb:hover {
         background: rgb(115 131 170);
     }
+    .bg-gray-50:hover {
+    background-color: #f8fafc;
+  }
 </style>
 
 <body class="py-5 md:py-0 bg-black/[0.15] dark:bg-transparent">
@@ -166,7 +170,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                         <label for="models" class="block mb-2 text-lg font-medium text-slate-800">Choose
                                             Model</label>
                                         <select id="models"
-                                            class="bg-gray-50 border border-gray-300 text-slate-800 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                                            class="bg-gray-50  border border-gray-300 text-slate-800 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                                             <option selected>Choose from the list</option>
                                             <option value="AlexNet">AlexNet</option>
                                             <option value="VGG-11">VGG-11</option>
@@ -215,6 +219,123 @@ License: You must have a valid license purchased only from themeforest(the above
                                     <button id="create-project" class="project px-4 py-2.5 text-white rounded">Train
                                         Model</button>
                                 </form>
+                                <div class=" mx-auto py-8">
+                                    <div class="flex justify-center">
+                                      <div style="width: -webkit-fill-available;margin-top: 90px;" class="block rounded-lg shadow-lg font-bold bg-white ">
+                                        <div class="py-3 px-6 border-b border-gray-300 text-xl text-black text-center">
+                                          Classification Report
+                                        </div>
+                                        <table class="min-w-full leading-normal">
+                                          <thead>
+                                            <tr>
+                                              <th class="px-5 py-3 border-b-2 border-gray-300 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                                Class
+                                              </th>
+                                              <th class="px-5 py-3 border-b-2 border-gray-300 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                                Precision
+                                              </th>
+                                              <th class="px-5 py-3 border-b-2 border-gray-300 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                                Recall
+                                              </th>
+                                              <th class="px-5 py-3 border-b-2 !border-gray-300 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                                F1-score
+                                              </th>
+                                              <th class="px-5 py-3 border-b-2 border-gray-300 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                                Support
+                                              </th>
+                                            </tr>
+                                          </thead>
+                                          <tbody style="color: black;">
+                                            <tr>
+                                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">0</td>
+                                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">0.00</td>
+                                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">0.00</td>
+                                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">0.00</td>
+                                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">4</td>
+                                            </tr>
+                                            <!-- Repeat for other rows -->
+                                            <tr>
+                                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">1</td>
+                                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">0.00</td>
+                                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">0.00</td>
+                                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">0.00</td>
+                                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">4</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">2</td>
+                                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">0.00</td>
+                                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">0.00</td>
+                                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">0.00</td>
+                                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">4</td>
+                                              </tr>
+                                            <!-- ... other rows ... -->
+                                            <tr>
+                                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">3</td>
+                                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">0.25</td>
+                                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">1.00</td>
+                                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">0.40</td>
+                                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">4</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">Accuracy</td>
+                                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">-</td>
+                                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">-</td>
+                                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">0.25</td>
+                                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">16</td>
+                                              </tr>
+                                              <tr>
+                                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">Macro avg</td>
+                                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">0.06</td>
+                                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">0.25</td>
+                                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">0.10</td>
+                                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">16</td>
+                                              </tr>
+                                              <tr>
+                                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">Weighted avg</td>
+                                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">0.06</td>
+                                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">0.25</td>
+                                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">0.10</td>
+                                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">16</td>
+                                              </tr>
+                                            <!-- <tr>
+                                              <td class="px-5 py-5 bg-white text-sm" colspan="5">
+                                                <strong>accuracy</strong> 0.25
+                                              </td>
+                                            </tr>
+                                            <tr>
+                                              <td class="px-5 py-5 bg-white text-sm" colspan="5">
+                                                <strong>macro avg</strong> 0.06 0.25 0.10 16
+                                              </td>
+                                            </tr>
+                                            <tr>
+                                              <td class="px-5 py-5 bg-white text-sm" colspan="5">
+                                                <strong>weighted avg</strong> 0.06 0.25 0.10 16
+                                              </td>
+                                            </tr> -->
+                                          </tbody>
+                                        </table>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="flex flex-row justify-center items-center space-x-4">
+                                    <!-- First Graph Container -->
+                                    <div class="w-1/2">
+                                      <canvas class="bg-white" id="rocChart1"></canvas>
+                                    </div>
+                                  
+                                    <!-- Second Graph Container -->
+                                    <div  class="w-1/2">
+                                      <canvas class="bg-white" id="rocChart2"></canvas>
+                                    </div>
+                                  </div>
+                                <img style="margin-top: 60px;
+                                width: 40%;
+                                padding-bottom: 40px;
+                                justify-content: center;
+                                display: flex;
+                                align-items: center;
+                                margin-left: auto;
+                                margin-right: auto;" src="images/confusion.png" alt="">
 
                                 </main>
                                 <!-- <div class="flex justify-center">
@@ -308,6 +429,75 @@ License: You must have a valid license purchased only from themeforest(the above
         </div>
         <!-- END: Content -->
     </div>
+
+      
+    
+<script>
+    // Define data for the first chart
+    var data1 = {
+      labels: [0, 0.2, 0.4, 0.6, 0.8, 1],
+      datasets: [{
+        label: 'Class 0 (AUC = 0.50)',
+        data: [0, 0.2, 0.4, 0.6, 0.8, 1],
+        borderColor: 'rgba(255, 99, 132, 1)',
+        fill: false
+      }]
+    };
+  
+    // Define data for the second chart
+    var data2 = {
+      labels: [0, 0.2, 0.4, 0.6, 0.8, 1],
+      datasets: [{
+        label: 'Class 1 (AUC = 0.50)',
+        data: [0, 0.2, 0.4, 0.6, 0.8, 1],
+        borderColor: 'rgba(54, 162, 235, 1)',
+        fill: false
+      }]
+    };
+  
+    // Chart options (can be reused or customized for each chart)
+    var options = {
+      scales: {
+        x: {
+          title: {
+            display: true,
+            text: 'False Positive Rate'
+          }
+        },
+        y: {
+          title: {
+            display: true,
+            text: 'True Positive Rate'
+          }
+        }
+      },
+      elements: {
+        line: {
+          tension: 0 // Disables bezier curves
+        }
+      }
+    };
+  
+    // Initialize the first chart
+    var ctx1 = document.getElementById('rocChart1').getContext('2d');
+    var rocChart1 = new Chart(ctx1, {
+      type: 'line',
+      data: data1,
+      options: options
+    });
+  
+    // Initialize the second chart
+    var ctx2 = document.getElementById('rocChart2').getContext('2d');
+    var rocChart2 = new Chart(ctx2, {
+      type: 'line',
+      data: data2,
+      options: options
+    });
+  </script>
+
+
+
+
 
 
     <!-- BEGIN: JS Assets-->
