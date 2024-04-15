@@ -165,7 +165,7 @@ License: You must have a valid license purchased only from themeforest(the above
                               </a>
                               </header> -->
 
-                                <form class="w-11/12 flex gap-6 mt-10 items-center justify-center">
+                                <div class="w-11/12 flex gap-6 mt-10 items-center justify-center">
                                     <div class="w-96">
                                         <label for="models" class="block mb-2 text-lg font-medium text-slate-800">Choose
                                             Model</label>
@@ -218,7 +218,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                     </div> -->
                                     <button id="create-project" class="project px-4 py-2.5 text-white rounded" onclick="trainModel()">Train
                                         Model</button>
-                                </form>
+                                    </div>
                                 <div class=" mx-auto py-8">
                                     <div class="flex justify-center">
                                       <div style="width: -webkit-fill-available;margin-top: 90px;" class="block rounded-lg shadow-lg font-bold bg-white ">
@@ -347,6 +347,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
                             <script>
                                 function trainModel() {
+                                console.log("called")
                                         const modelName = document.getElementById('models').value;
                                         console.log('Selected modelName:', modelName);
                                         if (!modelName) {
@@ -360,7 +361,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
                                         const formData = new FormData();
                                         formData.append('userId', userId);
-                                        formData.append('projectId', projectId);
+                                        formData.append('projectId', "123");
                                         formData.append('datasetId', datasetId);
                                         formData.append('modelName', modelName);
 
