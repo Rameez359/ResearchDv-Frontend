@@ -358,6 +358,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                         const userId = localStorage.getItem('userId');
                                         const projectId = localStorage.getItem('currentProjectId');
                                         const datasetId = localStorage.getItem('datasetId');
+                                        const authToken = localStorage.getItem("signInToken");
 
                                         const formData = new FormData();
                                         formData.append('userId', userId);
@@ -369,6 +370,10 @@ License: You must have a valid license purchased only from themeforest(the above
                                         console.log(formData, "data value");
                                         fetch('http://localhost:3000/projects/postTrainModel', {
                                             method: 'POST',
+                                            headers: {
+                                              "Content-Type": "application/json",
+                                              authorization: authToken,
+                                            },
                                             body: formData
                                         })
                                             .then(response => {
