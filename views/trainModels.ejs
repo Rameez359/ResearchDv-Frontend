@@ -216,9 +216,14 @@ License: You must have a valid license purchased only from themeforest(the above
                                             <option value="FR">Face Detection</option>
                                         </select>
                                     </div> -->
-                    <button id="create-project" class="project px-4 py-2.5 text-white rounded">Train
+
+                    <button id="create-project" class="project px-4 py-2.5 text-white rounded"
+                      onclick="trainModel()">Train
                       Model</button>
-                  </form>
+                  </div>
+                 
+                  <div class="text-center" id="alert-container"></div>
+
                   <div class=" mx-auto py-8">
                     <div class="flex justify-center">
                       <div style="width: -webkit-fill-available;margin-top: 90px;"
@@ -351,60 +356,81 @@ License: You must have a valid license purchased only from themeforest(the above
                               </a> -->
                 </div>
 
+
                 <script>
-                  document.addEventListener("DOMContentLoaded", function () {
-                    function fetchUserProjects(userId) {
-                      const url = `http://localhost:3000/projects/getUserProject/${userId}`;
-                      fetch(url)
-                        .then(response => {
-                          if (!response.ok) {
-                            throw new Error('Network response was not ok');
-                          }
-                          return response.json();
-                        })
-                        .then(data => {
-                          console.log('User projects:', data.result);
-                          displayUserProjects(data.result);
-                        })
-                        .catch(error => {
-                          console.error('There was an error!', error);
-
-                        });
-                    }
-
-                    function displayUserProjects(projects) {
-                      const projectContainer = document.querySelector('#project-container');
-
-                      projectContainer.innerHTML = '';
-
-                      for (let project of projects) {
-                        window.showAlert = function (projectId) {
-                          console.log("Project ID: " + projectId);
-                          localStorage.setItem('currentProjectId', `${projectId}`);
-                          window.location.href = '../Source/dashboard.html';
-
-                        };
-                        const projectDiv = document.createElement('div');
-                        projectDiv.classList.add('project-item');
-
-                        projectDiv.innerHTML = `
-                                      <a id="hello" onclick="showAlert('${project._id}')">
-                                      <img src="./images/1.png" alt="Object Detection Image" class=" mb-2">
-                                      <input type="hidden" value=${project._id}>
-                                      <h2>${project.projectName}</h2>
-                                        <p>${project.projectType}</p>
-                                       </a>
-                                        
-                                      `;
-
-                        projectContainer.appendChild(projectDiv);
-
-                      };
+                  function trainModel() {
+                    console.log("called")
+                    const modelName = document.getElementById('models').value;
+                    console.log('Selected modelName:', modelName);
+                    if (!modelName) {
+                      console.error('No mddel selected.');
+                      return;
                     }
 
                     const userId = localStorage.getItem('userId');
-                    fetchUserProjects(userId);
-                  });
+                    const projectId = localStorage.getItem('currentProjectId');
+                    const datasetId = localStorage.getItem('datasetId');
+
+                    // const formData = new FormData();
+                    const formData = {
+                      userId: userId,
+                      projectId: projectId,
+                      datasetId: datasetId,
+                      modelName: modelName
+                    }
+                    // formData.append('userId', userId);
+                    // formData.append('projectId', "123");
+                    // formData.append('datasetId', datasetId);
+                    // formData.append('modelName', modelName);
+
+
+                    console.log(formData, "data value");
+                    fetch('http://localhost:3000/projects/postTrainModel', {
+                      method: 'POST',
+                      headers: {
+                        'Content-Type': 'application/json'  // Add this line
+                      },
+                      body: JSON.stringify(formData)
+                    })
+                      .then(response => {
+                        if (!response.ok) {
+                          throw new Error('Network response was not ok');
+                        }
+                        return response.json();
+
+                      })
+                      .then(data => {
+                        console.log('Model training request submitted successfully:', data);
+                        document.getElementById('alert-container').innerHTML = `
+                        <div style="    width: fit-content;
+                                    text-align: center;
+                                    /* display: flex; */
+                                    align-items: center;
+                                    margin: auto;
+                                    margin-top: 70px;"
+                    class="flex items-center p-4 mb-4 text-sm text-green-800 border border-green-300 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400 dark:border-green-800"
+                    role="alert">
+                    <svg style="width: 33px;" class="flex-shrink-0 inline me-3" aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                      <path
+                        d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+                    </svg>
+                    <span class="sr-only">Info</span>
+                    <div style="margin-left: 10px;font-size: 35px;">
+                      Train model request has been submitted successfully!
+                      <br>
+                      <br>
+                      <p style="font-size: 20px;margin-left: 6px;" class="text-left">Please wait for results</p>
+                    </div>
+                  </div>`;
+                        // window.location.href = '/trainModels';
+                        // window.alert("uploaded successfully")
+                      })
+                      .catch(error => {
+                        console.error('Error uploading files:', error);
+                      });
+                  }
+
                 </script>
               </div>
 

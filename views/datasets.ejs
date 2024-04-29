@@ -252,7 +252,7 @@
                                         console.log(`userId is ${userId}`);
                                         formData.append('userId', userId);
                                         console.log(formData, "data value");
-                                        fetch('http://localhost:3000/projects/postProjectData', {
+                                        fetch('http://localhost:3000/projects/postDataset', {
                                             method: 'POST',
                                             body: formData
                                         })
@@ -265,6 +265,10 @@
                                             })
                                             .then(data => {
                                                 console.log('Files uploaded:', data);
+                                                localStorage.setItem(
+                                                    "datasetId",
+                                                        `${data.data.insertedId}`
+                                                    );
                                                 isLoading = false;
                                                 updateLoadingMessage();
                                                 window.location.href = '/trainModels';
@@ -496,10 +500,16 @@
             document.addEventListener("DOMContentLoaded", function() {
     // Assuming you have the user ID stored somewhere, like localStorage
     const userId = localStorage.getItem('userId');
+    const authToken = localStorage.getItem("signInToken");
 
     const apiUrl = `http://localhost:3000/projects/getDatasets/${userId}`;
 
-    fetch(apiUrl)
+    fetch(apiUrl,{
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            "authorization": authToken
+            }})
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok ' + response.statusText);
@@ -530,7 +540,7 @@
                 <div  class="intro-y col-span-6 sm:col-span-4 md:col-span-3 2xl:col-span-2">
                     <div onclick="showAlert('${dataset._id}')" class="file box rounded-md px-5 pt-8 pb-5 px-3 sm:px-5 relative zoom-in">
                         <a href="#" class="w-3/5 file__icon file__icon--directory mx-auto"></a>
-                        <a href="#" class="block font-medium mt-4 text-center truncate text-slate-800">${dataset.name}</a>
+                        <a href="#" class="block font-medium mt-4 text-center truncate text-slate-800">${dataset.datasetName}</a>
                         <div class="text-slate-600 text-xs text-center mt-0.5">800 kb</div>
                         <input type="hidden" value=${dataset._id}}>
                     </div>

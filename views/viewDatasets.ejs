@@ -208,27 +208,16 @@
       function updateDatasetsList(datasets) {
         const container = document.querySelector(".intro-y.grid"); // Adjust the selector to your grid container
         container.innerHTML = ""; // Clear the container
-
-        // Loop through the datasets and create the HTML for each dataset
-        datasets.forEach((dataset) => {
-          const datasetHtml = `
-              <div class="intro-y col-span-6 sm:col-span-4 md:col-span-3 2xl:col-span-2">
-                <div class="file box rounded-md px-5 pt-8 pb-5 px-3 sm:px-5 relative zoom-in">
-                    <a href="" class="w-3/5 file__icon file__icon--directory mx-auto"></a> <a
-                        href=""
-                        class="block font-medium mt-4 text-center truncate text-slate-800">${dataset.name}</a>
-                    <div class="text-slate-600 text-xs text-center mt-0.5">20 KB</div>
-                    <div class="absolute top-0 right-0 mr-2 mt-3 dropdown ml-auto">
-                      <a class="dropdown-toggle w-5 h-5 block" href="javascript:;" aria-expanded="false" data-tw-toggle="dropdown"> 
-                        <i data-lucide="more-vertical" class="w-5 h-5 text-slate-600"></i>
-                      </a>
-                      <div class="dropdown-menu w-40">
-                        <ul class="dropdown-content">
-                          <li>
-                            <a href="" class="dropdown-item"> <i data-lucide="trash" class="w-4 h-4 mr-2"></i> Delete </a>
-                          </li>
-                        </ul>
-                      </div>
+        
+          // Loop through the datasets and create the HTML for each dataset
+          datasets.forEach((dataset) => {
+            const datasetHtml = `
+                <div class="intro-y col-span-6 sm:col-span-4 md:col-span-3 2xl:col-span-2">
+                    <div class="file box rounded-md px-5 pt-8 pb-5 px-3 sm:px-5 relative zoom-in">
+                        <a href="" class="w-3/5 file__icon file__icon--directory mx-auto"></a>
+                        <a href="" class="block font-medium mt-4 text-center truncate text-slate-800">${dataset.datasetName}</a>
+                        <div class="text-slate-600 text-xs text-center mt-0.5">800 kb</div>
+                        <!-- Add any other dataset details you want to display -->
                     </div>
                 </div>
               </div>

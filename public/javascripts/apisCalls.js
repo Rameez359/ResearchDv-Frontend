@@ -119,6 +119,11 @@ const signIn = async () => {
         username_mail: username_mail,
         password: password,
     };
+    // if (!data.username || !data.password) {
+    //     document.getElementById('signin-error').style.display = 'block'; // Show the error modal
+    //     document.querySelector('.error').textContent = '*Incomplete information. Please fill out all fields.';
+    //     return;
+    // }
     const checkUser = await postData(`${SERVER_URL}/localSignIn`, data);
     
     if (checkUser.statusCode === 200) {
@@ -128,11 +133,15 @@ const signIn = async () => {
         localStorage.setItem('signInToken', `${checkUser.response.token}`);
 
         window.location.href = '/dashboard';
+      
+    } else if (checkUser.statusCode === 404) {
+        console.log(JSON.stringify(checkUser.response));
+        document.getElementById('signin-error').style.display = 'block';
+        document.getElementById('error').textContent = checkUser.response;
     } 
-    else if (checkUser.statusCode === 404) {
-        displayError('signin-error', '*'+checkUser.response);
-    }
-    else if (checkUser.statusCode === 401) {
-        displayError('signin-error', '*'+checkUser.response);
-    }
+    else{
+        console.log(JSON.stringify(checkUser.response));
+        document.getElementById('signin-error').style.display = 'block';
+        document.getElementById('error').textContent = checkUser.response;
+    } 
 };
