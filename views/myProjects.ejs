@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 
 <html lang="en" class="dark">
@@ -31,16 +30,16 @@
     }
 
     .project {
-        background-color: #17d0d9 !important;
+        background-color: #01b1e9;
         margin-top: 30px;
     }
 
     .project:hover {
-        background-color: #096166 !important;
+        background-color: #1a96bd;
     }
 
     .project-item {
-        width: 30%;
+        width: 25%;
         cursor: pointer;
         border-radius: 2%;
         padding: 10px;
@@ -105,87 +104,88 @@
     <div class="flex mt-[4.7rem] md:mt-0 overflow-hidden">
         <!-- BEGIN: Side Menu -->
         <%- include('./components/navBar') %>
-        <!-- END: Side Menu -->
-        <!-- BEGIN: Content -->
-        <div style="background: #f1f5f9;;color: black;" class="content">
-            <!-- BEGIN: Top Bar -->
-            <div class="top-bar -mx-4 px-4 md:mx-0 md:px-0">
-                <!-- BEGIN: Breadcrumb -->
-                <nav style="font-size: 26px;color: black;" aria-label="breadcrumb"
-                    class="-intro-x mr-auto hidden sm:flex">
+            <!-- END: Side Menu -->
+            <!-- BEGIN: Content -->
+            <div style="background: #f1f5f9;;color: black;" class="content">
+                <!-- BEGIN: Top Bar -->
+                <div class="top-bar -mx-4 px-4 md:mx-0 md:px-0">
+                    <!-- BEGIN: Breadcrumb -->
+                    <nav style="font-size: 26px;color: black;" aria-label="breadcrumb"
+                        class="-intro-x mr-auto hidden sm:flex">
 
-                </nav>
-                <%- include('./components/accounts') %>
-            </div>
-            <!-- END: Top Bar -->
-            <div class="">
-                <div class="col-span-12 2xl:col-span-9">
-                    <div class="grid ">
-            
-                        <!-- BEGIN: General Report -->
-                        <div class="col-span-12 lg:col-span-8 xl:col-span-6 mt-2">
-                            <div class="intro-y block items-center h-10">
-                                <div class="flex justify-between">
-                                    <h3 class="font-bold mr-5 text-2xl truncate text-slate-800">My Projects</h3>
-                                    <a href="./createProject">
-                                        <button id="create-project" class="project px-4 py-2 text-white rounded">Create
-                                            New Project</button>
+                    </nav>
+                    <%- include('./components/accounts') %>
+                </div>
+                <!-- END: Top Bar -->
+                <div class="">
+                    <div class="col-span-12 2xl:col-span-9">
+                        <div class="grid ">
 
-                                    </a>
+                            <!-- BEGIN: General Report -->
+                            <div class="col-span-12 lg:col-span-8 xl:col-span-6 mt-2">
+                                <div class="intro-y block items-center h-10">
+                                    <div class="flex justify-between">
+                                        <h3 class="font-bold mr-5 text-2xl truncate text-slate-800">My Projects</h3>
+                                        <a href="./createProject">
+                                            <button id="create-project"
+                                                class="project px-4 py-2 text-white rounded">Create
+                                                New Project</button>
+
+                                        </a>
+                                    </div>
+                                    <div class="grid  gap-4 " id="project-grid">
+                                        <main class="container mx-auto px-4 py-10 flex flex-wrap"
+                                            id="project-container">
+                                    </div>
+
+                                    </main>
                                 </div>
-                                <div class="grid  gap-4 " id="project-grid" >
-                                    <main class="container mx-auto px-4 py-10 flex flex-wrap justify-left"
-                                        id="project-container">
-                                </div>
 
-                                </main>
-                            </div>
+                                <script>
+                                    document.addEventListener("DOMContentLoaded", function () {
+                                        const authToken = localStorage.getItem("signInToken");
+                                        function fetchUserProjects(userId) {
+                                            const url = `http://localhost:3000/projects/getUserProject/${userId}`;
+                                            fetch(url, {
+                                                method: "GET",
+                                                headers: {
+                                                    "Content-Type": "application/json",
+                                                    "authorization": authToken
+                                                }
+                                            }).then(response => {
+                                                if (!response.ok) {
+                                                    throw new Error('Network response was not ok');
+                                                }
+                                                return response.json();
+                                            })
+                                                .then(data => {
+                                                    console.log('User projects:', data.result.projects);
+                                                    displayUserProjects(data.result.projects);
+                                                })
+                                                .catch(error => {
+                                                    console.error('There was an error!', error);
 
-                            <script>
-                                document.addEventListener("DOMContentLoaded", function () {
-                                    const authToken = localStorage.getItem("signInToken");
-                                    function fetchUserProjects(userId) {
-                                        const url = `http://localhost:3000/projects/getUserProject/${userId}`;
-                                        fetch(url,{
-                                            method: "GET",
-                                            headers: {
-                                            "Content-Type": "application/json",
-                                            "authorization": authToken
-                                            }
-                                        }).then(response => {
-                                            if (!response.ok) {
-                                                throw new Error('Network response was not ok');
-                                            }
-                                            return response.json();
-                                        })
-                                        .then(data => {
-                                            console.log('User projects:', data.result.projects);
-                                            displayUserProjects(data.result.projects);
-                                        })
-                                        .catch(error => {
-                                            console.error('There was an error!', error);
+                                                });
+                                        }
 
-                                        });
-                                    }
+                                        function displayUserProjects(projects) {
+                                            const projectContainer = document.querySelector('#project-container');
 
-                                    function displayUserProjects(projects) {
-                                        const projectContainer = document.querySelector('#project-container');
+                                            projectContainer.innerHTML = '';
 
-                                        projectContainer.innerHTML = '';
+                                            for (let project of projects) {
+                                                window.showAlert = function (projectId, projectType) {
+                                                    console.log("Project ID: " + projectId);
+                                                    console.log("Project Type: " + projectType);
+                                                    localStorage.setItem('currentProjectId', `${projectId}`);
+                                                    localStorage.setItem('currentProjectType', `${projectType}`);
+                                                    window.location.href = '/trainModels';
 
-                                        for (let project of projects) {
-                                            window.showAlert = function (projectId, projectType) {
-                                                console.log("Project ID: " + projectId);
-                                                console.log("Project Type: " + projectType);
-                                                localStorage.setItem('currentProjectId', `${projectId}`);
-                                                localStorage.setItem('currentProjectType', `${projectType}`);
-                                                window.location.href = '/trainModels';
+                                                };
+                                                const projectDiv = document.createElement('div');
+                                                projectDiv.classList.add('project-item');
 
-                                            };
-                                            const projectDiv = document.createElement('div');
-                                            projectDiv.classList.add('project-item');
-
-                                            projectDiv.innerHTML = `
+                                                projectDiv.innerHTML = `
                                             <div
                                             class="p-4 bg-gray-100  rounded-md flex items-center justify-center cursor-pointer section">
                                             <div id="hello" onclick="showAlert('${project._id}','${project.projectType}')" class="report-box zoom-in">
@@ -205,22 +205,22 @@
                                             </div>
                                         </div>`;
 
-                                            projectContainer.appendChild(projectDiv);
+                                                projectContainer.appendChild(projectDiv);
 
-                                        };
-                                    }
+                                            };
+                                        }
 
-                                    const userId = localStorage.getItem('userId');
-                                    fetchUserProjects(userId);
-                                });
-                            </script>
+                                        const userId = localStorage.getItem('userId');
+                                        fetchUserProjects(userId);
+                                    });
+                                </script>
+                            </div>
                         </div>
                     </div>
-                </div>
 
+                </div>
             </div>
-        </div>
-        <!-- END: Content -->
+            <!-- END: Content -->
     </div>
 
 

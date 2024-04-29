@@ -108,7 +108,6 @@ const registerStepThree = async () => {
 };
 
 const signIn = async () => {
-    console.log("called")
     const username_mail = document.getElementById('username-mail').value;
     const password = document.getElementById('user-password').value;
     if (!(username_mail && password)) {
@@ -134,6 +133,7 @@ const signIn = async () => {
         localStorage.setItem('signInToken', `${checkUser.response.token}`);
 
         window.location.href = '/dashboard';
+      
     } else if (checkUser.statusCode === 404) {
         console.log(JSON.stringify(checkUser.response));
         document.getElementById('signin-error').style.display = 'block';

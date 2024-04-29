@@ -180,31 +180,25 @@ h1 {
     display: none;
     position: fixed;
     z-index: 1;
-    /* border-radius: 10px; */
     width: 80%;
-    /* height:80%;  */
     max-width: 600px;
     height: auto;
     left: 50%;
     top: 30%;
     transform: translate(-50%, -30%);
     background-color: #f1f5f9;
+    border-radius: 10px;
     color: rgb(30 41 59);
-    box-shadow: 9px 11px 4px -6px rgba(180, 176, 176, 0.75);
-    -webkit-box-shadow: 9px 11px 4px -6px rgba(180, 176, 176, 0.75);
-    -moz-box-shadow: 9px 11px 4px -6px rgba(180, 176, 176, 0.75);
+    box-shadow: 0px 0px 20px 3px rgba(114, 110, 110, 0.75);
+    -webkit-box-shadow: 0px 0px 20px 3px rgba(114, 110, 110, 0.75);
+    -moz-box-shadow: 0px 0px 20px 3px rgba(114, 110, 110, 0.75);
 
 }
 
 /* Modal Content */
 .modal-content {
-    /* background-color: #f1f5f9; */
     color: rgb(30 41 59);
     padding: 10px 20px 20px 20px;
-    border-radius: 10px;
-    border: 1px solid #888;
-    /* border: 1px solid #888; */
-    /* width: 90%; */
 }
 
 .display-none {
@@ -379,6 +373,5 @@ label {
     }
 
     .flow-flock-intro,
-    .flow-flock-joining {
-    }
+    .flow-flock-joining {}
 }

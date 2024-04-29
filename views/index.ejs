@@ -1,344 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="dist/images/logo.svg" rel="shortcut icon" />
-    <link rel="stylesheet" href="stylesheets/style.css" />
-    <script
-      src="https://kit.fontawesome.com/2e4f9a987e.js"
-      crossorigin="anonymous"
-    ></script>
-    <!-- <link rel="stylesheet" href="../styles/main.css" /> -->
-    <script>
-        const currentRoute = window.location.pathname;
-        console.log("Current route:", currentRoute);
-        if (currentRoute === "/logout") {
-            localStorage.clear();
-            window.location.href = '/';
-        }
-      </script>
-    <title>Research DV</title>
-  </head>
-   <body>
-    <div class="main-page">
-      <div class="content">
-        <div class="flow-flock-intro">
-          <h1>Research</h1>
-          <h1>DV</h1>
-          <img
-            class="main-img"
-            src="/images/AI and Deep Learning.gif"
-            alt="main"
-          />
-        </div>
-        <div class="flow-flock-joining">
-          <!-- <h2>Join MultiModel Hub</h2> -->
-          <h5>We Help In Your Research</h5>
-          <div class="signup-account">
-            <a href="#" class="signup-with">
-              <span class="signup-icon-items">
-                <i
-                  class="fa-brands fa-google fa-xl signup-icon"
-                  style="color: #d51010"
-                ></i>
-                Sign up with Google
-              </span>
-            </a>
-            <a class="signup-with">
-              <span class="signup-icon-items">
-                <i
-                  class="fa-brands fa-facebook fa-xl signup-icon"
-                  style="color: #1041d5"
-                ></i>
-                Sign up with Facebook
-              </span>
-            </a>
-            <div class="or">
-              <div class="h-line"></div>
-              <div class="">or</div>
-              <div class="h-line"></div>
-            </div>
-            <a
-              class="create-account"
-              id="create-account"
-              onclick="OpenSignUpModal()"
-            >
-              <span class="signup-icon-items">
-                <strong>Create Account</strong>
-              </span>
-            </a>
-            <!-- <div class="privacy-policy">
-                            By signing up, you agree to the
-                            <span class="link-detail">Terms of Service</span>
-                            and
-                            <span class="link-detail">Privacy Policy,</span>
-                            including
-                            <span class="link-detail">Cookie Use.</span>
-                        </div> -->
-            <a class="already-account">
-              <strong>Already have an account? </strong>
-            </a>
-            <a class="account-sign-in" onclick="OpenSignInModal()">
-              <span class="signup-icon-items">
-                <strong>Sign in</strong>
-              </span>
-            </a>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="dist/images/logo.svg" rel="shortcut icon" />
+  <link rel="stylesheet" href="stylesheets/style.css" />
+  <script src="https://kit.fontawesome.com/2e4f9a987e.js" crossorigin="anonymous"></script>
+  <!-- <link rel="stylesheet" href="../styles/main.css" /> -->
+  <script>
+    const currentRoute = window.location.pathname;
+    if (currentRoute === "/logout") {
+      localStorage.clear();
+      window.location.href = '/';
+    }
+  </script>
+  <title>Research DV</title>
+</head>
+
+<body>
+  <div id="main" class="main-page">
+    <div class="content">
+      <div class="flow-flock-intro">
+        <h1>Research Dv</h1>
+        <img class="main-img" src="/images/AI and Deep Learning.gif" alt="main" />
+      </div>
+      <div class="flow-flock-joining">
+        <!-- <h2>Join MultiModel Hub</h2> -->
+        <h5>We Help In Your Research</h5>
+        <div class="signup-account">
+          <a href="#" class="signup-with">
+            <span class="signup-icon-items">
+              <i class="fa-brands fa-google fa-xl signup-icon" style="color: #ff0000"></i>
+              Sign up with Google
+            </span>
+          </a>
+
+          <div class="or">
+            <div class="h-line"></div>
+            <div class="">or</div>
+            <div class="h-line"></div>
           </div>
+          <a class="create-account" id="create-account" onclick="OpenSignUpModal()">
+            <span class="signup-icon-items">
+              <strong>Create Account</strong>
+            </span>
+          </a>
+          <a class="already-account">
+            <strong>Already have an account? </strong>
+          </a>
+          <a class="account-sign-in" id="sign-in-btn" onclick="OpenSignInModal()">
+            <span class="signup-icon-items">
+              <strong>Sign in</strong>
+            </span>
+          </a>
         </div>
       </div>
     </div>
-    <div id="myModal" class="modal">
-      <!-- Modal content -->
-      <div class="modal-content" id="modal-content">
-        <div
-          class="modal-content-step-one display-none"
-          id="modal-content-step-one"
-        >
-          <div class="signup-steps modal-top">
-            <div class="steps-count">
-              <strong>Step 1 of 3</strong>
+  </div>
+  <div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content" id="modal-content">
+      <div class="modal-content-step-one display-none" id="modal-content-step-one">
+        <div class="signup-steps modal-top">
+          <div class="steps-count">
+            <strong>Step 1 of 3</strong>
+          </div>
+          <div class="close-btn float-right" onclick="closeModal()">
+            <a class="close">&times;</a>
+          </div>
+        </div>
+        <div class="create-account-info modal-inner-content">
+          <div class="modal-inner-head create-account-text">
+            <h1>Create your account</h1>
+          </div>
+          <div class="field">
+            <div class="label">
+              <label for="name"><strong>Name</strong></label>
             </div>
-            <div class="close-btn float-right" onclick="closeModal()">
-              <a class="close">&times;</a>
+            <div class="modal-input signup-input">
+              <input type="text" id="name" autocomplete="off" />
             </div>
           </div>
-          <div class="create-account-info modal-inner-content">
-            <div class="modal-inner-head create-account-text">
-              <h1>Create your account</h1>
+          <div class="field">
+            <div class="label">
+              <label for="email"><strong>Email</strong></label>
             </div>
-            <div class="field">
-              <div class="label">
-                <label for="name"><strong>Name</strong></label>
-              </div>
-              <div class="modal-input signup-input">
-                <input type="text" id="name" autocomplete="off" />
-              </div>
+            <div class="modal-input">
+              <input type="email" id="email" autocomplete="off" onchange="checkEmail()" />
             </div>
-            <div class="field">
-              <div class="label">
-                <label for="email"><strong>Email</strong></label>
-              </div>
-              <div class="modal-input">
-                <input
-                  type="email"
-                  id="email"
-                  autocomplete="off"
-                  onchange="checkEmail()"
-                />
-              </div>
-              <div class="inValidEmail display-none" id="inValidEmail">
-                <div class="error">*Please Enter Valid Email Address.</div>
-              </div>
+            <div class="inValidEmail display-none" id="inValidEmail">
+              <div class="error">*Please Enter Valid Email Address.</div>
             </div>
-            <div class="date-of-birth">
-              <div class="dob-text">
-                <h4>Select Date of birth</h4>
+          </div>
+          <div class="date-of-birth">
+            <div class="dob-text">
+              <h4>Select Date of birth</h4>
+            </div>
+            <div class="day-month-year">
+              <div class="month">
+                <select id="month">
+                  <option value="1">January</option>
+                  <option value="2">February</option>
+                  <option value="3">March</option>
+                  <option value="4">April</option>
+                  <option value="5">May</option>
+                  <option value="6">June</option>
+                  <option value="7">July</option>
+                  <option value="8">August</option>
+                  <option value="9">September</option>
+                  <option value="10">October</option>
+                  <option value="11">November</option>
+                  <option value="12">December</option>
+                </select>
               </div>
-              <div class="day-month-year">
-                <div class="month">
-                  <select id="month">
-                    <option value="1">January</option>
-                    <option value="2">February</option>
-                    <option value="3">March</option>
-                    <option value="4">April</option>
-                    <option value="5">May</option>
-                    <option value="6">June</option>
-                    <option value="7">July</option>
-                    <option value="8">August</option>
-                    <option value="9">September</option>
-                    <option value="10">October</option>
-                    <option value="11">November</option>
-                    <option value="12">December</option>
-                  </select>
-                </div>
-                <div class="day">
-                  <div class="dob-label"></div>
-                  <select id="day"></select>
-                </div>
-                <div class="year">
-                  <select id="year" name="year"></select>
-                </div>
+              <div class="day">
+                <div class="dob-label"></div>
+                <select id="day"></select>
+              </div>
+              <div class="year">
+                <select id="year" name="year"></select>
               </div>
             </div>
           </div>
-          <div
-            class="register-error modal-error display-none"
-            id="register-error"
-          >
+        </div>
+        <div class="register-error modal-error display-none" id="register-error">
+          <div class="error">
+            *Incomplete information. Please fill out all fields.
+          </div>
+        </div>
+        <div class="register modal-btn" onclick="registerStepOne()">
+          <a class="modal-btn-txt">
+            <strong>Register</strong>
+          </a>
+        </div>
+      </div>
+
+      <div class="modal-content-step-two display-none" id="modal-content-step-two">
+        <div class="modal-top">
+          <div class="close-btn" onclick="closeModal()">
+            <a class="close">&times;</a>
+          </div>
+          <div class="steps-count">
+            <strong>Step 2 of 3</strong>
+          </div>
+        </div>
+        <div class="modal-inner-content">
+          <div class="modal-inner-head">
+            <h1>Verify Your Account</h1>
+          </div>
+          <div class="verification-msg">
+            *Verification code sent to your email. Please enter to verify your
+            account.
+          </div>
+          <div>
+            <div class="label">
+              <label for="verification-code"><strong>Enter verification code</strong></label>
+            </div>
+            <div class="modal-input signup-input">
+              <input type="text" id="verification-code" autocomplete="off" oninput="validateNumberInput(this)" />
+            </div>
+          </div>
+          <div class="register-error modal-error display-none" id="code-error">
             <div class="error">
               *Incomplete information. Please fill out all fields.
             </div>
           </div>
-          <div class="register modal-btn" onclick="registerStepOne()">
-            <a class="modal-btn-txt">
-              <strong>Register</strong>
-            </a>
+        </div>
+        <div class="modal-btn" onclick="registerStepTwo()">
+          <a class="modal-btn-txt">
+            <strong>Verify</strong>
+          </a>
+        </div>
+      </div>
+
+      <div class="modal-content-step-three display-none" id="modal-content-step-three">
+        <div class="modal-top">
+          <div class="close-btn">
+            <a class="close" onclick="closeModal()">&times;</a>
+          </div>
+          <div class="steps-count">
+            <strong>Step 3 of 3</strong>
           </div>
         </div>
+        <div class="modal-inner-content">
+          <div class="modal-inner-head create-account-text">
+            <h1>Choose your Username</h1>
+          </div>
+          <div class="verification-msg">
+            *Your account has been verified successfully. Please choose your
+            username and password.
+          </div>
+          <div>
+            <div class="label">
+              <label for="username"><strong>Enter username</strong></label>
+            </div>
+            <div class="modal-input">
+              <input type="text" id="username" autocomplete="off" />
+            </div>
+          </div>
+          <div>
+            <div class="label">
+              <label for="password"><strong>Password</strong></label>
+            </div>
+            <div class="modal-input">
+              <input type="password" id="password" autocomplete="off" />
+            </div>
+          </div>
+          <div>
+            <div class="label">
+              <label for="confirm-password"><strong>Confirm Password</strong></label>
+            </div>
+            <div class="modal-input">
+              <input type="password" id="confirm-password" autocomplete="off" />
+            </div>
+          </div>
+          <div class="modal-error display-none" id="username-error"></div>
 
-        <div
-          class="modal-content-step-two display-none"
-          id="modal-content-step-two"
-        >
-          <div class="modal-top">
-            <div class="close-btn" onclick="closeModal()">
-              <a class="close">&times;</a>
-            </div>
-            <div class="steps-count">
-              <strong>Step 2 of 3</strong>
-            </div>
-          </div>
-          <div class="modal-inner-content">
-            <div class="modal-inner-head">
-              <h1>Verify Your Account</h1>
-            </div>
-            <div class="verification-msg">
-              *Verification code sent to your email. Please enter to verify your
-              account.
-            </div>
-            <div>
-              <div class="label">
-                <label for="verification-code"
-                  ><strong>Enter verification code</strong></label
-                >
-              </div>
-              <div class="modal-input signup-input">
-                <input
-                  type="text"
-                  id="verification-code"
-                  autocomplete="off"
-                  oninput="validateNumberInput(this)"
-                />
-              </div>
-            </div>
-            <div
-              class="register-error modal-error display-none"
-              id="code-error"
-            >
-              <div class="error">
-                *Incomplete information. Please fill out all fields.
-              </div>
-            </div>
-          </div>
-          <div class="modal-btn" onclick="registerStepTwo()">
-            <a class="modal-btn-txt">
-              <strong>Verify</strong>
-            </a>
-          </div>
-        </div>
-
-        <div
-          class="modal-content-step-three display-none"
-          id="modal-content-step-three"
-        >
-          <div class="modal-top">
-            <div class="close-btn">
-              <a class="close" onclick="closeModal()">&times;</a>
-            </div>
-            <div class="steps-count">
-              <strong>Step 3 of 3</strong>
-            </div>
-          </div>
-          <div class="modal-inner-content">
-            <div class="modal-inner-head create-account-text">
-              <h1>Choose your Username</h1>
-            </div>
-            <div class="verification-msg">
-              *Your account has been verified successfully. Please choose your
-              username and password.
-            </div>
-            <div>
-              <div class="label">
-                <label for="username"><strong>Enter username</strong></label>
-              </div>
-              <div class="modal-input">
-                <input type="text" id="username" autocomplete="off" />
-              </div>
-            </div>
-            <div>
-              <div class="label">
-                <label for="password"><strong>Password</strong></label>
-              </div>
-              <div class="modal-input">
-                <input type="password" id="password" autocomplete="off" />
-              </div>
-            </div>
-            <div>
-              <div class="label">
-                <label for="confirm-password"
-                  ><strong>Confirm Password</strong></label
-                >
-              </div>
-              <div class="modal-input">
-                <input
-                  type="password"
-                  id="confirm-password"
-                  autocomplete="off"
-                />
-              </div>
-            </div>
-            <div class="modal-error display-none" id="username-error"></div>
-
-            <div class="modal-btn">
-              <a class="modal-btn-txt" onclick="registerStepThree()">
-                <strong>Confirm</strong>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="sign-in display-none" id="sign-in">
-          <div class="modal-top">
-            <div
-              style="margin-left: auto"
-              class="close-btn"
-              onclick="closeModal()"
-            >
-              <a class="close">&times;</a>
-            </div>
-          </div>
-          <div class="modal-inner-content">
-            <div class="modal-inner-head">
-              <h1>Sign in your account</h1>
-            </div>
-            <div class="field">
-              <div class="label">
-                <label for="username-mail"
-                  ><strong>Username/Email</strong></label
-                >
-              </div>
-              <div class="modal-input">
-                <input type="text" id="username-mail" oninput="checkEmail()" />
-              </div>
-              <div class="inValidEmail display-none" id="inValidEmail">
-                <div class="error">*Please Enter Valid Email Address.</div>
-              </div>
-            </div>
-            <div class="field">
-              <div class="label">
-                <label for="user-password"><strong>Password</strong></label>
-              </div>
-              <div class="modal-input">
-                <input type="password" id="user-password" />
-              </div>
-            </div>
-          </div>
-          <div class="modal-error display-none" id="signin-error">
-            <div id="error" class="error">
-              
-            </div>
-          </div>
           <div class="modal-btn">
-            <a class="modal-btn-txt" onclick="signIn()">
-              <strong>Sign in</strong>
+            <a class="modal-btn-txt" onclick="registerStepThree()">
+              <strong>Confirm</strong>
             </a>
           </div>
         </div>
       </div>
+
+      <div class="sign-in display-none" id="sign-in">
+        <div class="modal-top">
+          <div style="margin-left: auto" class="close-btn" onclick="closeModal()">
+            <a class="close">&times;</a>
+          </div>
+        </div>
+        <div class="modal-inner-content">
+          <div class="modal-inner-head">
+            <h1>Sign in your account</h1>
+          </div>
+          <div class="field">
+            <div class="label">
+              <label for="username-mail"><strong>Username/Email</strong></label>
+            </div>
+            <div class="modal-input">
+              <input type="text" id="username-mail" oninput="checkEmail()" />
+            </div>
+            <div class="inValidEmail display-none" id="inValidEmail">
+              <div class="error">*Please Enter Valid Email Address.</div>
+            </div>
+          </div>
+//<<<<<<< yahya
+ //         <div class="field">
+  //          <div class="label">
+  //            <label for="user-password"><strong>Password</strong></label>
+   //         </div>
+   //         <div class="modal-input">
+    //          <input type="password" id="user-password" />
+//=======
+        <div class="modal-error display-none" id="signin-error">
+        <div id="error" class="error">
+
+            </div>
+          </div>
+        </div>
+        <div class="modal-error display-none" id="signin-error">
+          <div class="error">
+            *Incomplete information. Please fill out all fields.
+          </div>
+        </div>
+        <div class="modal-btn">
+          <a class="modal-btn-txt" onclick="signIn()">
+            <strong>Sign in</strong>
+          </a>
+        </div>
+      </div>
     </div>
-    <!-- <footer>&copy; 2024 Twitter Clone</footer> -->
-  </body>
+  </div>
+  <!-- <footer>&copy; 2024 Twitter Clone</footer> -->
+</body>
+
 </html>
 <script src="javascripts/main.js"></script>
 <script src="javascripts/apisCalls.js"></script>
