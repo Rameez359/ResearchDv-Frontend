@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<!-- BEGIN: Head -->
+
+<head>
+  <meta charset="utf-8" />
+  <link href="dist/images/logo.svg" rel="shortcut icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description"
+    content="Tinker admin is super flexible, powerful, clean & modern responsive tailwind admin template with unlimited possibilities." />
+  <meta name="keywords"
+    content="admin template, Tinker Admin Template, dashboard template, flat admin template, responsive admin template, web app" />
+  <meta name="author" content="LEFT4CODE" />
+  <title>Research Dv</title>
+  <!-- BEGIN: CSS Assets-->
+  <link rel="stylesheet" href="dist/css/app.css" />
+  <!-- END: CSS Assets-->
+</head>
+<!-- END: Head -->
+<style>
+  #file-name {
+    font-size: 21px;
+    color: #222222;
+  }
+
+  .upload-dataset-btn {
+    width: fit-content;
+    margin-top: 20px;
+    padding: 7px;
+    color: white;
+    padding-left: 14px;
+    padding-right: 14px;
+    font-weight: 500;
+    border-radius: 6px;
+    background-color: #17d0d9 !important;
+  }
+
+  .upload-dataset-btn:hover {
+    background-color: #096166 !important;
+  }
+  .loader {
+        border: 8px solid #f3f3f3;
+        border-top: 8px solid #3498db;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        animation: spin 2s linear infinite;
+    }
+    
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+</style>
+
+<body class="py-5 md:py-0 bg-black/[0.15] dark:bg-transparent">
+  <!-- BEGIN: Mobile Menu -->
+  <div class="mobile-menu md:hidden">
+    <div class="mobile-menu-bar">
+      <a href="" class="flex mr-auto">
+        <img alt="Midone - HTML Admin Template" class="w-6" src="dist/images/logo.svg" />
+      </a>
+      <a href="javascript:;" class="mobile-menu-toggler">
+        <i data-lucide="bar-chart-2" class="w-8 h-8 text-white transform -rotate-90"></i>
+      </a>
+    </div>
+    <div class="scrollable">
+      <a href="javascript:;" class="mobile-menu-toggler">
+        <i data-lucide="x-circle" class="w-8 h-8 text-white transform -rotate-90"></i>
+      </a>
+      <ul class="scrollable__content py-2">
+        <li>
+          <a href="javascript:;.html" class="menu menu--active">
+            <div class="menu__icon"><i data-lucide="home"></i></div>
+            <div class="menu__title">
+              Dashboard
+              <i data-lucide="chevron-down" class="menu__sub-icon transform rotate-180"></i>
+            </div>
+          </a>
+          <ul class="menu__sub-open">
+            <li>
+              <a href="side-menu-dark-dashboard-overview-1.html" class="menu">
+                <div class="menu__icon"><i data-lucide="activity"></i></div>
+                <div class="menu__title">Overview 1</div>
+              </a>
+            </li>
+            <li>
+              <a href="side-menu-dark-dashboard-overview-2.html" class="menu menu--active">
+                <div class="menu__icon"><i data-lucide="activity"></i></div>
+                <div class="menu__title">Overview 2</div>
+              </a>
+            </li>
+            <li>
+              <a href="side-menu-dark-dashboard-overview-3.html" class="menu">
+                <div class="menu__icon"><i data-lucide="activity"></i></div>
+                <div class="menu__title">Overview 3</div>
+              </a>
+            </li>
+            <li>
+              <a href="side-menu-dark-dashboard-overview-4.html" class="menu">
+                <div class="menu__icon"><i data-lucide="activity"></i></div>
+                <div class="menu__title">Overview 4</div>
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- END: Mobile Menu -->
+  <div class="flex mt-[4.7rem] md:mt-0 overflow-hidden">
+    <!-- BEGIN: Side Menu -->
+    <%- include('./components/navBar') %>
+      <!-- END: Side Menu -->
+      <!-- BEGIN: Content -->
+      <div style="background: #f1f5f9" class="content">
+        <!-- BEGIN: Top Bar -->
+        <div class="top-bar -mx-4 px-4 md:mx-0 md:px-0">
+          <!-- BEGIN: Breadcrumb -->
+          <nav aria-label="breadcrumb" class="-intro-x mr-auto hidden sm:flex"></nav>
+          <!-- BEGIN: Account Menu -->
+          <div class="intro-x dropdown w-8 h-8">
+            <div class="dropdown-toggle w-8 h-8 rounded-full overflow-hidden shadow-lg image-fit zoom-in" role="button"
+              aria-expanded="false" data-tw-toggle="dropdown">
+              <img alt="Midone - HTML Admin Template" src="./images/profile-icon.png" />
+            </div>
+            <div class="dropdown-menu w-56">
+              <ul class="dropdown-content bg-primary text-white">
+                <li class="p-2">
+                  <div class="font-medium">Username</div>
+                  <div class="text-xs text-white/70 mt-0.5 dark:text-slate-500">
+                    Title
+                  </div>
+                </li>
+                <li>
+                  <hr class="dropdown-divider border-white/[0.08]" />
+                </li>
+                <li>
+                  <a href="" class="dropdown-item hover:bg-white/5">
+                    <i data-lucide="user" class="w-4 h-4 mr-2"></i> Profile
+                  </a>
+                </li>
+
+                <li>
+                  <a href="" class="dropdown-item hover:bg-white/5">
+                    <i data-lucide="lock" class="w-4 h-4 mr-2"></i> Reset
+                    Password
+                  </a>
+                </li>
+
+                <li>
+                  <hr class="dropdown-divider border-white/[0.08]" />
+                </li>
+                <li>
+                  <a href="/" class="dropdown-item hover:bg-white/5">
+                    <i data-lucide="toggle-right" class="w-4 h-4 mr-2"></i>
+                    Logout
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- END: Account Menu -->
+        </div>
+        <!-- END: Top Bar -->
+        <div class="grid gap-6">
+            <div class="col-span-12 2xl:col-span-9">
+                <div class="">
+                    <div class="grid gap-6 mt-8">
+                        <div class="col-span-12 lg:col-span-3 2xl:col-span-2">
+                            <h2 style="color: black" class="font-bold mr-5 text-2xl truncate text-slate-800">
+                                Results
+                            </h2>
+                        </div>
+                        <!-- <table id="classificationTable">
+                            <thead>
+                                <tr>
+                                    <th>Label</th>
+                                    <th>Precision</th>
+                                    <th>Recall</th>
+                                    <th>F1-Score</th>
+                                    <th>Support</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table> -->
+                        
+                        <div class="col-span-12 lg:col-span-9 2xl:col-span-10">
+                            <div class="intro-y flex flex-col-reverse sm:flex-row items-center">
+                                <div class="w-full sm:w-auto relative mr-auto mt-3 sm:mt-0"></div>
+                            </div>
+                            <!-- Loader Spinner -->
+                            <div id="loader" class="intro-y flex items-center justify-center mt-5">
+                                <div class="loader"></div>
+                            </div>
+                            <!-- Image Grid Container -->
+                            <div class="intro-y grid grid-cols-12 gap-3 sm:gap-6 mt-5" id="imageGrid" style="display: none;">
+                                <div class="col-span-12 sm:col-span-6 md:col-span-6">
+                                    <img id="image1" class="w-full">
+                                </div>
+                                <div class="col-span-12 sm:col-span-6 md:col-span-6">
+                                    <img id="image2" class="w-full">
+                                </div>
+                                <div class="col-span-12 sm:col-span-6 md:col-span-6">
+                                    <img id="image3" class="w-full">
+                                </div>
+                                <div class="col-span-12 sm:col-span-6 md:col-span-6">
+                                    <img id="image4" class="w-full">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END: Content -->
+      </div>
+  </div>
+
+  <script>
+   document.addEventListener("DOMContentLoaded", function () {
+  const datasetResultId = localStorage.getItem("datasetResultId");
+  const authToken = localStorage.getItem("signInToken");
+  const loader = document.getElementById("loader");
+  const imageGrid = document.getElementById("imageGrid");
+
+  // Ensure the loader is shown initially
+  loader.style.display = "flex";
+  imageGrid.style.display = "none";
+
+  const apiUrl = `http://localhost:3000/projects/getResultsFiles/${datasetResultId}`;
+
+  fetch(apiUrl, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${authToken}` // Assuming you use Bearer tokens
+    },
+  })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok: " + response.statusText);
+      }
+      return response.json();
+    })
+    .then(data => {
+      // Hide the loader and show the image grid
+      loader.style.display = "none";
+      imageGrid.style.display = "grid";
+
+      const fileData = [data.data[0]];
+      const imagesData = data.data.slice(1);;
+      console.log(`fileData: ${JSON.stringify(fileData)}`);
+      console.log(`imagesData: ${imagesData}`);
+
+      const images = imagesData;
+    //   updateReport(fileData);
+
+      updateDatasetsList(images);
+    })
+    .catch(error => {
+      console.error("There was an error fetching the datasets:", error);
+      // Hide the loader even on error, and perhaps show an error message
+      loader.style.display = "none";
+      alert("Failed to load data: " + error.message);
+    });
+});
+// function updateReport(reportData){
+//     const tbody = document.getElementById('classificationTable').getElementsByTagName('tbody')[0];
+//     reportData = atob(reportData[0].data);
+//     console.log("Report Data", reportData);
+//     const lines = reportData.split('\n');
+//     const dataStartIndex = lines.findIndex(line => line.trim().startsWith('0')) || lines.length;
+//     const dataEndIndex = lines.findIndex(line => line.includes('accuracy')) || lines.length;
+//     tbody.innerHTML = ''; // Clear previous rows
+
+//     // Process each line and create table rows
+//     for (let i = dataStartIndex; i < dataEndIndex; i++) {
+//         const columns = lines[i].trim().split(/\s+/);
+//         if (columns.length < 5) continue; // Skip any lines that don't have enough data
+
+//         let row = tbody.insertRow();
+//         row.style.backgroundColor = "#fafafa";
+
+//         // Add cells with the respective data
+//         columns.forEach((value, index) => {
+//             let cell = row.insertCell();
+//             cell.style.padding = "8px";
+//             cell.style.border = "1px solid #ddd";
+//             cell.textContent = value;
+//         });
+//     }
+// }
+function updateDatasetsList(images) {
+  const imageIds = ['image1', 'image2', 'image3', 'image4'];
+  images.forEach((image, index) => {
+    if (index < imageIds.length) {
+      const imgElement = document.getElementById(imageIds[index]);
+      if (imgElement) {
+        imgElement.src = `data:image/png;base64,${image.data}`;
+        imgElement.onerror = () => {
+          console.error("Error loading image", image.name);
+        };
+      }
+    }
+  });
+}
+
+ </script>
+
+  <!-- BEGIN: JS Assets-->
+  <script
+    src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=[" your-google-map-api"]&libraries=places"></script>
+  <script src="dist/js/app.js"></script>
+  <!-- END: JS Assets
+  </body>
+</html>
